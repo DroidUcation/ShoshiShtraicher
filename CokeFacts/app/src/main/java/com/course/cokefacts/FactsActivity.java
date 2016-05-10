@@ -23,17 +23,14 @@ public class FactsActivity extends FragmentActivity implements View.OnClickListe
         setContentView(R.layout.activity_facts);
          // Retrieve facts records
         String fact;
-        String URL = "content://com.course.cokefacts.FactsContentProvider";
-        Uri facts = Uri.parse(URL);
-        insertFacts(); //insert facts texts to DB by contentProvider
-        Cursor c = getContentResolver().query(facts, null, null, null, FactsContract.FactsEntry.COLUMN_FACT);
-        c.moveToFirst();
-        while (!c.isAfterLast()) {
-            fact = c.getString(c.getColumnIndex(FactsContract.FactsEntry.COLUMN_FACT));
-            fragmentsList.add(PageFragment.newInstance(fact));
-            c.moveToNext();
+        Cursor c = getContentResolver().query(FactsContentProvider.CONTENT_URI, null, null, null, FactsContract.FactsEntry.COLUMN_FACT);
+        if (c != null && c.moveToFirst()) {
+            do{
+                fact = c.getString(c.getColumnIndex(FactsContract.FactsEntry.COLUMN_FACT));
+                fragmentsList.add(PageFragment.newInstance(fact));
+            }
+            while (c.moveToNext());
         }
-        c.close();
 
         //Set page viewer
         myViewPager = (ViewPager)findViewById(R.id.coke_facts_pager);
@@ -72,27 +69,6 @@ public class FactsActivity extends FragmentActivity implements View.OnClickListe
                 myViewPager.setCurrentItem(tab);
                 break;
         }
-    }
-
-
-    /**
-     * insert facts texts to DB by contentProvider
-     *
-     */
-    public void insertFacts(){
-        // Add a new fact record
-        ContentValues values = new ContentValues();
-        //Set content values
-        values.put(FactsContract.FactsEntry.COLUMN_FACT, getResources().getString(R.string.fact1));
-        getContentResolver().insert( FactsContentProvider.CONTENT_URI, values);
-        values.put(FactsContract.FactsEntry.COLUMN_FACT, getResources().getString(R.string.fact2));
-        getContentResolver().insert( FactsContentProvider.CONTENT_URI, values);
-        values.put(FactsContract.FactsEntry.COLUMN_FACT, getResources().getString(R.string.fact3));
-        getContentResolver().insert( FactsContentProvider.CONTENT_URI, values);
-        values.put(FactsContract.FactsEntry.COLUMN_FACT, getResources().getString(R.string.fact4));
-        getContentResolver().insert( FactsContentProvider.CONTENT_URI, values);
-        values.put(FactsContract.FactsEntry.COLUMN_FACT, getResources().getString(R.string.fact5));
-        getContentResolver().insert( FactsContentProvider.CONTENT_URI, values);
     }
 }
 

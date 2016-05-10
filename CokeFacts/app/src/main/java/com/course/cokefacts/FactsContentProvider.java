@@ -4,12 +4,12 @@ import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
+import android.view.View;
 import android.support.annotation.Nullable;
 
 /**
@@ -35,6 +35,7 @@ public class FactsContentProvider extends ContentProvider{
         FactsDataBaseHelper dbHelper= new FactsDataBaseHelper(context);
         /** * Create a write able database which will trigger its * creation if it doesn't already exist. */
         db = dbHelper.getWritableDatabase();
+
         return (db == null)? false:true;
     }
 

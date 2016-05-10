@@ -1,5 +1,6 @@
 package com.course.cokefacts;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -8,17 +9,32 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Facts DatabaseHelper
  */
 public class FactsDataBaseHelper extends SQLiteOpenHelper {
-    String sqlCreation="CREATE TABLE IF NOT EXISTS "+FactsContract.FactsEntry.TABLE_NAME+
+    String sqlCreation="CREATE TABLE "+FactsContract.FactsEntry.TABLE_NAME+
             "(" +
             "_id INTEGER PRIMARY KEY, "+
             FactsContract.FactsEntry.COLUMN_FACT+ " TEXT NOT NULL"+
             ");";
+    Context cnx;
    public FactsDataBaseHelper(Context context){
         super(context,"factsDB",null,1);
+        cnx = context;
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(sqlCreation);
+
+        //insert facts texts to DB
+        ContentValues values = new ContentValues();
+        values.put(FactsContract.FactsEntry.COLUMN_FACT, cnx.getResources().getString(R.string.fact1));
+        db.insert(FactsContract.FactsEntry.TABLE_NAME,null, values);
+        values.put(FactsContract.FactsEntry.COLUMN_FACT,cnx.getResources().getString(R.string.fact2));
+        db.insert(FactsContract.FactsEntry.TABLE_NAME, null, values);
+        values.put(FactsContract.FactsEntry.COLUMN_FACT,cnx.getResources().getString(R.string.fact3));
+        db.insert(FactsContract.FactsEntry.TABLE_NAME, null, values);
+        values.put(FactsContract.FactsEntry.COLUMN_FACT,cnx.getResources().getString(R.string.fact4));
+        db.insert(FactsContract.FactsEntry.TABLE_NAME,null, values);
+        values.put(FactsContract.FactsEntry.COLUMN_FACT,cnx.getResources().getString(R.string.fact5));
+        db.insert(FactsContract.FactsEntry.TABLE_NAME,null, values);
     }
 
     @Override
