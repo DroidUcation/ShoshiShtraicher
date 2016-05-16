@@ -50,12 +50,11 @@ public class FactsIntentService extends IntentService{
 
     public PendingIntent createPendingIntent(){
         //Add notification action
-        Intent resultIntent = new Intent(this, FactsActivity.class);
+        Intent factIntent = new Intent(this, FactsActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 
         // Adds the Intent that starts the Activity to the top of the stack
-        stackBuilder.addNextIntent(resultIntent);
-        stackBuilder.addParentStack(FactsActivity.class);
+        stackBuilder.addNextIntentWithParentStack(factIntent);
         PendingIntent pi = stackBuilder.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
         return pi;
     }
@@ -64,7 +63,7 @@ public class FactsIntentService extends IntentService{
         Notification n = new NotificationCompat.Builder(this)
                 .setContentTitle("New coke facts")
                 .setContentText("5 new facts were added to cokeApp")
-                .setSmallIcon(R.drawable.coke_icon)
+                .setSmallIcon(R.drawable.cola_can_icon)
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true)
                 .setContentIntent(createPendingIntent())

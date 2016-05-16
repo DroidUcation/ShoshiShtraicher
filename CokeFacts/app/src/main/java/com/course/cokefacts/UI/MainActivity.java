@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         PendingIntent pendingIntent = PendingIntent.getBroadcast(cnx, 0, intent, 0);
         AlarmManager am = (AlarmManager) cnx.getSystemService(Context.ALARM_SERVICE);
         am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),
-        AlarmManager.INTERVAL_DAY, pendingIntent);
+             AlarmManager.INTERVAL_DAY, pendingIntent);
         //am.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 60 * 1000, pendingIntent);
     }
 }
