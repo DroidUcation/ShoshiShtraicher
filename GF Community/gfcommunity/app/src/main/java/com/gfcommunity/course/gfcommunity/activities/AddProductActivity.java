@@ -1,7 +1,14 @@
 package com.gfcommunity.course.gfcommunity.activities;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -15,19 +22,25 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 
 import com.gfcommunity.course.gfcommunity.R;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
-import com.gfcommunity.course.gfcommunity.places.PlacesAutoCompleteAdapter;
-
-
+import com.gfcommunity.course.gfcommunity.firebase.storage.UploadPostTask;
 import com.gfcommunity.course.gfcommunity.products.InsertProductLoader;
+
+
 import android.net.Uri;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 
 public class AddProductActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Uri>, View.OnClickListener, AdapterView.OnItemSelectedListener {
@@ -41,7 +54,13 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     private EditText storeHouseNoEditTxt;
     private int loaderID = 0;
     private String logTag = AddProductActivity.class.getName();
-        private String selectedCity;
+    private String selectedCity;
+    private ImageView productImg;
+    private Button addProductImgBtn;
+    private OutputStream outFile;
+    private Bitmap bitmap;
+    private Bitmap thumbnail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +80,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
 
         //Define views
         addProductBtn  = (Button) findViewById(R.id.add_product_btn);
-        addProductBtn.setTransformationMethod(null);  //Ignore automatic upper case for lollipop
+        addProductBtn.setTransformationMethod(null);  //Ignore automatic upper case
         productNameEditTxt  = (EditText) findViewById(R.id.product_name_edit_text);
         storeNameEditTxt  = (EditText) findViewById(R.id.store_edit_txt);
         storeUrlEditTxt  = (EditText) findViewById(R.id.store_url_edit_txt);
@@ -70,12 +89,16 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         storeStreetEditTxt = (EditText) findViewById(R.id.store_street_edit_txt);
         storeHouseNoEditTxt = (EditText) findViewById(R.id.store_house_no_edit_txt);
         commentEditTxt = (EditText) findViewById(R.id.product_comment_txt);
+        addProductImgBtn = (Button)findViewById(R.id.btnSelectProductImg);
+        addProductImgBtn.setTransformationMethod(null);  //Ignore automatic upper case
+        productImg = (ImageView)findViewById(R.id.viewImage);
 
         //Bind views to Listener
         addProductBtn.setOnClickListener(this);
         citiesSpinner.setOnItemSelectedListener(this);
         productNameEditTxt.addTextChangedListener(new MyTextWatcher(productNameEditTxt));
         storeNameEditTxt.addTextChangedListener(new MyTextWatcher(storeNameEditTxt));
+        addProductImgBtn.setOnClickListener(this);
 
         //Cities spinner
         citiesSpinner.setPrompt(getResources().getString(R.string.city));
@@ -94,7 +117,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, !TextUtils.isEmpty(storeName) ? storeName : "");
         String storeUrl = storeUrlEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.STORE_URL, !TextUtils.isEmpty(storeUrl) ? storeUrl : "");
-        values.put(SharingInfoContract.ProductsEntry.CREATED_AT, DateFormat.format("yyyy-MM-dd hh:mm:ss",new java.util.Date()).toString());
+        values.put(SharingInfoContract.ProductsEntry.CREATED_AT, DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString());
         String storePhone = storePhoneEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.PHONE, !TextUtils.isEmpty(storePhone) ? storePhone : "");
         values.put(SharingInfoContract.ProductsEntry.CITY, selectedCity);
@@ -110,7 +133,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     @Override
     public void onLoadFinished(Loader<Uri> loader, Uri data) {
         Log.i(logTag, "Insert product succssed: "+ productNameEditTxt.getText().toString());
-        Intent intent = new Intent(this, ProductsActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         Toast.makeText(this,"Product is inserted successfully",Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
     }
@@ -126,7 +149,12 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
             case R.id.add_product_btn: //Start Add new product activity
                 if(isValidatedForm()) { //Validate inputs
                     getSupportLoaderManager().initLoader(loaderID, null, this).forceLoad();//Initializes the Insert Loader
+                    UploadPostTask uploadTask = new UploadPostTask(outFile, thumbnail, this);
+                    uploadTask.execute();
                 }
+                break;
+            case R.id.btnSelectProductImg:
+                selectImage(); //select image from camera or gallery
                 break;
         }
     }
@@ -140,6 +168,107 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    /**
+     * Create alert dialog with options to add image from gallery or camera
+     */
+    private void selectImage() {
+        final CharSequence[] options = { "Take Photo", "Choose from Gallery","Cancel" };
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Add product image");
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+
+                if (options[item].equals("Take Photo")) {
+                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    File f = new File(android.os.Environment.getExternalStorageDirectory(), "temp.jpg");
+                    intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
+                    startActivityForResult(intent, 1);
+                }
+
+                else if (options[item].equals("Choose from Gallery")) {
+                    Intent intent = new   Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(intent, 2);
+                }
+
+                else if (options[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+
+            }
+
+        });
+
+        builder.show();
+
+    }
+
+    @Override
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 1) {
+                File f = new File(Environment.getExternalStorageDirectory().toString());
+                for (File temp : f.listFiles()) {
+                    if (temp.getName().equals("temp.jpg")) {
+                        f = temp;
+                        break;
+                    }
+                }
+
+                try {
+                    BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+                    bitmap = BitmapFactory.decodeFile(f.getAbsolutePath(),bitmapOptions);
+                    productImg.setImageBitmap(bitmap);
+                    String path = android.os.Environment
+                            .getExternalStorageDirectory()
+                            + File.separator
+                            + "Phoenix" + File.separator + "default";
+                    f.delete();
+                    outFile = null;
+                    File file = new File(path, String.valueOf(System.currentTimeMillis()) + ".jpg");
+
+                    try {
+                        outFile = new FileOutputStream(file);
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, outFile);
+                        Bitmap.createScaledBitmap(bitmap, (int) (bitmap.getWidth() * 0.8), (int) (bitmap.getHeight() * 0.8), true);
+                        outFile.flush();
+                        outFile.close();
+
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            } else if (requestCode == 2) {
+                Uri selectedImage = data.getData();
+                String[] filePath = {MediaStore.Images.Media.DATA };
+                Cursor c = getContentResolver().query(selectedImage,filePath, null, null, null);
+                c.moveToFirst();
+                int columnIndex = c.getColumnIndex(filePath[0]);
+                String picturePath = c.getString(columnIndex);
+                c.close();
+                thumbnail = (BitmapFactory.decodeFile(picturePath));
+                Log.w(logTag, picturePath);
+                productImg.setImageBitmap(thumbnail);
+
+            }
+
+        }
+
+    }
+
+
 
     /**
      * Validating form
@@ -203,7 +332,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         boolean isStreetEmpty = TextUtils.isEmpty(storeStreetEditTxt.getText().toString().trim());
         boolean isHouseNoEmpty = TextUtils.isEmpty(storeHouseNoEditTxt.getText().toString().trim());
         boolean isValid = true;
-        if(!isUrlEmpty && (isCityEmpty || isStreetEmpty || isHouseNoEmpty)) {
+        if(isUrlEmpty && (isCityEmpty || isStreetEmpty || isHouseNoEmpty)) {
             if(isCityEmpty) {
                 //TODO: set spinner error
                 isValid = false;
@@ -216,9 +345,11 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
                 setErrorMsg(storeHouseNoEditTxt);
                 isValid = false;
             }
-        } else {
-            setErrorMsg(storeUrlEditTxt);
-            isValid = false;
+
+            if(isUrlEmpty) {
+                setErrorMsg(storeUrlEditTxt);
+                isValid = false;
+            }
         }
         return isValid;
     }

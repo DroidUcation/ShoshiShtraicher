@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_3564a5a7daa4e5fa0b504acc38d50ec90f689420\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_650d13d60d833fa97e4222ef88439c3444208cd9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_96d1c324ebefcaf88ee325f02e8492b66b1e74d3\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a511c684ea4c2cf31a3377d51e7677cb76696e07">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.0.2_fa15aa01ff2135c719894b93cfca2e196c677891\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_a3eab78b5acff91227b5a61f2d4e4ea06003b34a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.0.2_be19e005e96b42e70e76312d37ed989ba8340ffe\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-9.0.2_3122300efdf17ff47e9af98b4d1f7907b9889c3b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_9814ce673ab0f90f7d45dae1b0cd7b224f2b0776\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_9cde390bd76623b11aa193c61fc81d73a038682a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_a2231ae9b3c50d4ed5015e08261347c7f53a5134\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="51a11c41a08f099a204e1b8dcc04f27217de50ec">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-9.0.2_d32bae00cd838ea6aa59592da01e3063462b9ede\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="cd4c7c54e15d9ccbc448384fa2c4684d69ca73f0">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-9.0.2_92ac553691315881bc86c4c12daf9b48572d7342\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b3d0809a742c5f768c6aa9efc6decd5c1d6cd227">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-9.0.2_a6d2670031bed696bc179cda96452866fdcfec22\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_4f61b6987f43b5a8e6527cf173eb53f5fb60480f\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b218e8d517cd178c3bc1b5df612dc517e4b0315a">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_71705e3ec83bc70a253230257bb441292ee467e6\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="568d5bda0b4d51f90d978ace369bb9ad024d2057">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-common-9.0.2_d1a38026d62b3816382a13cb6d2e04cc5ba9d859\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fa472b7cbd3897bf6bed6068ac0b00e494987688">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-9.0.2_3d3216e070b8a2cac0b56b19b4f4d357344e7d07\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e795d38cc25fcf9ebe1b751e84a181a5b11dcbaf">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_66f6157c4a075183582400ab30b5591b25a17c74\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth-module\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="79e298d7fed2fcada58da7032d07d34ee198a545">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-module-9.0.2_318d9b297a439f2eb9abf2a76fa5db86c975d51a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.0.2_206f97509febb3f71e166463bd9a75c30a6fbb60\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.0.2_d69eaab6465bfb0862763463a0c3525c4a48c844\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\9.0.2\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6ff48ef26bc539c78af4aa061cb9bad6abcbf5e8">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-9.0.2_06dde8eda266cef4192e50a2fdc466238f4f50fe\classes.dex" />
+    </item>
+
+</items>
