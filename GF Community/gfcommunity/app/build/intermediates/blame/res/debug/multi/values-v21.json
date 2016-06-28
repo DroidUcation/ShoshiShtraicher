@@ -1608,12 +1608,12 @@
                 "from": {
                     "file": "C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\src\\main\\res\\values-v21\\styles.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 318,
-                        "endLine": 14,
+                        "startOffset": 319,
+                        "endLine": 15,
                         "endColumn": 12,
-                        "endOffset": 799
+                        "endOffset": 800
                     }
                 }
             },

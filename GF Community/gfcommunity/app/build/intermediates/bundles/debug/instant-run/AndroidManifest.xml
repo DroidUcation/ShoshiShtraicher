@@ -14,8 +14,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <!-- Required permission for App measurement to run. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
  <!-- Optional permission for App measurement to run. -->
@@ -56,6 +55,19 @@
             android:value="R.string.places_api_key" />
 
         <activity android:name="com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity" />
+        <activity
+            android:name="com.gfcommunity.course.gfcommunity.activities.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/MyMaterialTheme" >
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

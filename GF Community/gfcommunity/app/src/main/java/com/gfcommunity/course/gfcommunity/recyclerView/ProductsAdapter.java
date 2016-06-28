@@ -118,13 +118,13 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     public static Product setProductValues(){
         Product product = new Product();
         product.setProductName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.PRODUCT_NAME)));
-        //TODO: set image
+        product.setImgUrl(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.IMAGE_URI)));
         product.setStoreName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STORE_NAME)));
 
         int houseNo = cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO));
         String street = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STREET));
         String city = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CITY));
-        if(houseNo > 0 && TextUtils.isEmpty(street) && TextUtils.isEmpty(city)) {
+        if(houseNo > 0 && !TextUtils.isEmpty(street) && !TextUtils.isEmpty(city)) {
             //Build and set address
             product.setAddress(String.format(context.getResources().getString(R.string.address),
                     cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO)),
@@ -163,7 +163,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         int houseNo = cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO));
         String street = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STREET));
         String city = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CITY));
-        if(houseNo > 0 && TextUtils.isEmpty(street) && TextUtils.isEmpty(city)) {
+        if(houseNo > 0 && !TextUtils.isEmpty(street) && !TextUtils.isEmpty(city)) {
             //Build address string
             text = String.format(context.getResources().getString(R.string.address),
                     cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO)),

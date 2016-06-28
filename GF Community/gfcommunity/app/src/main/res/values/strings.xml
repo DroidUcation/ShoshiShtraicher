@@ -18,6 +18,7 @@
     <string name="required_err_msg">%1$s is required</string>
     <string name="store_name">Store name</string>
     <string name="required_err_msg_default">This field is required</string>
+    <string name="city_spinner_title">Select City</string>
 
     <!-->Israel cities array<!-->
     <string-array name="cities_array">
@@ -98,4 +99,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 </resources>

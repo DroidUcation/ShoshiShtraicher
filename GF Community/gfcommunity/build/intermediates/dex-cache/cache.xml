@@ -30,6 +30,13 @@
         <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-9.0.2_fa15aa01ff2135c719894b93cfca2e196c677891\classes.dex" />
     </item>
     <item
+        jar="C:\Users\slevin\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_ccbf3b4683ddd6d092727822a755bd93f1db5f14\classes.dex" />
+    </item>
+    <item
         jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
         jumboMode="true"
         revision="23.0.3"
@@ -103,7 +110,7 @@
         jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="b218e8d517cd178c3bc1b5df612dc517e4b0315a">
+        sha1="feb8839d2dac57ab01bfe9072f4fa2db01c29b81">
         <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_71705e3ec83bc70a253230257bb441292ee467e6\classes.dex" />
     </item>
     <item
@@ -124,7 +131,7 @@
         jar="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="23.0.3"
-        sha1="e795d38cc25fcf9ebe1b751e84a181a5b11dcbaf">
+        sha1="ba5d8e23406191f5a65866435a307b5a80b9eb4d">
         <dex dex="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_66f6157c4a075183582400ab30b5591b25a17c74\classes.dex" />
     </item>
     <item

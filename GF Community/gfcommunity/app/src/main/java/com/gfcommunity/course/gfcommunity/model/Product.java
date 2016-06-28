@@ -17,10 +17,11 @@ public class Product implements Serializable{
     private String comment;
     private String userID;
     private Timestamp createdAt;
+    private String imgUri;
 
     public Product(){}
 
-    public Product(String productName, int image, Timestamp createdAt, String userID, String comment, String phone, String address, String storeName, String storeUrl) {
+    public Product(String productName, int image, Timestamp createdAt, String userID, String comment, String phone, String address, String storeName, String storeUrl, String imgUri) {
         this.productName = productName;
         this.image = image;
         this.createdAt = createdAt;
@@ -30,6 +31,7 @@ public class Product implements Serializable{
         this.address = address;
         this.storeName = storeName;
         this.storeUrl = storeUrl;
+        this.imgUri = imgUri;
     }
 
     public String getProductName() {
@@ -92,6 +94,15 @@ public class Product implements Serializable{
         return userID;
     }
 
+    public void setImgUrl(String imgUri) {
+        this.imgUri = imgUri;
+    }
+
+    public String getImgUrl() {
+        return imgUri;
+
+    }
+
     public void setUserID(String userID) {
         this.userID = userID;
     }
@@ -116,6 +127,7 @@ public class Product implements Serializable{
                 ", comment='" + comment + '\'' +
                 ", userID='" + userID + '\'' +
                 ", createdAt=" + createdAt +
+                ", imgUrl='" + imgUri + '\'' +
                 '}';
     }
 }
