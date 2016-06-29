@@ -37,7 +37,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="R.string.places_api_key" />
 
-        <activity android:name=".activities.ProductDetailsActivity" />
+        <activity
+            android:name=".activities.ProductDetailsActivity"
+            android:parentActivityName=".activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity"/>
+        </activity>
 
         <activity android:name=".activities.Main2Activity"
             android:label="@string/title_activity_main2"

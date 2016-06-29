@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:2:1-53:16
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:2:1-59:16
 	package
 		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:3:5-49
 		INJECTED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml
@@ -41,7 +41,7 @@ MERGED from [com.google.firebase:firebase-iid:9.0.2] C:\Users\slevin\Documents\a
 	android:name
 		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:12:22-64
 application
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:14:5-51:23
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:14:5-57:23
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
@@ -253,17 +253,25 @@ ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\ap
 	android:name
 		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:37:13-58
 activity#com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:40:9-71
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:40:9-46:20
+	android:parentActivityName
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:42:13-66
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:40:19-68
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:41:13-62
+meta-data#android.support.PARENT_ACTIVITY
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:43:13-45:59
+	android:value
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:45:17-57
+	android:name
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:44:17-63
 activity#com.gfcommunity.course.gfcommunity.activities.Main2Activity
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:42:9-50:24
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:48:9-56:24
 	android:label
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:43:13-57
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:49:13-57
 	android:theme
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:44:13-51
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:50:13-51
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:42:19-59
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:48:19-59
 uses-sdk
 INJECTED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:21:5-23:78

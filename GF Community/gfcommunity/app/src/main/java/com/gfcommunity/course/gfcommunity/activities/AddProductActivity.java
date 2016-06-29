@@ -1,6 +1,10 @@
 package com.gfcommunity.course.gfcommunity.activities;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -10,6 +14,7 @@ import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.NotificationCompat;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -18,13 +23,13 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 
 import com.gfcommunity.course.gfcommunity.R;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.products.InsertProductLoader;
 import com.gfcommunity.course.gfcommunity.firebase.storage.UploadFile;
+import com.gfcommunity.course.gfcommunity.utils.SpinnerAdapter;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -94,17 +99,21 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         addProductImgBtn.setOnClickListener(this);
 
         //Cities spinner
+        String[] cityArray = getResources().getStringArray(R.array.cities_array);
+        String[] cityList = new String[(cityArray.length)+1];
+        System.arraycopy(cityArray, 0, cityList, 0, cityArray.length);
+        cityList[cityArray.length] = getResources().getString(R.string.city_spinner_title);
         citiesSpinner.setPrompt(getResources().getString(R.string.city_spinner_title));
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.cities_array));
-        //dataAdapter.add(getResources().getString(R.string.city_spinner_title));// add hint as last item
+        SpinnerAdapter dataAdapter = new SpinnerAdapter(this, cityList, android.R.layout.simple_spinner_item);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);// Drop down layout style - list view with radio button
         citiesSpinner.setAdapter(dataAdapter);
-        //citiesSpinner.setSelection(dataAdapter.getCount());// show hint
+        citiesSpinner.setSelection(dataAdapter.getCount());// show hint
+
     }
 
     @Override
     public Loader<Uri> onCreateLoader(int id, Bundle args) {
-        String downloadUrlPath = args.getString("downloadUrlPath");
+        String downloadUrlPath = args != null ? args.getString("downloadUrlPath") : "";
         ContentValues values = new ContentValues();
         String productName = productNameEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, !TextUtils.isEmpty(productName) ? productName : "");
@@ -122,11 +131,35 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         values.put(SharingInfoContract.ProductsEntry.HOUSE_NO, !TextUtils.isEmpty(storeHouseNo) ? storeHouseNo : "");
         String comment = commentEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.COMMENT, !TextUtils.isEmpty(comment) ? comment : "");
+        values.put(SharingInfoContract.ProductsEntry.IMAGE_URI, !TextUtils.isEmpty(downloadUrlPath) ? downloadUrlPath : "");
 
-        if(downloadUrlPath != null) {
-            values.put(SharingInfoContract.ProductsEntry.IMAGE_URI, !TextUtils.isEmpty(downloadUrlPath) ? downloadUrlPath : "");
-        }
         return new InsertProductLoader(this, values);
+    }
+
+    public PendingIntent createPendingIntent(){
+        //Add notification action
+        Intent productDetailsIntent = new Intent(this, ProductDetailsActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+
+        // Adds the Intent that starts the Activity to the top of the stack
+        stackBuilder.addNextIntentWithParentStack(productDetailsIntent);
+        PendingIntent pi = stackBuilder.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
+        return pi;
+    }
+
+    public void sendNotification(){
+        Notification n = new NotificationCompat.Builder(this)
+                .setContentTitle("New GF product")
+                .setContentText("product name in store name")
+                .setSmallIcon(R.drawable.ic_menu_send) //TODO: put app icon
+                .setDefaults(Notification.DEFAULT_SOUND)
+                .setAutoCancel(true)
+                .setContentIntent(createPendingIntent())
+                .build();
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(this.NOTIFICATION_SERVICE);
+        notificationManager.notify(1, n);
     }
 
     @Override
@@ -135,6 +168,8 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         Toast.makeText(this,"Product is inserted successfully",Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
+        //TODO: check if user city is same as product city
+        sendNotification(); //Send notification
     }
 
     @Override
@@ -147,7 +182,11 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         switch(view.getId()){
             case R.id.add_product_btn: //Start Add new product activity
                 if(isValidatedForm()) { //Validate inputs
-                    UploadFile.uploadFile(this, selectedImage,this);
+                    if(selectedImage != null) {
+                        UploadFile.uploadFile(this, selectedImage, this); //Upload product image to firebase
+                    } else {
+                        getSupportLoaderManager().initLoader(loaderID, null, this).forceLoad();//Initializes the Insert Loader
+                    }
                 }
                 break;
             case R.id.btnSelectProductImg:
@@ -171,7 +210,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
      */
     private void selectImage() {
         Uri selectedImage;
-        final CharSequence[] options = { "Take Photo", "Choose from Gallery","Cancel" };
+        final CharSequence[] options = { getResources().getString(R.string.take_photo_option),getResources().getString(R.string.gallery_option),getResources().getString(R.string.cancel_option)};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Add product image");
         builder.setItems(options, new DialogInterface.OnClickListener() {
@@ -179,19 +218,19 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
             @Override
             public void onClick(DialogInterface dialog, int item) {
 
-                if (options[item].equals("Take Photo")) {
+                if (options[item].equals(getResources().getString(R.string.take_photo_option))) {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     File f = new File(android.os.Environment.getExternalStorageDirectory(), "product.jpg");
                     intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
                     startActivityForResult(intent, 1);
                 }
 
-                else if (options[item].equals("Choose from Gallery")) {
+                else if (options[item].equals(getResources().getString(R.string.gallery_option))) {
                     Intent intent = new   Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, 2);
                 }
 
-                else if (options[item].equals("Cancel")) {
+                else if (options[item].equals(getResources().getString(R.string.cancel_option))) {
                     dialog.dismiss();
                 }
 
@@ -259,6 +298,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         boolean isStroreAddressOrStoreUrlFilled = validateRequiredAddressOrUrl(storeUrlEditTxt, storeStreetEditTxt, storeHouseNoEditTxt); //Validate store address or store url (one of them is required)
         if(isProductNameFilled && isStoreNameFilled && isStroreAddressOrStoreUrlFilled) {
             isValid = true;
+            cleanErrorMsg(); //Clean all error messages
         }
         return isValid;
     }
@@ -296,6 +336,14 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
             return false;
         }
         return true;
+    }
+
+    private void cleanErrorMsg(){
+        productNameEditTxt.setError(null);
+        storeNameEditTxt.setError(null);
+        storeUrlEditTxt.setError(null);
+        storeStreetEditTxt.setError(null);
+        storeHouseNoEditTxt.setError(null);
     }
 
     /**
@@ -344,8 +392,6 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         Bundle bundle= new Bundle();
         bundle.putString("downloadUrlPath",uri.toString());
         getSupportLoaderManager().initLoader(loaderID,bundle , this).forceLoad();//Initializes the Insert Loader
-
-
     }
 
     private class MyTextWatcher implements TextWatcher {

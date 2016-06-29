@@ -54,7 +54,13 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="R.string.places_api_key" />
 
-        <activity android:name="com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity" />
+        <activity
+            android:name="com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity"
+            android:parentActivityName="com.gfcommunity.course.gfcommunity.activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
         <activity
             android:name="com.gfcommunity.course.gfcommunity.activities.Main2Activity"
             android:label="@string/title_activity_main2"

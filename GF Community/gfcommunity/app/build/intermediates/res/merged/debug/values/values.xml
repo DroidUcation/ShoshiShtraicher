@@ -6,7 +6,7 @@
         <item>Arad</item>
         <item>Ariel</item>
         <item>Ashdod</item>
-        <item>Ashkelond</item>
+        <item>Ashkelon</item>
         <item>Bat Yam</item>
         <item>Beershebae</item>
         <item>Beit She\'an</item>
@@ -402,9 +402,10 @@
     <string name="app_name">GF Community</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
+    <string name="cancel_option">Cancel</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="city">City</string>
-    <string name="city_spinner_title">Select City</string>
+    <string name="city_spinner_title">Select city</string>
     <string name="comment">Comment</string>
     <string name="common_google_play_services_api_unavailable_text"><ns1:g id="app_name">%1$s</ns1:g> requires one or more Google Play services that are not currently available. Please contact the developer for assistance.</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable Google Play services</string>
@@ -439,6 +440,7 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="default_web_client_id" translatable="false">710704984798-vqiv1420tef95v74hbd6bb5utde5buj7.apps.googleusercontent.com</string>
     <string name="firebase_database_url" translatable="false">https://gf-community.firebaseio.com</string>
+    <string name="gallery_option">Choose from Gallery</string>
     <string name="gcm_defaultSenderId" translatable="false">710704984798</string>
     <string name="google_api_key" translatable="false">AIzaSyB3N1aH_ddG8PSkDa2b0SOQqmUHIZARtN4</string>
     <string name="google_app_id" translatable="false">1:710704984798:android:9d6737fac299bbed</string>
@@ -461,6 +463,7 @@
     <string name="store_phone">Phone</string>
     <string name="store_url">URL</string>
     <string name="street">Street</string>
+    <string name="take_photo_option">Take Photo</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="user_uploaded_text">Added by %1$s on %2$s.</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
