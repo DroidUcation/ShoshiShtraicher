@@ -5,9 +5,11 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.LoaderManager;
@@ -20,15 +22,18 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.gfcommunity.course.gfcommunity.R;
+import com.gfcommunity.course.gfcommunity.data.ProductsContentProvider;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.products.InsertProductLoader;
 import com.gfcommunity.course.gfcommunity.firebase.storage.UploadFile;
+import com.gfcommunity.course.gfcommunity.recyclerView.ProductsAdapter;
 import com.gfcommunity.course.gfcommunity.utils.SpinnerAdapter;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -58,6 +63,8 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     private ImageView productImg;
     private Button addProductImgBtn;
     private Uri selectedImage;
+    String productName;
+    String storeName;
 
 
     @Override
@@ -115,9 +122,9 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     public Loader<Uri> onCreateLoader(int id, Bundle args) {
         String downloadUrlPath = args != null ? args.getString("downloadUrlPath") : "";
         ContentValues values = new ContentValues();
-        String productName = productNameEditTxt.getText().toString();
+        productName = productNameEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, !TextUtils.isEmpty(productName) ? productName : "");
-        String storeName = storeNameEditTxt.getText().toString();
+        storeName = storeNameEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, !TextUtils.isEmpty(storeName) ? storeName : "");
         String storeUrl = storeUrlEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.STORE_URL, !TextUtils.isEmpty(storeUrl) ? storeUrl : "");
@@ -136,9 +143,18 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         return new InsertProductLoader(this, values);
     }
 
-    public PendingIntent createPendingIntent(){
+    /*
+     * Create pending intent for details activity which be opened from notification
+     * @param productUri: relevant product uri to get product details
+     * @return PendingIntent
+     */
+    public PendingIntent createPendingIntent(Uri productUri){
         //Add notification action
         Intent productDetailsIntent = new Intent(this, ProductDetailsActivity.class);
+        Cursor cursor = this.getContentResolver().query(productUri, null, null, null, null);
+        if(cursor != null && cursor.moveToFirst()) {
+            productDetailsIntent.putExtra("selected_item", ProductsAdapter.setProductValues(cursor)); //Pass relevant product to ProductDetailsActivity
+        }
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
 
         // Adds the Intent that starts the Activity to the top of the stack
@@ -147,14 +163,17 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         return pi;
     }
 
-    public void sendNotification(){
+    /**
+     * Send notification about new product
+     */
+    public void sendNotification(Uri productUri){
         Notification n = new NotificationCompat.Builder(this)
-                .setContentTitle("New GF product")
-                .setContentText("product name in store name")
+                .setContentTitle("New Gluten free product")
+                .setContentText(productName +" was added in "+storeName )
                 .setSmallIcon(R.drawable.ic_menu_send) //TODO: put app icon
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true)
-                .setContentIntent(createPendingIntent())
+                .setContentIntent(createPendingIntent(productUri))
                 .build();
 
         NotificationManager notificationManager =
@@ -166,10 +185,11 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     public void onLoadFinished(Loader<Uri> loader, Uri data) {
         Log.i(logTag, "Insert product succssed: "+ productNameEditTxt.getText().toString());
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("fragmentPosition", 1);
         startActivity(intent);
         Toast.makeText(this,"Product is inserted successfully",Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
         //TODO: check if user city is same as product city
-        sendNotification(); //Send notification
+        sendNotification(data); //Send notification
     }
 
     @Override
@@ -293,10 +313,24 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
      */
     private boolean isValidatedForm() {
         boolean isValid = false;
-        boolean isProductNameFilled = validateRequiredText(productNameEditTxt);
-        boolean isStoreNameFilled = validateRequiredText(storeNameEditTxt);
+        boolean isProductNameFilled = validateRequiredText(productNameEditTxt); //validate product name
+        boolean isStoreNameFilled = validateRequiredText(storeNameEditTxt); //validate store name
         boolean isStroreAddressOrStoreUrlFilled = validateRequiredAddressOrUrl(storeUrlEditTxt, storeStreetEditTxt, storeHouseNoEditTxt); //Validate store address or store url (one of them is required)
-        if(isProductNameFilled && isStoreNameFilled && isStroreAddressOrStoreUrlFilled) {
+
+        //validate store phone
+        Editable storePhoneNumber = storePhoneEditTxt.getText();
+        boolean isStorePhoneValid = true;
+        if(storePhoneNumber != null && !TextUtils.isEmpty(storePhoneNumber.toString())) {
+            isStorePhoneValid = isValidMobile(storePhoneEditTxt, storePhoneNumber.toString().trim());
+        }
+
+        //validate store web url
+        Editable storeUrl = storeUrlEditTxt.getText();
+        boolean isStoreUrlValid = true;
+        if(storeUrl != null && !TextUtils.isEmpty(storeUrl.toString())) {
+            isStoreUrlValid = isValidWebUrl(storeUrlEditTxt, storeUrl.toString().trim());
+        }
+        if(isProductNameFilled && isStoreNameFilled && isStroreAddressOrStoreUrlFilled && isStorePhoneValid && isStoreUrlValid) {
             isValid = true;
             cleanErrorMsg(); //Clean all error messages
         }
@@ -325,11 +359,19 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
             case R.id.store_url_edit_txt:
                 errMessage = (String.format(getResources().getString(R.string.required_err_msg),getString(R.string.store_url)));
                 break;
+            case R.id.store_phone_edit_txt:
+                errMessage = getResources().getString(R.string.not_valid_number_msg);
+                break;
         }
         view.setError(errMessage);
         requestFocus(view);
     }
 
+    /**
+     * Validate required text
+     * @param editTextView
+     * @return isValid
+     */
     private boolean validateRequiredText(EditText editTextView) {
         if (TextUtils.isEmpty(editTextView.getText().toString().trim())) {
             setErrorMsg(editTextView);
@@ -338,12 +380,40 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         return true;
     }
 
+    /**
+     * Validate phone
+     * @param phone
+     * @return isValid
+     */
+    private boolean isValidMobile(EditText editTextView, String phone) {
+        boolean isValid = Patterns.PHONE.matcher(phone).matches();
+        if(!isValid) {
+            setErrorMsg(editTextView);
+        }
+        return isValid;
+    }
+
+    /**
+     * Validate web url
+     * @param webUrl
+     * @return isValid
+     */
+    private boolean isValidWebUrl(EditText editTextView, String webUrl) {
+        boolean isValid = Patterns.WEB_URL.matcher(webUrl).matches();
+        if(!isValid) {
+            editTextView.setError(getResources().getString(R.string.not_valid_url_msg));
+            requestFocus(editTextView);
+        }
+        return isValid;
+    }
+
     private void cleanErrorMsg(){
         productNameEditTxt.setError(null);
         storeNameEditTxt.setError(null);
         storeUrlEditTxt.setError(null);
         storeStreetEditTxt.setError(null);
         storeHouseNoEditTxt.setError(null);
+        storePhoneEditTxt.setError(null);
     }
 
     /**

@@ -47,7 +47,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         String imgUri = product.getImgUrl();
         if(!TextUtils.isEmpty(imgUri)){
             Picasso.with(this)
-                    .load("http://apod.nasa.gov/apod/image/1606/Omega_Crete_200mm_50schedler.jpg")
+                    //.load("http://apod.nasa.gov/apod/image/1606/Omega_Crete_200mm_50schedler.jpg")
+                    .load(imgUri)
                     .placeholder(R.xml.progress) //TODO: put loading icon
                     .error(R.drawable.filter) //TODO: put product icon
                     .into(productImg, new Callback() {

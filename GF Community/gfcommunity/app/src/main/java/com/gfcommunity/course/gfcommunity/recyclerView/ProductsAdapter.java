@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -70,7 +71,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         if (cursor != null) {
             if (cursor.moveToFirst()) {
                 do {
-                    productsList.add(setProductValues());
+                    productsList.add(setProductValues(cursor));
                 } while (cursor.moveToNext());
             }
             cursor.close();
@@ -105,7 +106,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             Product product = productsMap.get(productID);
             //Set the product only if it's the first clicking (the product is not initialized to map)
             if(product == null){
-                product = setProductValues();
+                product = setProductValues(cursor);
                 productsMap.put(productID, product );
             }
 
@@ -115,28 +116,32 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         }
     }
 
-    public static Product setProductValues(){
+    public static Product setProductValues(Cursor cursor){
         Product product = new Product();
-        product.setProductName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.PRODUCT_NAME)));
-        product.setImgUrl(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.IMAGE_URI)));
-        product.setStoreName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STORE_NAME)));
+        if(cursor != null) {
+            product.setProductName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.PRODUCT_NAME)));
+            product.setImgUrl(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.IMAGE_URI)));
+            product.setStoreName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STORE_NAME)));
 
-        int houseNo = cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO));
-        String street = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STREET));
-        String city = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CITY));
-        if(houseNo > 0 && !TextUtils.isEmpty(street) && !TextUtils.isEmpty(city)) {
-            //Build and set address
-            product.setAddress(String.format(context.getResources().getString(R.string.address),
-                    cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO)),
-                    cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STREET)),
-                    cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CITY))));
+            int houseNo = cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO));
+            String street = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STREET));
+            String city = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CITY));
+            if (houseNo > 0 && !TextUtils.isEmpty(street) && !TextUtils.isEmpty(city)) {
+                //Build and set address
+                product.setAddress(String.format(context.getResources().getString(R.string.address),
+                        cursor.getInt(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.HOUSE_NO)),
+                        cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STREET)),
+                        cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CITY))));
+            }
+
+            product.setStoreUrl(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STORE_URL)));
+            product.setPhone(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.PHONE)));
+            product.setComment(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.COMMENT)));
+            product.setUserID(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.USER_ID)));
+            product.setCreatedAt(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CREATED_AT))));
+        } else {
+            Log.e(ProductsAdapter.class.getName(), "Failed to set product details");
         }
-
-        product.setStoreUrl(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.STORE_URL)));
-        product.setPhone(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.PHONE)));
-        product.setComment(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.COMMENT)));
-        product.setUserID(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.USER_ID)));
-        product.setCreatedAt(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CREATED_AT))));
         return product;
     }
     public ProductsAdapter(Context context, Cursor cursor) {

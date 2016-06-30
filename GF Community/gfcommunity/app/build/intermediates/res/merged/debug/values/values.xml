@@ -451,9 +451,13 @@
     <string name="name">Name</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="news_fragment_name">What\'s new</string>
     <string name="no_records">No records found</string>
+    <string name="not_valid_number_msg">Not Valid Number</string>
     <string name="places_api_key">AIzaSyCEsq36NBlHcfNnyxemW-YfmV_EFIqLeNM</string>
     <string name="product_name">Product name</string>
+    <string name="products_fragment_name">Products</string>
+    <string name="receipts_fragment_name">Receipts</string>
     <string name="required_err_msg">%1$s is required</string>
     <string name="required_err_msg_default">This field is required</string>
     <string name="status_bar_notification_info_overflow">999+</string>

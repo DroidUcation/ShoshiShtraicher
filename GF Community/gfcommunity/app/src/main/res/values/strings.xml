@@ -22,6 +22,12 @@
     <string name="take_photo_option">Take Photo</string>
     <string name="gallery_option">Choose from Gallery</string>
     <string name="cancel_option">Cancel</string>
+    <string name="products_fragment_name">Products</string>
+    <string name="news_fragment_name">What\'s new</string>
+    <string name="receipts_fragment_name">Receipts</string>
+    <string name="not_valid_number_msg">Not Valid Number</string>
+    <string name="not_valid_url_msg">Url not valid</string>
+
 
     <!-->Israel cities array<!-->
     <string-array name="cities_array">

@@ -29,37 +29,123 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AddProductActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AddProductActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3654224">
-              <caret line="394" column="5" selection-start-line="394" selection-start-column="5" selection-end-line="394" selection-end-column="5" />
+            <state vertical-scroll-proportion="-4.214286">
+              <caret line="388" column="38" selection-start-line="388" selection-start-column="38" selection-end-line="388" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4521#4574#0" expanded="true" />
-                <element signature="e#4608#4661#0" expanded="true" />
-                <element signature="e#9868#9920#0" expanded="true" />
-                <element signature="e#9921#9970#0" expanded="true" />
-                <element signature="e#9971#10019#0" expanded="true" />
-                <element signature="e#10172#11230#0" expanded="true" />
-                <element signature="e#10345#10397#0" expanded="true" />
-                <element signature="e#10790#10839#0" expanded="true" />
-                <element signature="e#11096#11144#0" expanded="true" />
-                <element signature="e#11229#11230#0" expanded="true" />
-                <element signature="e#12474#12475#0" expanded="true" />
-                <element signature="e#12565#12566#0" expanded="true" />
-                <element signature="e#13666#13710#0" expanded="true" />
-                <element signature="e#13834#13885#0" expanded="true" />
-                <element signature="e#13886#13918#0" expanded="true" />
-                <element signature="e#14027#14078#0" expanded="true" />
-                <element signature="e#14079#14109#0" expanded="true" />
-                <element signature="e#14225#14276#0" expanded="true" />
-                <element signature="e#14277#14303#0" expanded="true" />
-                <element signature="e#14421#14472#0" expanded="true" />
-                <element signature="e#14473#14501#0" expanded="true" />
-                <element signature="e#14614#14665#0" expanded="true" />
-                <element signature="e#14666#14695#0" expanded="true" />
+                <element signature="e#4809#4862#0" expanded="true" />
+                <element signature="e#4896#4949#0" expanded="true" />
+                <element signature="e#10818#10870#0" expanded="true" />
+                <element signature="e#10871#10920#0" expanded="true" />
+                <element signature="e#10921#10969#0" expanded="true" />
+                <element signature="e#11122#12180#0" expanded="true" />
+                <element signature="e#11295#11347#0" expanded="true" />
+                <element signature="e#11740#11789#0" expanded="true" />
+                <element signature="e#12046#12094#0" expanded="true" />
+                <element signature="e#12179#12180#0" expanded="true" />
+                <element signature="e#13424#13425#0" expanded="true" />
+                <element signature="e#13515#13516#0" expanded="true" />
+                <element signature="e#15346#15390#0" expanded="true" />
+                <element signature="e#15514#15565#0" expanded="true" />
+                <element signature="e#15566#15598#0" expanded="true" />
+                <element signature="e#15707#15758#0" expanded="true" />
+                <element signature="e#15759#15789#0" expanded="true" />
+                <element signature="e#15905#15956#0" expanded="true" />
+                <element signature="e#15957#15983#0" expanded="true" />
+                <element signature="e#16101#16152#0" expanded="true" />
+                <element signature="e#16153#16181#0" expanded="true" />
+                <element signature="e#16294#16345#0" expanded="true" />
+                <element signature="e#16346#16375#0" expanded="true" />
+                <element signature="e#16475#16530#0" expanded="true" />
+                <element signature="e#17584#17636#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Patterns.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/util/Patterns.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="182" column="32" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EditText.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/widget/EditText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="77" column="19" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="19" />
+              <folding>
+                <element signature="e#2427#2428#0" expanded="true" />
+                <element signature="e#2476#2477#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/System.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="204" column="30" selection-start-line="204" selection-start-column="30" selection-end-line="204" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.137931">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding>
+                <element signature="e#1921#1974#0" expanded="true" />
+                <element signature="e#2034#2091#0" expanded="true" />
+                <element signature="e#2139#2196#0" expanded="true" />
+                <element signature="e#2613#2614#0" expanded="true" />
+                <element signature="e#2671#2672#0" expanded="true" />
+                <element signature="e#2722#2723#0" expanded="true" />
+                <element signature="e#2773#2774#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.2075472">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductsFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.88640594">
+              <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <folding>
+                <element signature="e#6325#6326#0" expanded="true" />
+                <element signature="e#6370#6371#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpinnerAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/utils/SpinnerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,89 +160,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.615385">
-              <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="System.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/System.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="193" column="28" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppCompatSpinner.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.4.0/appcompat-v7-23.4.0-sources.jar!/android/support/v7/widget/AppCompatSpinner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpinnerAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/utils/SpinnerAdapter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductDetailsActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductDetailsActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.6551723">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_product_details.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_details.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3090909">
-              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ProductsAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/recyclerView/ProductsAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.137931">
-              <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+            <state vertical-scroll-proportion="-11.137931">
+              <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8586#8587#0" expanded="true" />
+                <element signature="e#8626#8627#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.283019">
-              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1996,17 +2009,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_product_details.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add_product.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/model/Product.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/recyclerView/ProductsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/NothingSelectedSpinnerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/cities_spinner_row_nothing_selected.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/cities_spinner_row_nothing_selected.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/HintAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/SpinnerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/utils/SpinnerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductDetailsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/services/ProductNotificationIntentService.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/data/ProductsContentProvider.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductDetailsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/recyclerView/ProductsAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java" />
       </list>
     </option>
@@ -2067,6 +2082,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gfcommunity" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2241,28 +2274,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="storage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gfcommunity" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gfcommunity" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2588,6 +2599,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructuralSearchPlugin">
+    <searchConfiguration name="user defined" created="1467297683703" text="addURI" recursive="true" caseInsensitive="true" type="JAVA" history="1" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -2601,7 +2615,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -2638,14 +2652,14 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.50647247" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.4935275" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39904988" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39904988" sideWeight="0.49676377" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2653,9 +2667,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32897863" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
@@ -2685,7 +2699,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>185</line>
+          <line>205</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -2697,7 +2711,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>135</line>
+          <line>142</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -2709,7 +2723,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/recyclerView/ProductsAdapter.java</url>
-          <line>134</line>
+          <line>136</line>
           <properties />
           <option name="timeStamp" value="14" />
         </line-breakpoint>
@@ -2721,7 +2735,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>187</line>
+          <line>207</line>
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
@@ -2733,36 +2747,60 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>169</line>
+          <line>189</line>
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>168</line>
+          <line>188</line>
           <properties />
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>115</line>
+          <line>122</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>145</line>
+          <line>161</line>
           <properties />
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
-          <line>150</line>
+          <line>169</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
+          <line>461</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java</url>
+          <line>152</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/MainActivity.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductsFragment.java</url>
+          <line>58</line>
+          <properties />
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2777,32 +2815,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/data/ProductsContentProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37988827">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/data/SharingInfoContract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="49" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="49" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/firebase/storage/UploadFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.586206">
-          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
-          <folding>
-            <element signature="e#1520#1733#0" expanded="true" />
-            <element signature="e#1732#1733#0" expanded="true" />
-            <element signature="e#1756#2246#0" expanded="true" />
-            <element signature="e#2245#2246#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2837,14 +2854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="57.86207">
-          <caret line="44" column="34" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/widget/ArrayAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33263597">
@@ -2866,8 +2875,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
           <folding>
-            <element signature="e#11102#11103#0" expanded="true" />
-            <element signature="e#11143#11144#0" expanded="true" />
+            <element signature="e#11102#11103#0" expanded="false" />
+            <element signature="e#11143#11144#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2899,32 +2908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/System.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="193" column="28" selection-start-line="193" selection-start-column="22" selection-end-line="193" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.283019">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/utils/SpinnerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/23.4.0/appcompat-v7-23.4.0-sources.jar!/android/support/v7/widget/AppCompatSpinner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2952,6 +2935,305 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductDetailsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.068966">
+          <caret line="54" column="16" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/content/Intent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7110" column="18" selection-start-line="7110" selection-start-column="18" selection-end-line="7110" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/database/Cursor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/firebase/storage/UploadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5172414">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/content/ContentUris.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/data/ProductsContentProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.827586">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/data/InnerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="96" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.037736">
+          <caret line="454" column="0" selection-start-line="454" selection-start-column="0" selection-end-line="454" selection-end-column="0" />
+          <folding>
+            <marker date="1467304474101" expanded="true" signature="99:148035" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="138:2421" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="52619:52816" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="52889:53135" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="53265:53375" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="53525:53956" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="54123:54292" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="54374:54573" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="54649:54858" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="54944:55251" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="55332:55728" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="55783:55950" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="56005:56172" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="56228:56440" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="56497:56667" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="56725:56897" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="56955:57127" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="57185:57357" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="57415:57587" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="57645:57814" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="57871:58053" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="58108:58279" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="58342:58524" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="58641:58654" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="58771:58784" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="58840:59014" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="59078:59262" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="59316:59481" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="59553:59764" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="59835:59972" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="60040:60103" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="60158:60330" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="60393:60576" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="60633:60801" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="60866:61048" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="61103:61269" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="61332:61514" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="61626:61790" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="61907:62091" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="62224:62415" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="62527:62706" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="62834:63020" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="63505:63597" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="63704:63805" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="63916:63929" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="64040:64053" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="64388:64489" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="64622:64635" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="64762:64775" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="64848:64861" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="64923:65209" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="65350:65527" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="65584:65945" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="66001:66178" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="66345:66358" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="66454:66975" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="67134:67311" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="67374:67735" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="67797:67974" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="68214:68394" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="68492:70345" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="70407:70587" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="70687:72669" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="72740:82535" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="82183:82302" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="82615:83802" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="83885:93778" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="93426:93545" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="93870:95059" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="95169:95595" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="95681:95925" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="95986:97048" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="97105:97304" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="97372:97540" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="97609:98087" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="98156:98581" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="98686:99186" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="99250:99334" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="99457:99922" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="99984:100486" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="100557:100861" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="101051:101517" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="101576:101674" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="101741:101818" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="101940:102138" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="102194:102394" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="102448:102564" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="102639:102705" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="102882:103051" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="103170:103337" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="103439:104013" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="104128:104277" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="104353:104615" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="104687:104968" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="105151:105248" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="105346:105554" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="105617:105816" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="105928:105941" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="106055:106068" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="106196:106307" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="106421:106518" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="106624:106637" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="106703:106830" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="106897:107285" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="107368:107466" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="107525:107588" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="107681:107847" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="107947:107960" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="108020:108147" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="108236:108249" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="108338:108693" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="108804:108817" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="108902:109102" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="109197:109610" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="109701:110106" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="110182:110993" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="111055:111287" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="111360:111857" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="111949:112589" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="112649:112761" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="112868:113097" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="113170:114005" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="114096:114283" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="114355:114874" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="114913:115171" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="115236:115250" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="115432:115692" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="115840:118641" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="118714:121643" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="121761:122335" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="122392:122949" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="123135:123148" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="123239:123377" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="123465:123537" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="123622:123689" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="123788:123860" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="123950:124027" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="124114:124270" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="124363:124440" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="124533:124613" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="124706:124784" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="124904:125058" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="125148:125257" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="125342:125462" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="125576:125792" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="127477:127490" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="127631:127644" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="128077:128090" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="128211:128224" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="128983:128996" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="129283:129296" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="129571:129584" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="129721:129734" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="130006:130019" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="130517:130530" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="130659:130672" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="130801:130814" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="131177:131267" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="131459:131539" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="131628:131708" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="131796:131883" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="131973:132136" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="132222:132427" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="132922:132935" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="133066:133079" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="133204:133217" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="134428:134441" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="135040:135053" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="135106:135216" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="135263:135373" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="135430:135527" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="135609:135885" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="135954:136052" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="136146:136422" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="136472:136582" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="136626:136736" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="137295:137308" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="137407:137420" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="137521:137534" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="137637:137650" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="137753:137766" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="138175:138188" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="138295:138308" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="138417:138430" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="139707:139779" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="140172:140185" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="140296:140309" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="140489:140502" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="140685:140698" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="140829:140842" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="140957:140970" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="142097:142110" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="142227:142240" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="142553:142566" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="142851:142864" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="142951:142964" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="143069:143082" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="143173:143186" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="143277:143290" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="143403:143416" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="144688:144836" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="144911:145234" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="145309:145441" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="145516:145600" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="145678:146167" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="146225:146528" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="146594:146657" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="146723:147401" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="147482:147581" placeholder="..." />
+            <marker date="1467304474101" expanded="true" signature="147654:148022" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/23.4.0/support-v4-23.4.0-sources.jar!/android/support/v4/app/LoaderManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="477" column="0" selection-start-line="477" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="204" column="30" selection-start-line="204" selection-start-column="30" selection-end-line="204" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/utils/SpinnerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/products/InsertProductLoader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2962,51 +3244,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/recyclerView/ProductsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.137931">
-          <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+        <state vertical-scroll-proportion="-11.137931">
+          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8586#8587#0" expanded="true" />
+            <element signature="e#8626#8627#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductDetailsActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.6551723">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="24" />
+        <state vertical-scroll-proportion="-5.137931">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#1921#1974#0" expanded="true" />
+            <element signature="e#2034#2091#0" expanded="true" />
+            <element signature="e#2139#2196#0" expanded="true" />
+            <element signature="e#2613#2614#0" expanded="true" />
+            <element signature="e#2671#2672#0" expanded="true" />
+            <element signature="e#2722#2723#0" expanded="true" />
+            <element signature="e#2773#2774#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/widget/EditText.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="19" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="19" />
+          <folding>
+            <element signature="e#2427#2428#0" expanded="true" />
+            <element signature="e#2476#2477#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2075472">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/AddProductActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3654224">
-          <caret line="394" column="5" selection-start-line="394" selection-start-column="5" selection-end-line="394" selection-end-column="5" />
+        <state vertical-scroll-proportion="-4.214286">
+          <caret line="388" column="38" selection-start-line="388" selection-start-column="38" selection-end-line="388" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4521#4574#0" expanded="true" />
-            <element signature="e#4608#4661#0" expanded="true" />
-            <element signature="e#9868#9920#0" expanded="true" />
-            <element signature="e#9921#9970#0" expanded="true" />
-            <element signature="e#9971#10019#0" expanded="true" />
-            <element signature="e#10172#11230#0" expanded="true" />
-            <element signature="e#10345#10397#0" expanded="true" />
-            <element signature="e#10790#10839#0" expanded="true" />
-            <element signature="e#11096#11144#0" expanded="true" />
-            <element signature="e#11229#11230#0" expanded="true" />
-            <element signature="e#12474#12475#0" expanded="true" />
-            <element signature="e#12565#12566#0" expanded="true" />
-            <element signature="e#13666#13710#0" expanded="true" />
-            <element signature="e#13834#13885#0" expanded="true" />
-            <element signature="e#13886#13918#0" expanded="true" />
-            <element signature="e#14027#14078#0" expanded="true" />
-            <element signature="e#14079#14109#0" expanded="true" />
-            <element signature="e#14225#14276#0" expanded="true" />
-            <element signature="e#14277#14303#0" expanded="true" />
-            <element signature="e#14421#14472#0" expanded="true" />
-            <element signature="e#14473#14501#0" expanded="true" />
-            <element signature="e#14614#14665#0" expanded="true" />
-            <element signature="e#14666#14695#0" expanded="true" />
+            <element signature="e#4809#4862#0" expanded="true" />
+            <element signature="e#4896#4949#0" expanded="true" />
+            <element signature="e#10818#10870#0" expanded="true" />
+            <element signature="e#10871#10920#0" expanded="true" />
+            <element signature="e#10921#10969#0" expanded="true" />
+            <element signature="e#11122#12180#0" expanded="true" />
+            <element signature="e#11295#11347#0" expanded="true" />
+            <element signature="e#11740#11789#0" expanded="true" />
+            <element signature="e#12046#12094#0" expanded="true" />
+            <element signature="e#12179#12180#0" expanded="true" />
+            <element signature="e#13424#13425#0" expanded="true" />
+            <element signature="e#13515#13516#0" expanded="true" />
+            <element signature="e#15346#15390#0" expanded="true" />
+            <element signature="e#15514#15565#0" expanded="true" />
+            <element signature="e#15566#15598#0" expanded="true" />
+            <element signature="e#15707#15758#0" expanded="true" />
+            <element signature="e#15759#15789#0" expanded="true" />
+            <element signature="e#15905#15956#0" expanded="true" />
+            <element signature="e#15957#15983#0" expanded="true" />
+            <element signature="e#16101#16152#0" expanded="true" />
+            <element signature="e#16153#16181#0" expanded="true" />
+            <element signature="e#16294#16345#0" expanded="true" />
+            <element signature="e#16346#16375#0" expanded="true" />
+            <element signature="e#16475#16530#0" expanded="true" />
+            <element signature="e#17584#17636#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/util/Patterns.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="182" column="32" selection-start-line="182" selection-start-column="32" selection-end-line="182" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/gfcommunity/course/gfcommunity/activities/ProductsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88640594">
+          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding>
+            <element signature="e#6325#6326#0" expanded="true" />
+            <element signature="e#6370#6371#0" expanded="true" />
           </folding>
         </state>
       </provider>
