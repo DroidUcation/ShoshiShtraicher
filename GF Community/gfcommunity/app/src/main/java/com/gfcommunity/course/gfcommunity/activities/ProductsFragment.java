@@ -4,14 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -21,18 +17,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.gfcommunity.course.gfcommunity.R;
-import com.gfcommunity.course.gfcommunity.data.ProductsContentProvider;
+import com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.recyclerView.DividerItemDecoration;
 import com.gfcommunity.course.gfcommunity.recyclerView.ProductsAdapter;
-
-
+import com.gfcommunity.course.gfcommunity.utils.NetworkConnectedUtil;
 
 
 public class ProductsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener , AdapterView.OnItemSelectedListener{
@@ -128,9 +123,15 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.add_fab: //Start Add new product activity
-                Intent intent = new Intent(getActivity(), AddProductActivity.class);
-                startActivity(intent);
-                break;
+                //Check internet connection
+                if(NetworkConnectedUtil.isNetworkAvailable(context)) {
+                    Intent intent = new Intent(getActivity(), AddProductActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+                else {
+                    Toast.makeText(context,getString(R.string.no_internet_connection_msg),Toast.LENGTH_SHORT).show();
+                }
         }
     }
 
@@ -154,14 +155,7 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
-    public Cursor cursorResolve(String city) {
 
-        String selection = SharingInfoContract.ProductsEntry.CITY + " LIKE '" + city +"'";
-
-        return getContext().getContentResolver().query(ProductsContentProvider.PRODUCTS_CONTENT_URI, null, selection, null, null);
-
-
-    }
     public static Fragment getInstance() {
         return new ProductsFragment();
     }

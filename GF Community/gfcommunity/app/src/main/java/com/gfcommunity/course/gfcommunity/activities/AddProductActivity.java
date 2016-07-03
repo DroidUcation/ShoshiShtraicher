@@ -5,7 +5,6 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,7 +28,6 @@ import android.widget.AdapterView;
 import android.widget.Button;
 
 import com.gfcommunity.course.gfcommunity.R;
-import com.gfcommunity.course.gfcommunity.data.ProductsContentProvider;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.products.InsertProductLoader;
 import com.gfcommunity.course.gfcommunity.firebase.storage.UploadFile;
@@ -291,12 +289,12 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
                         .into(productImg, new Callback() {
                             @Override
                             public void onSuccess() {
-                                Log.d("Picasso", "success");
+                                Log.d("Picasso", "set product image was succeeded");
                             }
 
                             @Override
                             public void onError() {
-                                Log.d("Picasso", "onError");
+                                Log.d("Picasso", "set product image was failed");
 
                             }
                         });

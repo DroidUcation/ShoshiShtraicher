@@ -10,23 +10,23 @@ import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-
-import com.gfcommunity.course.gfcommunity.activities.ProductsFragment;
-import com.gfcommunity.course.gfcommunity.data.ProductsContentProvider;
-import com.gfcommunity.course.gfcommunity.model.Product;
-import com.gfcommunity.course.gfcommunity.R;
-import com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity;
-import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
-
-import java.sql.Timestamp;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.TextView;
 
+import com.gfcommunity.course.gfcommunity.R;
+import com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity;
+import com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider;
+import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
+import com.gfcommunity.course.gfcommunity.model.Product;
+import com.github.siyamed.shapeimageview.CircularImageView;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * Provide views to RecyclerView with data from productList.
@@ -35,6 +35,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     static Cursor cursor;
     static Context context;
     private List<Product> mProducts;
+    private String picassoLogTag = "Picasso productsAdapter";
 
     @Override
     public Filter getFilter() {
@@ -81,7 +82,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView title, subTitle, text;
-        private ImageView productImg;
+        private CircularImageView productImg;
         private static SparseArray<Product> productsMap = new SparseArray<Product>();//Products map mapped by product ID
 
         public ViewHolder(View view) {
@@ -89,7 +90,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             title = (TextView) view.findViewById(R.id.row_title);
             subTitle = (TextView) view.findViewById(R.id.row_subtitle);
             text = (TextView) view.findViewById(R.id.row_text);
-            productImg = (ImageView) view.findViewById(R.id.row_img);
+            productImg = (CircularImageView) view.findViewById(R.id.row_img);
             view.setOnClickListener(this);
         }
 
@@ -178,7 +179,29 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             text = storeUrl;
         }
         holder.text.setText(text);
-        holder.productImg.setImageResource(R.mipmap.ic_launcher); //TODO: Get product image
+
+        //Set product image by picasso
+        String productImgPath = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.IMAGE_URI));
+        //String productImgPath = "https://firebasestorage.googleapis.com/v0/b/gf-community.appspot.com/o/images%2Fproduct_img146697445826120160610_141506.jpg?alt=media&token=5130c587-38af-4e03-a401-cfea8afc08dc";
+        if(!TextUtils.isEmpty(productImgPath)) {
+            Picasso.with(context)
+                    .load(productImgPath)
+                    .placeholder(R.drawable.common_full_open_on_phone) //TODO: put loading icon
+                    .error(R.drawable.filter) //TODO: put product icon
+                    .into( holder.productImg, new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            Log.d(picassoLogTag, "set product image was succeeded");
+                        }
+
+                        @Override
+                        public void onError() {
+                            Log.d(picassoLogTag, "set product image was failed");
+
+                        }
+                    });
+        }
+
     }
 
     @Override

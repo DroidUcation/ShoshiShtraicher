@@ -5,7 +5,7 @@
     <string name="address">%1$d %2$s Street %3$s</string>
     <string name="product_name">Product name</string>
     <string name="name">Name</string>
-    <string name="store_url">URL</string>
+    <string name="store_url">Url</string>
     <string name="store_address">Address</string>
     <string name="city">City</string>
     <string name="street">Street</string>
@@ -26,7 +26,8 @@
     <string name="news_fragment_name">What\'s new</string>
     <string name="receipts_fragment_name">Receipts</string>
     <string name="not_valid_number_msg">Not Valid Number</string>
-    <string name="not_valid_url_msg">Url not valid</string>
+    <string name="not_valid_url_msg">Not Valid Url</string>
+    <string name="no_internet_connection_msg">No internet connection</string>
 
 
     <!-->Israel cities array<!-->

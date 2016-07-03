@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:2:1-59:16
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:2:1-60:16
 	package
 		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:3:5-49
 		INJECTED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml
@@ -40,8 +40,15 @@ MERGED from [com.google.firebase:firebase-analytics-impl:9.0.2] C:\Users\slevin\
 MERGED from [com.google.firebase:firebase-iid:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.0.2\AndroidManifest.xml:21:5-67
 	android:name
 		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:12:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-analytics:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.2\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.0.2\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.0.2\AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:13:22-76
 application
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:14:5-57:23
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:15:5-58:23
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
 MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\AndroidManifest.xml:7:5-20
@@ -211,67 +218,67 @@ MERGED from [com.google.android.gms:play-services-tasks:9.0.2] C:\Users\slevin\D
 MERGED from [com.google.android.gms:play-services-basement:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:17:9-41
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:19:9-35
 	android:allowBackup
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:16:9-43
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:19:9-47
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:20:9-47
 activity#com.gfcommunity.course.gfcommunity.activities.MainActivity
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:20:9-26:21
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:21:9-27:21
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:20:19-58
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:21:19-58
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:21:13-25:30
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:22:13-26:30
 action#android.intent.action.MAIN
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:22:18-70
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:23:18-70
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:22:26-67
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:23:26-67
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:24:18-78
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:25:18-78
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:24:28-75
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:25:28-75
 provider#com.gfcommunity.course.gfcommunity.data.ProductsContentProvider
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:28:10-31:41
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:29:10-32:41
 	android:authorities
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:30:14-99
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:31:14-99
 	android:exported
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:31:14-38
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:32:14-38
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:29:14-58
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:30:14-58
 activity#com.gfcommunity.course.gfcommunity.activities.AddProductActivity
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:33:10-68
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:34:10-68
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:33:20-65
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:34:20-65
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:36:9-38:55
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:37:9-39:55
 	android:value
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:38:13-52
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:39:13-52
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:37:13-58
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:38:13-58
 activity#com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:40:9-46:20
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:41:9-47:20
 	android:parentActivityName
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:42:13-66
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:43:13-66
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:41:13-62
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:42:13-62
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:43:13-45:59
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:44:13-46:59
 	android:value
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:45:17-57
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:46:17-57
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:44:17-63
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:45:17-63
 activity#com.gfcommunity.course.gfcommunity.activities.Main2Activity
-ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:48:9-56:24
+ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:49:9-57:24
 	android:label
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:49:13-57
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:50:13-57
 	android:theme
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:50:13-51
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:51:13-51
 	android:name
-		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:48:19-59
+		ADDED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml:49:19-59
 uses-sdk
 INJECTED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:21:5-23:78
@@ -448,6 +455,7 @@ MERGED from [com.android.support:support-v4:23.4.0] C:\Users\slevin\Documents\an
 MERGED from [com.google.android.gms:play-services-tasks:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.0.2\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-basement:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.0.2\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:support-v4:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\AndroidManifest.xml:20:5-43
+MERGED from [com.github.siyamed:android-shape-imageview:0.9.3] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.github.siyamed\android-shape-imageview\0.9.3\AndroidManifest.xml:8:5-10:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
@@ -456,12 +464,6 @@ MERGED from [com.android.support:support-v4:23.4.0] C:\Users\slevin\Documents\an
 	android:minSdkVersion
 		INJECTED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\main\AndroidManifest.xml
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-analytics:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.2\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.0.2\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\9.0.2\AndroidManifest.xml:20:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-analytics:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.2\AndroidManifest.xml:22:22-76
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-analytics:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\9.0.2\AndroidManifest.xml:24:5-67
 MERGED from [com.google.firebase:firebase-analytics-impl:9.0.2] C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\9.0.2\AndroidManifest.xml:24:5-67
