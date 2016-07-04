@@ -31,7 +31,7 @@ import com.gfcommunity.course.gfcommunity.R;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.products.InsertProductLoader;
 import com.gfcommunity.course.gfcommunity.firebase.storage.UploadFile;
-import com.gfcommunity.course.gfcommunity.recyclerView.ProductsAdapter;
+import com.gfcommunity.course.gfcommunity.recyclerView.products.ProductsAdapter;
 import com.gfcommunity.course.gfcommunity.utils.SpinnerAdapter;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;

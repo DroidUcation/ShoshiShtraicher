@@ -41,12 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <provider
-            android:name="com.gfcommunity.course.gfcommunity.data.ProductsContentProvider"
-            android:authorities="com.gfcommunity.course.gfcommunity.data.ProductsContentProvider"
-            android:exported="false" />
-
         <activity android:name="com.gfcommunity.course.gfcommunity.activities.AddProductActivity" />
 
         <!-- Google place API key -->
@@ -74,6 +68,15 @@
             </intent-filter>
             -->
         </activity>
+
+        <provider
+            android:name="com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider"
+            android:authorities="@string/products_authority"
+            android:exported="false" />
+        <provider
+            android:name="com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider"
+            android:authorities="@string/recipes_authority"
+            android:exported="false" />
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

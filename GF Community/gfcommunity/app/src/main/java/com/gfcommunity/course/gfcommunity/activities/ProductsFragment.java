@@ -20,14 +20,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gfcommunity.course.gfcommunity.R;
 import com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.recyclerView.DividerItemDecoration;
-import com.gfcommunity.course.gfcommunity.recyclerView.ProductsAdapter;
+import com.gfcommunity.course.gfcommunity.recyclerView.products.ProductsAdapter;
 import com.gfcommunity.course.gfcommunity.utils.NetworkConnectedUtil;
+import com.gfcommunity.course.gfcommunity.utils.SpinnerAdapter;
 
 
 public class ProductsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener , AdapterView.OnItemSelectedListener{
@@ -39,6 +41,10 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     private String selectedCity;
     private Spinner citiesSpinner;
     private Context context;
+    private  ImageView filterCity;
+    private TextView filtered_by_textView;
+    private ImageView cancelFilterImageView;
+    private int check = 0;
 
 
     @Override
@@ -64,12 +70,28 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
         //Adding fab
         FloatingActionButton addFab = (FloatingActionButton)view.findViewById(R.id.add_fab);
         addFab.setOnClickListener(this);
+
+        //filter imageView
+        filterCity = (ImageView)view.findViewById(R.id.filter_city);
+        filterCity.setOnClickListener(this);
+
+        //filtered by text view
+        filtered_by_textView =  (TextView)view.findViewById(R.id.filtered_by_textView);
+
+        cancelFilterImageView= (ImageView)view.findViewById(R.id.cancel_filter_imageView);
+        cancelFilterImageView.setOnClickListener(this);
+
         //Cities spinner
         citiesSpinner = (Spinner) view.findViewById(R.id.citiesSpinner);
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.cities_array));
+        String[] cityArray = getResources().getStringArray(R.array.cities_array);
+        String[] cityList = new String[(cityArray.length)+1];
+        System.arraycopy(cityArray, 0, cityList, 0, cityArray.length);
+        cityList[cityArray.length] = getResources().getString(R.string.city_spinner_title);
+        citiesSpinner.setPrompt(getResources().getString(R.string.city_spinner_title));
+        SpinnerAdapter dataAdapter = new SpinnerAdapter(context, cityList, android.R.layout.simple_spinner_item);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);// Drop down layout style - list view with radio button
         citiesSpinner.setAdapter(dataAdapter);
-        citiesSpinner.setPrompt(getResources().getString(R.string.city));
+        citiesSpinner.setSelection(dataAdapter.getCount());// show hint
         citiesSpinner.setOnItemSelectedListener(this);
     }
 
@@ -103,12 +125,10 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
             productsAdapter = new ProductsAdapter(context, cursor);
             recyclerView.setAdapter(productsAdapter);
             recyclerView.setVisibility(View.VISIBLE);
-            citiesSpinner.setVisibility(View.VISIBLE);
             noRecordsImg.setVisibility(View.GONE);
         //Set empty state for RecyclerView if no products found
         } else {
             recyclerView.setVisibility(View.GONE);
-            citiesSpinner.setVisibility(View.VISIBLE);
             noRecordsImg.setVisibility(View.VISIBLE);
         }
 
@@ -127,11 +147,22 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
                 if(NetworkConnectedUtil.isNetworkAvailable(context)) {
                     Intent intent = new Intent(getActivity(), AddProductActivity.class);
                     startActivity(intent);
-                    break;
                 }
                 else {
                     Toast.makeText(context,getString(R.string.no_internet_connection_msg),Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case R.id.filter_city:
+                citiesSpinner.setVisibility(View.VISIBLE);
+                filterCity.setVisibility(View.GONE);
+                break;
+
+            case R.id.cancel_filter_imageView:
+                cancelFilterImageView.setVisibility(View.GONE);
+                filtered_by_textView.setVisibility(View.GONE);
+                filterCity.setVisibility(View.VISIBLE);
+                getLoaderManager().restartLoader(loaderID, null, this);
+                break;
         }
     }
 
@@ -144,11 +175,15 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         selectedCity = parent.getItemAtPosition(position).toString();
-
-        Bundle b = new Bundle();
-        b.putCharSequence("City", selectedCity);
-
-        getLoaderManager().restartLoader(loaderID, b, this);
+       if(check++>0){
+           filtered_by_textView.setVisibility(View.VISIBLE);
+           filtered_by_textView.setText(getString(R.string.filtered_by)+ " "+ selectedCity);
+           citiesSpinner.setVisibility(View.GONE);
+           cancelFilterImageView.setVisibility(View.VISIBLE);
+           Bundle b = new Bundle();
+           b.putCharSequence("City", selectedCity);
+           getLoaderManager().restartLoader(loaderID, b, this);
+       }
     }
 
     @Override

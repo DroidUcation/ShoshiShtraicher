@@ -22,7 +22,7 @@ public class ProductsContentProvider extends ContentProvider {
     private static final String AUTHORITY = "com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider";
     private static final String URL = "content://" + AUTHORITY;
 
-    //URIs for products, recipes and tips tables
+    //URI for products
     public static final Uri PRODUCTS_CONTENT_URI = Uri.parse(URL + "/" + SharingInfoContract.ProductsEntry.TABLE_NAME);
 
     //Define URI Matcher
@@ -118,7 +118,7 @@ public class ProductsContentProvider extends ContentProvider {
     }
 
     /**
-     * Update a product record according to Uing to URI
+     * Update a product record according to URI
      * @return count of updated rows
      */
     @Override

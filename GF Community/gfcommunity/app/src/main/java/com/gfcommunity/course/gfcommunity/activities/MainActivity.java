@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new BlankFragment(), getResources().getString(R.string.news_fragment_name));
         adapter.addFrag( ProductsFragment.getInstance(), getResources().getString(R.string.products_fragment_name));
-        adapter.addFrag(new BlankFragment(), getResources().getString(R.string.receipts_fragment_name));
+        adapter.addFrag(new BlankFragment(), getResources().getString(R.string.recipes_fragment_name));
         viewPager.setAdapter(adapter);
     }
 

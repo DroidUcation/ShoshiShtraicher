@@ -458,6 +458,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="default_web_client_id" translatable="false">710704984798-vqiv1420tef95v74hbd6bb5utde5buj7.apps.googleusercontent.com</string>
+    <string name="filtered_by">Filtered by: </string>
     <string name="firebase_database_url" translatable="false">https://gf-community.firebaseio.com</string>
     <string name="gallery_option">Choose from Gallery</string>
     <string name="gcm_defaultSenderId" translatable="false">710704984798</string>
@@ -477,8 +478,10 @@
     <string name="not_valid_url_msg">Not Valid Url</string>
     <string name="places_api_key">AIzaSyCEsq36NBlHcfNnyxemW-YfmV_EFIqLeNM</string>
     <string name="product_name">Product name</string>
+    <string name="products_authority">com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider</string>
     <string name="products_fragment_name">Products</string>
-    <string name="receipts_fragment_name">Receipts</string>
+    <string name="recipes_authority">com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider</string>
+    <string name="recipes_fragment_name">Recipes</string>
     <string name="required_err_msg">%1$s is required</string>
     <string name="required_err_msg_default">This field is required</string>
     <string name="status_bar_notification_info_overflow">999+</string>

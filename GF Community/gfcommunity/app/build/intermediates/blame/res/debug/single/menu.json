@@ -1,14 +1,14 @@
 [
     {
-        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main2.xml",
-        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\main2.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\merge\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main2.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\merge\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\main2.xml"
     },
     {
-        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\options_menu.xml",
-        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\options_menu.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\merge\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\options_menu.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\merge\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\options_menu.xml"
     },
     {
-        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main2_drawer.xml",
-        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\activity_main2_drawer.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\merge\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_main2_drawer.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\merge\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\activity_main2_drawer.xml"
     }
 ]
