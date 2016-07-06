@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.gfcommunity.course.gfcommunity.R;
+import com.gfcommunity.course.gfcommunity.fragments.BlankFragment;
+import com.gfcommunity.course.gfcommunity.fragments.ProductsFragment;
+import com.gfcommunity.course.gfcommunity.fragments.RecipesFragment;
 
 public class MainActivity extends AppCompatActivity {
     private int fragmentPosition;
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new BlankFragment(), getResources().getString(R.string.news_fragment_name));
         adapter.addFrag( ProductsFragment.getInstance(), getResources().getString(R.string.products_fragment_name));
-        adapter.addFrag(new BlankFragment(), getResources().getString(R.string.recipes_fragment_name));
+        adapter.addFrag(new RecipesFragment(), getResources().getString(R.string.recipes_fragment_name));
         viewPager.setAdapter(adapter);
     }
 

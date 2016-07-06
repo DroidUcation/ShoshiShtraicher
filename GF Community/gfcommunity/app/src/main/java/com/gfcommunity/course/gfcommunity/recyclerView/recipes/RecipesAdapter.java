@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -12,15 +13,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.gfcommunity.course.gfcommunity.R;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider;
 import com.gfcommunity.course.gfcommunity.model.Recipe;
-import com.github.siyamed.shapeimageview.CircularImageView;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import com.gfcommunity.course.gfcommunity.utils.DateFormatUtil;
+import com.mikhaellopez.circularimageview.CircularImageView;
+
 
 import java.sql.Timestamp;
+
+import java.text.ParseException;
+import java.text.ParsePosition;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +38,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     static Context context;
 
     private List<Recipe> mRecipes;
-    private String picassoLogTag = "Picasso recipesAdapter";
 
     private ArrayList<Recipe> getFilteredList(CharSequence constraint) {
 
@@ -134,35 +139,39 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         holder.title.setText(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.RECIPE_NAME)));
 
+        //Set subtitle to preparationTime or difficultyPreparation or hide it
         String preparationTime = cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.PREPARATION_TIME));
-        holder.subTitle.setText(!TextUtils.isEmpty(preparationTime) ? "Preparation time: "+preparationTime :  "");
+        if(!TextUtils.isEmpty(preparationTime)) {
+            holder.subTitle.setText(context.getString(R.string.preparation_time) + ": " + preparationTime);
+        } else {
+            String difficultyPreparation = cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.DIFFICULTY_PREPARATION));
+            if(!TextUtils.isEmpty(difficultyPreparation)) {
+                holder.subTitle.setText(!TextUtils.isEmpty(difficultyPreparation) ? context.getString(R.string.difficulty_preparation) + ": " + difficultyPreparation : "");
+            } else {
+                holder.subTitle.setVisibility(View.GONE);
+            }
+        }
 
         //Build added by string
-        String text = String.format(context.getResources().getString(R.string.user_uploaded_text),
-                    cursor.getInt(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_ID)),
-                    cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.CREATED_AT)));
-        holder.text.setText(text);
+        try {
+            String text = String.format(context.getResources().getString(R.string.user_uploaded_text),
+                    "USER NAME",
+                    //cursor.getInt(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_ID)), //TODO: GET USER NAME
+                    DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.CREATED_AT)))));
+            holder.text.setText(text);
+        }catch(Exception e) {}
 
-        //Set recipe image by picasso
+
+        //Set recipe image by Glide
         String recipeImgPath = cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.RECIPE_IMAGE_URl));
         //String recipeImgPath = "https://firebasestorage.googleapis.com/v0/b/gf-community.appspot.com/o/images%2Fproduct_img146697445826120160610_141506.jpg?alt=media&token=5130c587-38af-4e03-a401-cfea8afc08dc";
         if(!TextUtils.isEmpty(recipeImgPath)) {
-            Picasso.with(context)
-                    .load(recipeImgPath)
-                    .placeholder(R.drawable.common_full_open_on_phone) //TODO: put loading icon
+            Glide.with(context).load(recipeImgPath)
+                    .dontAnimate()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .placeholder(R.xml.progress) //TODO: put loading icon
                     .error(R.drawable.filter) //TODO: put recipe icon
-                    .into( holder.recipeImg, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            Log.d(picassoLogTag, "set recipe image was succeeded");
-                        }
-
-                        @Override
-                        public void onError() {
-                            Log.d(picassoLogTag, "set recipe image was failed");
-
-                        }
-                    });
+                    .into(holder.recipeImg);
         }
 
     }

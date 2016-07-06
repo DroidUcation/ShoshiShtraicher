@@ -30,7 +30,7 @@ public class SharingInfoContract {
         public static  final String INGREDIENTS = "ingredients"; // Column INGREDIENTS is a list of string separated by ||.
         public static  final String INSTRUCTIONS = "instructions"; // Column INSTRUCTIONS is a list of string separated by ||.
         public static  final String RECIPE_IMAGE_URl = "recipe_img_url";
-        public static  final String PREPARATION_TIME = "preparation time";
+        public static  final String PREPARATION_TIME = "preparation_time";
         public static  final String DINERS_NUMBER = "diners_number";
         public static  final String DIFFICULTY_PREPARATION = "difficulty_preparation";
         public static  final String RECIPE_STORY = "recipe_story";

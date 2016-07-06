@@ -20,36 +20,39 @@
         android:theme="@style/MyMaterialTheme">
         <activity android:name=".activities.MainActivity">
             <intent-filter>
-                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-                 <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-         </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.products.AddProductActivity" />
 
-         <activity android:name=".activities.AddProductActivity" />
-
-         <!-- Google place API key -->
+        <!-- Google place API key -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="R.string.places_api_key" />
 
         <activity
-            android:name=".activities.ProductDetailsActivity"
+            android:name=".activities.products.ProductDetailsActivity"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity"/>
+                android:value=".activities.MainActivity" />
         </activity>
-
-        <activity android:name=".activities.Main2Activity"
+        <activity
+            android:name=".activities.Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/MyMaterialTheme">
-            <!-- <intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
+
         <provider
             android:name=".data.products.ProductsContentProvider"
             android:authorities="@string/products_authority"
@@ -58,6 +61,9 @@
             android:name=".data.recipes.RecipesContentProvider"
             android:authorities="@string/recipes_authority"
             android:exported="false" />
-        </application>
 
-    </manifest>
+        <activity android:name=".activities.recipes.AddRecipeActivity" />
+        <activity android:name=".activities.recipes.RecipeDetailsActivity"></activity>
+    </application>
+
+</manifest>

@@ -88,7 +88,6 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.github.siyamed/android-shape-imageview/0.9.3/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.0.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.2/jars" />
@@ -102,6 +101,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.0.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.0.2/jars" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.mikhaellopez/circularimageview/3.0.2/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
@@ -126,7 +126,6 @@
     <orderEntry type="library" exported="" name="design-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-9.0.2" level="project" />
-    <orderEntry type="library" exported="" name="picasso-2.5.2" level="project" />
     <orderEntry type="library" exported="" name="firebase-auth-9.0.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-base-9.0.2" level="project" />
     <orderEntry type="library" exported="" name="play-services-tasks-9.0.2" level="project" />
@@ -138,8 +137,9 @@
     <orderEntry type="library" exported="" name="support-v4-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="recyclerview-v7-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-storage-9.0.2" level="project" />
+    <orderEntry type="library" exported="" name="circularimageview-3.0.2" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-23.4.0" level="project" />
-    <orderEntry type="library" exported="" name="android-shape-imageview-0.9.3" level="project" />
+    <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.4.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-common-9.0.2" level="project" />
     <orderEntry type="library" exported="" name="firebase-iid-9.0.2" level="project" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView01"
+    android:id="@+id/ScrollViewAddProduct"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/margin"
@@ -91,8 +91,10 @@
             android:layout_height="wrap_content"
             android:hint="@string/store_phone"
             android:inputType="phone"
+            android:ems="10"
             android:layout_width="fill_parent">
         </EditText>
+
         <EditText
             android:id="@+id/product_comment_txt"
             android:layout_height="wrap_content"
@@ -100,6 +102,7 @@
             android:inputType="text"
             android:layout_width="fill_parent">
         </EditText>
+
         <Button
             android:id="@+id/add_product_btn"
             android:layout_height="wrap_content"

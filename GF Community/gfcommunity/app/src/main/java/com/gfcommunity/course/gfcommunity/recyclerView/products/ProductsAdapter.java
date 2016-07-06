@@ -12,17 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.gfcommunity.course.gfcommunity.R;
-import com.gfcommunity.course.gfcommunity.activities.ProductDetailsActivity;
-import com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider;
+import com.gfcommunity.course.gfcommunity.activities.products.ProductDetailsActivity;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.model.Product;
-import com.github.siyamed.shapeimageview.CircularImageView;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
-
+import com.mikhaellopez.circularimageview.CircularImageView;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -33,7 +30,6 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     static Cursor cursor;
     static Context context;
     private List<Product> mProducts;
-    private String picassoLogTag = "Picasso productsAdapter";
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -136,26 +132,16 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         }
         holder.text.setText(text);
 
-        //Set product image by picasso
+        //Set product image by Glide
         String productImgPath = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.IMAGE_URI));
-        //String productImgPath = "https://firebasestorage.googleapis.com/v0/b/gf-community.appspot.com/o/images%2Fproduct_img146697445826120160610_141506.jpg?alt=media&token=5130c587-38af-4e03-a401-cfea8afc08dc";
+        //String productImgPath = "https://firebasestorage.googleapis.com/v0/b/gf-community.appspot.com/o/images%2Fproduct_img14676540477212278?alt=media&token=d6a5d69a-b644-410d-89d8-14bfff807833";
         if(!TextUtils.isEmpty(productImgPath)) {
-            Picasso.with(context)
-                    .load(productImgPath)
-                    .placeholder(R.drawable.common_full_open_on_phone) //TODO: put loading icon
+            Glide.with(context).load(productImgPath)
+                    .dontAnimate()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .placeholder(R.xml.progress) //TODO: put product icon
                     .error(R.drawable.filter) //TODO: put product icon
-                    .into( holder.productImg, new Callback() {
-                        @Override
-                        public void onSuccess() {
-                            Log.d(picassoLogTag, "set product image was succeeded");
-                        }
-
-                        @Override
-                        public void onError() {
-                            Log.d(picassoLogTag, "set product image was failed");
-
-                        }
-                    });
+                    .into(holder.productImg);
         }
 
     }
