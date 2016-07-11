@@ -165,6 +165,7 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="greenAppColor">#6FC8B7</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
@@ -182,6 +183,7 @@
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
     <color name="navigationBarColor">#000000</color>
+    <color name="pinkAppColor">#EE7276</color>
     <color name="primary_dark_material_dark">@android:color/black</color>
     <color name="primary_dark_material_light">@color/material_grey_600</color>
     <color name="primary_material_dark">@color/material_grey_900</color>
@@ -321,6 +323,7 @@
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="add_recipe_or_product_button_margin_top">36dp</dimen>
     <dimen name="circle_image_view_size">48dp</dimen>
     <dimen name="custom_tab_layout_height">72dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
@@ -355,6 +358,7 @@
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="filter_image_view_margin">12dp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -369,7 +373,7 @@
     <dimen name="notification_subtext_size">12dp</dimen>
     <dimen name="recycle_view_height">70dp</dimen>
     <dimen name="recycle_view_margin">10dp</dimen>
-    <dimen name="relative_layout_height_list_row">90dp</dimen>
+    <dimen name="relative_layout_height_list_row">80dp</dimen>
     <dimen name="relative_layout_margin_list_row">10dp</dimen>
     <dimen name="relative_layout_padding">64dp</dimen>
     <dimen name="scroll_view_margin">64dp</dimen>
@@ -422,9 +426,12 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
     <string name="action_settings">Settings</string>
+    <string name="add_favorites">Add favorites</string>
     <string name="add_product">Add product</string>
-    <string name="add_product_image_title">Add product image</string>
+    <string name="add_product_image_title">Select product image</string>
     <string name="add_recipe">Add recipe</string>
     <string name="add_recipe_image_title">Add recipe image</string>
     <string name="address">%1$d %2$s Street %3$s</string>
@@ -469,7 +476,9 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="default_web_client_id" translatable="false">710704984798-vqiv1420tef95v74hbd6bb5utde5buj7.apps.googleusercontent.com</string>
     <string name="difficulty_preparation">Difficulty preparation</string>
+    <string name="difficulty_preparation_details">Difficulty preparation: %1$s</string>
     <string name="diners_number">Diners number</string>
+    <string name="diners_number_details">Diners number: %1$d</string>
     <string name="filtered_by">Filtered by: </string>
     <string name="firebase_database_url" translatable="false">https://gf-community.firebaseio.com</string>
     <string name="gallery_option">Choose from Gallery</string>
@@ -484,6 +493,7 @@
     <string name="ingredients_title">Recipe ingredients</string>
     <string name="instructions">Instructions</string>
     <string name="name">Name</string>
+    <string name="navigate">Navigate</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="news_fragment_name">What\'s new</string>
@@ -493,10 +503,12 @@
     <string name="not_valid_url_msg">Not Valid Url</string>
     <string name="places_api_key">AIzaSyCEsq36NBlHcfNnyxemW-YfmV_EFIqLeNM</string>
     <string name="preparation_time">Preparation time</string>
+    <string name="preparation_time_details">Preparation time: %1$s</string>
     <string name="product_added_msg">%1$s Product is added successfully</string>
     <string name="product_name">Product name</string>
     <string name="product_notification_text">%1$s was added in %2$s</string>
     <string name="product_notification_title">New Gluten free product</string>
+    <string name="product_saved_msg">%1$s Product is saved successfully</string>
     <string name="products_authority">com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider</string>
     <string name="products_fragment_name">Products</string>
     <string name="recipe_added_msg">%1$s Recipe is added successfully</string>
@@ -505,11 +517,15 @@
     <string name="recipe_notification_title">New Gluten free recipe</string>
     <string name="recipe_story">The story behind the recipe</string>
     <string name="recipes_authority">com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider</string>
+    <string name="recipes_category">Recipes category</string>
     <string name="recipes_fragment_name">Recipes</string>
     <string name="required_err_msg">%1$s is required</string>
     <string name="required_err_msg_default">This field is required</string>
+    <string name="save_product">Save product</string>
+    <string name="search">Search</string>
     <string name="select_difficulty_preparation">Select Difficulty</string>
     <string name="select_recipe_category">Select a recipes category</string>
+    <string name="share">Share</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="store_address">Address</string>
     <string name="store_details">Store details</string>
@@ -518,8 +534,10 @@
     <string name="store_url">Url</string>
     <string name="street">Street</string>
     <string name="take_photo_option">Take Photo</string>
+    <string name="tbd">TBD</string>
     <string name="title_activity_main2">Main2Activity</string>
-    <string name="user_uploaded_text">Added by %1$s on %2$s.</string>
+    <string name="user_uploaded_text">Added by %1$s</string>
+    <string name="user_uploaded_with_date_text">Added by %1$s on %2$s</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -1518,8 +1536,8 @@
     <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
-        <item name="colorPrimary">@android:color/holo_green_light</item>
-        <item name="colorPrimaryDark">@android:color/holo_green_light</item>
+        <item name="colorPrimary">@color/greenAppColor</item>
+        <item name="colorPrimaryDark">@color/pinkAppColor</item>
     </style>
     <style name="MyMaterialTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
     <style name="Platform.AppCompat" parent="android:Theme">
@@ -1665,6 +1683,9 @@
     <style name="RtlUnderlay.Widget.AppCompat.ActionButton.Overflow" parent="Base.Widget.AppCompat.ActionButton">
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
+    </style>
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
     </style>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>

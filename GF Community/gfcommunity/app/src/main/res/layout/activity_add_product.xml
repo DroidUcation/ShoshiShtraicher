@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ScrollViewAddProduct"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin"
-    android:layout_marginTop="@dimen/margin"
-    android:layout_marginLeft="@dimen/margin"
-    android:layout_marginRight="@dimen/margin"
     android:scrollbars="vertical">
     <LinearLayout
         android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <FrameLayout
+            android:id="@+id/product_img_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/product_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/products"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true"/>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/btnSelectProductImg"
+                android:contentDescription="@string/add_product_image_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@android:color/white"
+                android:src="@drawable/ic_add_a_photo_white_24dp"
+                app:backgroundTint="@color/pinkAppColor"
+                android:layout_marginRight="@dimen/margin"
+                android:layout_gravity="bottom|right"
+                />
+        </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/product_details_layout"
+        android:layout_width="fill_parent"
         android:orientation="vertical"
-        android:layout_height="fill_parent">
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="@dimen/margin"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginRight="@dimen/margin">
 
         <EditText
             android:id="@+id/product_name_edit_text"
@@ -22,20 +53,6 @@
             android:layout_width="fill_parent">
         </EditText>
 
-        <Button
-            android:id="@+id/btnSelectProductImg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select product image" />
-
-        <ImageView
-            android:id="@+id/product_img"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/star_on"
-            android:scaleType="fitStart"
-            android:adjustViewBounds="true" />
-
         <TextView
             android:id="@+id/store_details_title"
             android:layout_marginTop="@dimen/margin"
@@ -43,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/store_details"
+            android:textColor="@color/greenAppColor"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large">
         </TextView>
         <EditText
@@ -52,6 +70,7 @@
             android:inputType="text"
             android:layout_width="fill_parent">
         </EditText>
+
         <Spinner
             android:spinnerMode="dropdown"
             android:id="@+id/citiesSpinner"
@@ -60,6 +79,7 @@
             android:entries="@array/cities_array"
             android:hint="@string/city"
             android:prompt="@string/city"/>
+
         <EditText
             android:id="@+id/store_street_edit_txt"
             android:layout_height="wrap_content"
@@ -99,7 +119,7 @@
             android:id="@+id/product_comment_txt"
             android:layout_height="wrap_content"
             android:hint="@string/comment"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:layout_width="fill_parent">
         </EditText>
 
@@ -107,7 +127,12 @@
             android:id="@+id/add_product_btn"
             android:layout_height="wrap_content"
             android:text="@string/add_product"
-            android:layout_width="fill_parent">
+            android:layout_width="160dp"
+            android:layout_gravity="center"
+            android:background="@drawable/add_button_shape"
+            android:layout_marginTop="@dimen/add_recipe_or_product_button_margin_top"
+            android:textColor="@android:color/white">
         </Button>
+    </LinearLayout>
     </LinearLayout>
 </ScrollView>

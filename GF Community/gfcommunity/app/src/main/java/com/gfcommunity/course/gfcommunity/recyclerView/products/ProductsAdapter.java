@@ -3,6 +3,7 @@ package com.gfcommunity.course.gfcommunity.recyclerView.products;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -134,14 +135,15 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
 
         //Set product image by Glide
         String productImgPath = cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.IMAGE_URI));
-        //String productImgPath = "https://firebasestorage.googleapis.com/v0/b/gf-community.appspot.com/o/images%2Fproduct_img14676540477212278?alt=media&token=d6a5d69a-b644-410d-89d8-14bfff807833";
         if(!TextUtils.isEmpty(productImgPath)) {
             Glide.with(context).load(productImgPath)
                     .dontAnimate()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.xml.progress) //TODO: put product icon
-                    .error(R.drawable.filter) //TODO: put product icon
+                    .placeholder(R.drawable.product_24)
+                    .error(R.drawable.product_24)
                     .into(holder.productImg);
+        } else {
+            holder.productImg.setImageResource(R.drawable.product_24);
         }
 
     }

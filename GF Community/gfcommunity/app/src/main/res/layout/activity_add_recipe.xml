@@ -38,7 +38,7 @@
 
         <Spinner
             android:spinnerMode="dropdown"
-            android:id="@+id/recipe_categories_spinner"
+            android:id="@+id/recipes_categories_spinner"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:entries="@array/recipe_categories_array"

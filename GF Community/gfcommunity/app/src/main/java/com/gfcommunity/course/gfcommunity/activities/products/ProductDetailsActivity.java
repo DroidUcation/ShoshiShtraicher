@@ -21,6 +21,7 @@ import com.gfcommunity.course.gfcommunity.utils.DateFormatUtil;
 public class ProductDetailsActivity extends AppCompatActivity implements View.OnClickListener {
     private Product product;
     private String storePhone;
+    private ImageView storePhoneImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
         product = (Product) getIntent().getSerializableExtra("selected_item"); //get current product passed from ProductsAdapter
 
-        ImageView storePhoneImg = (ImageView) findViewById(R.id.store_phone_img);
+        storePhoneImg = (ImageView) findViewById(R.id.store_phone_img);
         storePhoneImg.setOnClickListener(this);
 
         setProductValues(); //Set product details in the textViews
@@ -46,12 +47,11 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         ImageView productImg = (ImageView) findViewById(R.id.product_img);
         String imgUrl = product.getImgUrl();
         if(!TextUtils.isEmpty(imgUrl)){
-            //imgUrl = "https://firebasestorage.googleapis.com/v0/b/gf-community.appspot.com/o/images%2Fproduct_img14676540477212278?alt=media&token=d6a5d69a-b644-410d-89d8-14bfff807833";
             Glide.with(this).load(imgUrl)
                     .dontAnimate()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.xml.progress) //TODO: put loading icon
-                    .error(R.drawable.filter) //TODO: put product icon
+                    .placeholder(R.drawable.products)
+                    .error(R.drawable.products)
                     .into(productImg);
         }
 
@@ -75,7 +75,12 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
         TextView store_phone_txt = (TextView) findViewById(R.id.store_phone_txt);
         storePhone = product.getPhone();
-        store_phone_txt.setText(!TextUtils.isEmpty(storePhone) ? storePhone : "");
+        if(!TextUtils.isEmpty(storePhone)) {
+            store_phone_txt.setText(storePhone);
+        }else {
+            store_phone_txt.setText("");
+            storePhoneImg.setVisibility(View.GONE);
+        }
 
         TextView productCommentTxt = (TextView) findViewById(R.id.product_comment_txt);
         String comment = product.getComment();
@@ -84,7 +89,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         TextView productUserUploadedTxt = (TextView) findViewById(R.id.product_user_uploaded_txt);
         String productUserUploadedDate = DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(product.getCreatedAt()).toString();
         //TODO: set user name
-        String productUserUploaded = String.format(getResources().getString(R.string.user_uploaded_text), "user name", productUserUploadedDate);
+        String productUserUploaded = String.format(getResources().getString(R.string.user_uploaded_with_date_text), "user name", productUserUploadedDate);
         productUserUploadedTxt.setText(!TextUtils.isEmpty(productUserUploaded) ? productUserUploaded : "");
     }
 

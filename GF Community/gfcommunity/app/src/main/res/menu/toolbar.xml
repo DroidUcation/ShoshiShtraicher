@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search_white_24dp"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_share"
+        android:title="@string/share"
+        android:icon="@drawable/ic_share_white_24dp"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_favorites"
+        android:title="@string/add_favorites"
+        android:icon="@drawable/ic_star_white_24dp"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_navigate"
+        android:title="@string/navigate"
+        android:icon="@drawable/ic_place_white_24dp"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_edit"
+        android:title="@string/action_edit"
+        android:icon="@android:drawable/ic_menu_edit"/>
+
+    <item
+        android:id="@+id/action_delete"
+        android:title="@string/action_delete"
+        android:icon="@android:drawable/ic_menu_delete" />
+
+</menu>

@@ -1,6 +1,9 @@
 package com.gfcommunity.course.gfcommunity.activities;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,24 +11,34 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.gfcommunity.course.gfcommunity.R;
+import com.gfcommunity.course.gfcommunity.activities.products.AddProductActivity;
+import com.gfcommunity.course.gfcommunity.activities.products.EditProductActivity;
+import com.gfcommunity.course.gfcommunity.activities.recipes.AddRecipeActivity;
 import com.gfcommunity.course.gfcommunity.fragments.BlankFragment;
 import com.gfcommunity.course.gfcommunity.fragments.ProductsFragment;
 import com.gfcommunity.course.gfcommunity.fragments.RecipesFragment;
+import com.gfcommunity.course.gfcommunity.utils.NetworkConnectedUtil;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, Toolbar.OnMenuItemClickListener, View.OnClickListener {
     private int fragmentPosition;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private int[] tabIcons = {
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher,
-            R.mipmap.ic_launcher
+            R.drawable.new_24,
+            R.drawable.product_24,
+            R.drawable.recipes_24
     };
 
     @Override
@@ -33,9 +46,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentPosition = getIntent().getIntExtra("fragmentPosition", 0);
+        fragmentPosition = getIntent().getIntExtra("fragmentPosition", 1);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(Color.WHITE);
+        toolbar.setTitle(getString(R.string.app_name));
+        toolbar.inflateMenu(R.menu.toolbar);
+        toolbar.setOnMenuItemClickListener(this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -45,8 +62,19 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        //Adding fab
+        FloatingActionButton addFab = (FloatingActionButton)findViewById(R.id.add_fab);
+        addFab.setOnClickListener(this);
         setupTabIcons();
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar, menu);
+        return true;
+    }
+
 
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
@@ -57,10 +85,65 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new BlankFragment(), getResources().getString(R.string.news_fragment_name));
-        adapter.addFrag( ProductsFragment.getInstance(), getResources().getString(R.string.products_fragment_name));
+        adapter.addFrag(ProductsFragment.getInstance(), getResources().getString(R.string.products_fragment_name));
         adapter.addFrag(new RecipesFragment(), getResources().getString(R.string.recipes_fragment_name));
         viewPager.setAdapter(adapter);
     }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //TODO: change toolbar items dynamically
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_edit:
+                item.setChecked(true);
+                if (NetworkConnectedUtil.isNetworkAvailable(this)) {
+                    //TODO: find selected item and pass it to EditProductActivity
+                    Intent intent = new Intent(this, EditProductActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, getString(R.string.no_internet_connection_msg), Toast.LENGTH_SHORT).show();
+                }
+            return true;
+
+            case R.id.action_delete:
+                item.setChecked(true);
+                if (NetworkConnectedUtil.isNetworkAvailable(this)) {
+                  //TODO: delete selected item
+                } else {
+                    Toast.makeText(this, getString(R.string.no_internet_connection_msg), Toast.LENGTH_SHORT).show();
+                }
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.add_fab: //Start Add new product or recipe activity
+                //Check internet connection
+                if(NetworkConnectedUtil.isNetworkAvailable(this)) {
+                    if(viewPager.getCurrentItem()  == 1) { //Add product
+                        Intent intent = new Intent(this, AddProductActivity.class);
+                        startActivity(intent);
+                    } else if(viewPager.getCurrentItem()  == 2){ //Add recipe
+                        Intent intent = new Intent(this, AddRecipeActivity.class);
+                        startActivity(intent);
+                    }
+                }
+                else {
+                    Toast.makeText(this,getString(R.string.no_internet_connection_msg),Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+    }
+
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();

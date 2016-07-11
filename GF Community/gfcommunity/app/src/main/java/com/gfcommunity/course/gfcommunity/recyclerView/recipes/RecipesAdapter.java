@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.gfcommunity.course.gfcommunity.R;
+import com.gfcommunity.course.gfcommunity.activities.recipes.RecipeDetailsActivity;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider;
 import com.gfcommunity.course.gfcommunity.model.Recipe;
@@ -90,9 +91,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                 recipesMap.put(recipeID, recipe);
             }
 
-            //Intent intent = new Intent(context, RecipeDetailsActivity.class);
-            //intent.putExtra("selected_item",recipe); //Pass selected recipe to RecipeDetailsActivity
-            //context.startActivity(intent);
+            Intent intent = new Intent(context, RecipeDetailsActivity.class);
+            intent.putExtra("selected_item",recipe); //Pass selected recipe to RecipeDetailsActivity
+            context.startActivity(intent);
         }
     }
 
@@ -154,7 +155,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         //Build added by string
         try {
-            String text = String.format(context.getResources().getString(R.string.user_uploaded_text),
+            String text = String.format(context.getResources().getString(R.string.user_uploaded_with_date_text),
                     "USER NAME",
                     //cursor.getInt(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_ID)), //TODO: GET USER NAME
                     DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.CREATED_AT)))));
@@ -169,9 +170,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             Glide.with(context).load(recipeImgPath)
                     .dontAnimate()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.xml.progress) //TODO: put loading icon
-                    .error(R.drawable.filter) //TODO: put recipe icon
+                    .placeholder(R.drawable.recipes_24)
+                    .error(R.drawable.recipes_24)
                     .into(holder.recipeImg);
+        } else {
+            holder.recipeImg.setImageResource(R.drawable.recipes_24);
         }
 
     }

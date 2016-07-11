@@ -9,8 +9,10 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -41,6 +43,7 @@ import android.net.Uri;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -56,11 +59,12 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     private EditText commentEditTxt;
     private EditText storeStreetEditTxt;
     private EditText storeHouseNoEditTxt;
+    private Spinner citiesSpinner;
     private int loaderID = 0;//Insert products loader ID
     private String logTag = AddProductActivity.class.getName();
     private String selectedCity;
     private ImageView productImg;
-    private Button addProductImgBtn;
+    private FloatingActionButton addProductImgBtn;
     private Uri selectedImage;
     private String productName;
     private String storeName;
@@ -89,12 +93,11 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         storeNameEditTxt  = (EditText) findViewById(R.id.store_edit_txt);
         storeUrlEditTxt  = (EditText) findViewById(R.id.store_url_edit_txt);
         storePhoneEditTxt  = (EditText) findViewById(R.id.store_phone_edit_txt);
-        Spinner citiesSpinner = (Spinner) findViewById(R.id.citiesSpinner);
+        citiesSpinner = (Spinner) findViewById(R.id.citiesSpinner);
         storeStreetEditTxt = (EditText) findViewById(R.id.store_street_edit_txt);
         storeHouseNoEditTxt = (EditText) findViewById(R.id.store_house_no_edit_txt);
         commentEditTxt = (EditText) findViewById(R.id.product_comment_txt);
-        addProductImgBtn = (Button)findViewById(R.id.btnSelectProductImg);
-        addProductImgBtn.setTransformationMethod(null);  //Ignore automatic upper case
+        addProductImgBtn = (FloatingActionButton)findViewById(R.id.btnSelectProductImg);
         productImg = (ImageView)findViewById(R.id.product_img);
 
         //Bind views to Listener
@@ -114,7 +117,6 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         dataAdapter.setDropDownViewResource(android.R.layout.simple_list_item_single_choice);// Drop down layout style - list view with radio button
         citiesSpinner.setAdapter(dataAdapter);
         citiesSpinner.setSelection(dataAdapter.getCount());// show hint
-
     }
 
     @Override
@@ -127,7 +129,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, !TextUtils.isEmpty(storeName) ? storeName : "");
         String storeUrl = storeUrlEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.STORE_URL, !TextUtils.isEmpty(storeUrl) ? storeUrl : "");
-        values.put(SharingInfoContract.ProductsEntry.CREATED_AT, DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(new java.util.Date()).toString());
+        values.put(SharingInfoContract.ProductsEntry.CREATED_AT, DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString());
         String storePhone = storePhoneEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.PHONE, !TextUtils.isEmpty(storePhone) ? storePhone : "");
         values.put(SharingInfoContract.ProductsEntry.CITY, !(selectedCity.equals(getString(R.string.city_spinner_title))) ? selectedCity : "");
@@ -169,7 +171,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         Notification n = new NotificationCompat.Builder(this)
                 .setContentTitle(getString(R.string.product_notification_title))
                 .setContentText(String.format(getString(R.string.product_notification_text),productName,storeName ))
-                .setSmallIcon(R.drawable.ic_menu_send) //TODO: put app icon
+                .setSmallIcon(R.drawable.icon_app_24)
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true)
                 .setContentIntent(createPendingIntent(productUri))
@@ -182,7 +184,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
 
     @Override
     public void onLoadFinished(Loader<Uri> loader, Uri data) {
-        Log.i(logTag, "Insert product succssed: "+ productName);
+        Log.i(logTag, "Insert product succeed: "+ productName);
         Toast.makeText(this,String.format(getString(R.string.product_added_msg), productName),Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
         //TODO: check if user city is same as product city
         sendNotification(data); //Send notification
@@ -284,8 +286,8 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
                 Glide.with(this).load(selectedImage)
                         .dontAnimate()
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .placeholder(R.xml.progress) //TODO: put loading icon
-                        .error(R.drawable.filter) //TODO: put product icon
+                        .placeholder(R.drawable.products)
+                        .error(R.drawable.products)
                         .into(productImg);
             }
 
@@ -412,13 +414,17 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
      */
     private boolean validateRequiredAddressOrUrl(EditText storeUrlEditTxt, EditText storeStreetEditTxt, EditText storeHouseNoEditTxt) {
         boolean isUrlEmpty = TextUtils.isEmpty(storeUrlEditTxt.getText().toString().trim());
-        boolean isCityEmpty = TextUtils.isEmpty(selectedCity.toString().trim());
+        boolean isCityEmpty = TextUtils.isEmpty(selectedCity) || selectedCity.equals(getString(R.string.city_spinner_title));
         boolean isStreetEmpty = TextUtils.isEmpty(storeStreetEditTxt.getText().toString().trim());
         boolean isHouseNoEmpty = TextUtils.isEmpty(storeHouseNoEditTxt.getText().toString().trim());
         boolean isValid = true;
         if(isUrlEmpty && (isCityEmpty || isStreetEmpty || isHouseNoEmpty)) {
             if(isCityEmpty) {
-                //TODO: set spinner error
+                TextView cityItem = (TextView)citiesSpinner.getSelectedView();
+                String errMessage = (String.format(getResources().getString(R.string.required_err_msg),getString(R.string.city)));
+                cityItem.setError(errMessage);
+                cityItem.setText(errMessage);//changes the selected item error text
+                requestFocus(cityItem);
                 isValid = false;
             }
             if(isStreetEmpty) {

@@ -1,2 +1,3 @@
-CHANGED,C:\Users\slevin\Documents\androidProjects\merge\GF Community\gfcommunity\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\gfcommunity\course\gfcommunity\recyclerView\recipes\RecipesAdapter$override.class
-CHANGED,C:\Users\slevin\Documents\androidProjects\merge\GF Community\gfcommunity\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\gfcommunity\course\gfcommunity\activities\recipes\AddRecipeActivity$override.class
+CHANGED,C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\android\tools\fd\runtime\AppPatchesLoaderImpl.class
+CHANGED,C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\intermediates\transforms\instantRun\debug\folders\4000\5\enhanced\com\gfcommunity\course\gfcommunity\activities\products\AddProductActivity$override.class

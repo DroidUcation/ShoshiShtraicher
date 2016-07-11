@@ -6,4 +6,6 @@
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
+    <color name="greenAppColor">#6FC8B7</color>
+    <color name="pinkAppColor">#EE7276</color>
 </resources>

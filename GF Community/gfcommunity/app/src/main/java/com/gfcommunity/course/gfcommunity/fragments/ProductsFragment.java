@@ -3,6 +3,7 @@ package com.gfcommunity.course.gfcommunity.fragments;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
@@ -36,7 +37,6 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     private int loaderID = 0; // Identifies a particular Loader being used in this component
     private ProductsAdapter productsAdapter;
     private RecyclerView recyclerView;
-    private ImageView noRecordsImg;
     private ProgressBar progressBar;
     private String selectedCity;
     private Spinner citiesSpinner;
@@ -64,12 +64,7 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
-        noRecordsImg = (ImageView) view.findViewById(R.id.no_results_img);
         progressBar = (ProgressBar)view.findViewById(R.id.progress_bar);
-
-        //Adding fab
-        FloatingActionButton addFab = (FloatingActionButton)view.findViewById(R.id.add_fab);
-        addFab.setOnClickListener(this);
 
         //filter imageView
         filterCity = (ImageView)view.findViewById(R.id.filter_city);
@@ -125,11 +120,11 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
             productsAdapter = new ProductsAdapter(context, cursor);
             recyclerView.setAdapter(productsAdapter);
             recyclerView.setVisibility(View.VISIBLE);
-            noRecordsImg.setVisibility(View.GONE);
+            this.getView().setBackgroundColor(Color.TRANSPARENT);
         //Set empty state for RecyclerView if no products found
         } else {
             recyclerView.setVisibility(View.GONE);
-            noRecordsImg.setVisibility(View.VISIBLE);
+            this.getView().setBackgroundResource(R.drawable.no_records);
         }
 
     }
@@ -142,16 +137,6 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.add_fab: //Start Add new product activity
-                //Check internet connection
-                if(NetworkConnectedUtil.isNetworkAvailable(context)) {
-                    Intent intent = new Intent(getActivity(), AddProductActivity.class);
-                    startActivity(intent);
-                }
-                else {
-                    Toast.makeText(context,getString(R.string.no_internet_connection_msg),Toast.LENGTH_SHORT).show();
-                }
-                break;
             case R.id.filter_city:
                 citiesSpinner.setVisibility(View.VISIBLE);
                 filterCity.setVisibility(View.GONE);
