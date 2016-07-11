@@ -50,7 +50,7 @@
             android:exported="false" />
 
         <activity android:name=".activities.recipes.AddRecipeActivity" />
-        <activity android:name=".activities.recipes.RecipeDetailsActivity"></activity>
+        <activity android:name=".activities.recipes.RecipeDetailsActivity"/>
     </application>
 
 </manifest>

@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\src\androidTest\assets"/><source path="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\generated\assets\shaders\androidTest\debug"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/src/androidTest/assets"/><source path="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/generated/assets/shaders/androidTest/debug"/></dataSet></merger>

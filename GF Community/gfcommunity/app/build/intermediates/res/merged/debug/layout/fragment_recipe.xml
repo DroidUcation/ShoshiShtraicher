@@ -74,17 +74,5 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:background ="@xml/progress"/>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/add_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:tint="@android:color/white"
-        android:src="@android:drawable/ic_input_add"
-        android:layout_marginBottom="@dimen/margin"
-        android:layout_marginRight="@dimen/margin"
-        />
 </RelativeLayout>
 

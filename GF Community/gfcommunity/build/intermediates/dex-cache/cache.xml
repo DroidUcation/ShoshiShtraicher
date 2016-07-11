@@ -1,3 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.mikhaellopez/circularimageview/3.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a8340f8c17337c864648c13abe1416d34c80ec14">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikhaellopez-circularimageview-3.0.2_bc147d98d9be6f91f7b52245e3c8430e0583a7e8/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_672befcd3198e6b3de4ee9e2544c768e856c739d/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage-common/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6ff48ef26bc539c78af4aa061cb9bad6abcbf5e8">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-common-9.0.2_80e6479c82108be676a11c7dc622c835051af99a/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="51a11c41a08f099a204e1b8dcc04f27217de50ec">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-9.0.2_22857c4fcb5a287ba17d4295b15815666a2c9a7a/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.4.0_0c0b49a7c8d40666dd488bd9da73f623a5313d51/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-analytics-impl/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a511c684ea4c2cf31a3377d51e7677cb76696e07">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-analytics-impl-9.0.2_4682ca1b7d01ffb7ba025cbcf61327aac5baeebd/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_68ae57b26d1de70f55251e9bce3eba2cf379b01e/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.4.0_f0000233410402dce42859a825ae2c6adeab8e00/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a25950c0fc17448dd5dac63d2849c96bb81849cf">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_80b4dae00592919962f361853ae0ad6bb9ee487b/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-base-9.0.2_065b89b2b115c1ceb420571741340c4b91e5e7ee/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-module/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="79e298d7fed2fcada58da7032d07d34ee198a545">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-module-9.0.2_265e5400495062454a7bfa032d84811e75add88f/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-storage/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="cd4c7c54e15d9ccbc448384fa2c4684d69ca73f0">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-storage-9.0.2_3630a69638c08c8958314521e3b95096b0895141/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_4735faab8556c8c80d48d153f36d7ac21cc8a5db/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_a414724821ea5958adf037f8b2725e24c13e9398/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-tasks/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-tasks-9.0.2_51a3048339272a776bb11ac640d60ec743479fce/classes.dex" />
+    </item>
+    <item
+        jar="/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_084fc5f5a9b096a5d2f3485b82b383251e51fd4b/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth-common/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="568d5bda0b4d51f90d978ace369bb9ad024d2057">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-common-9.0.2_820189f417ea245091771ac020d42eb4a1e4a5f1/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-common/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-common-9.0.2_ae188022dfdc4ee9b911f36962bbc7cc2f9ab5e4/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-iid/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="b3d0809a742c5f768c6aa9efc6decd5c1d6cd227">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-iid-9.0.2_43f29bc5cbb4faa12f0de7da75ba2f37bb90add2/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.firebase/firebase-auth/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fa472b7cbd3897bf6bed6068ac0b00e494987688">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.firebase-firebase-auth-9.0.2_3f084475edc77b9c080416fc5829f63824475f04/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_beeb17d0387d52ab9f34198e97718050ed6aa962/classes.dex" />
+    </item>
+    <item
+        jar="/Users/MaTriXy 1/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_6fbc5a694bbaa957a6d03c9c8fcfb600811449ab/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="04fd412026222b4e0c6832347b94ab3ad5efd298">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_48ff7169c49c3cdd898e98c949149fb8220ebf3c/classes.dex" />
+    </item>
+    <item
+        jar="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.0.2/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
+        <dex dex="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.google.android.gms-play-services-basement-9.0.2_d07f9da926d582f605ce4afde29eb832d93a573f/classes.dex" />
+    </item>
+
+</items>

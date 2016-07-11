@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="armeabi-v7a,armeabi"
-    api-level="16"
-    density="mdpi"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="23"
+    density="560dpi"
     format="7"
-    timestamp="1653575731339445"
-    token="8348047486826120" >
+    timestamp="118524357036982"
+    token="-4065210804533534155" >
 
     <task
         name="javac"
-        duration="264" />
+        duration="2524" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="61" />
+        duration="292" />
     <task
         name="verifier"
-        duration="14" />
+        duration="37" />
 
     <artifact
-        location="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\outputs\apk\app-debug.apk"
+        location="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="1653575731339445" >
+    <build timestamp="118524357036982" >
         <artifact
-            location="C:\Users\slevin\Documents\androidProjects\GF Community\gfcommunity\app\build\outputs\apk\app-debug.apk"
+            location="/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
 
