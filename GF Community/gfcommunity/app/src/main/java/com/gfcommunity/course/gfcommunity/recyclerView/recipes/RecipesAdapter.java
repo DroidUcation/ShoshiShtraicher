@@ -174,7 +174,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                     .error(R.drawable.recipe_circle_img)
                     .into(holder.recipeImg);
         } else {
-            holder.recipeImg.setImageResource(R.drawable.product_round);
+            holder.recipeImg.setImageResource(R.drawable.recipe_circle_img);
         }
 
     }

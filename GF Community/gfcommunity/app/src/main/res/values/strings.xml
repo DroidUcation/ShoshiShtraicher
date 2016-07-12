@@ -63,6 +63,7 @@
     <string name="preparation_time_details">Preparation time: %1$s</string>
     <string name="diners_number_details">Diners number: %1$d</string>
     <string name="difficulty_preparation_details">Difficulty preparation: %1$s</string>
+    <string name="add_ingredient">Add ingredient</string>
 
     <string name="tbd">TBD</string>
     <!-->Israel cities array<!-->

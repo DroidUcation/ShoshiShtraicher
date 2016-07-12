@@ -9,6 +9,8 @@ import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -23,12 +25,15 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,6 +48,7 @@ import com.gfcommunity.course.gfcommunity.recyclerView.recipes.RecipesAdapter;
 import com.gfcommunity.course.gfcommunity.utils.SpinnerAdapter;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class AddRecipeActivity extends AppCompatActivity  implements LoaderManager.LoaderCallbacks<Uri>, View.OnClickListener, AdapterView.OnItemSelectedListener, UploadFile.OnuploadCompletedListener{
     private Button addRecipetBtn;
@@ -54,6 +60,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
     private EditText recipeStoryEditTxt;
     private Spinner recipesCategoriesSpinner;
     private ImageView recipeImg;
+    private ImageView addIngredientImg;
     private FloatingActionButton addRecipeImgBtn;
     private int loaderID = 0; //Insert recipes loader ID
     private String logTag = AddRecipeActivity.class.getName();
@@ -61,7 +68,8 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
     private String selectedDifficultyPreparation;
     private Uri selectedImage;
     private String recipeName;
-
+    private LinearLayout addIngredientsLayout;
+    private ArrayList<EditText> ingredientsEditTextsArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,10 +96,17 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
         Spinner difficultyPreparationSpinner = (Spinner) findViewById(R.id.difficulty_preparation_spinner);
         addRecipeImgBtn = (FloatingActionButton)findViewById(R.id.select_recipe_img_btn);
         recipeImg = (ImageView)findViewById(R.id.recipe_img);
+        addIngredientImg = (ImageView)findViewById(R.id.add_ingredient_img);
+        addIngredientsLayout = (LinearLayout) findViewById(R.id.ingredients_layout);
+
+        //Array of edit text for ingredients
+        ingredientsEditTextsArray = new ArrayList<EditText>();
+        ingredientsEditTextsArray.add(ingredientsEditTxt);
 
         //Bind views to Listener
         addRecipetBtn.setOnClickListener(this);
         addRecipeImgBtn.setOnClickListener(this);
+        addIngredientImg.setOnClickListener(this);
         recipesCategoriesSpinner.setOnItemSelectedListener(this);
         difficultyPreparationSpinner.setOnItemSelectedListener(this);
         recipeNameEditTxt.addTextChangedListener(new RecipeTextWatcher(recipeNameEditTxt));
@@ -186,7 +201,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
     public void onLoadFinished(Loader<Uri> loader, Uri data) {
         Log.i(logTag, "Insert recipe succeed: "+ recipeName);
         Toast.makeText(this,String.format(getString(R.string.recipe_added_msg), recipeName),Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
-        //sendNotification(data); //Send notification
+        sendNotification(data); //Send notification
         finish(); //Close this activity and go back to Main Activity
     }
 
@@ -210,12 +225,26 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
             case R.id.select_recipe_img_btn:
                 selectImage(); //select image from camera or gallery
                 break;
+            case R.id.add_ingredient_img:
+                try{
+                    EditText edtView = new EditText(this);
+                    LayoutParams lParams = new LinearLayout.LayoutParams(
+                            LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+                    edtView.setHint(getString(R.string.ingredients));
+                    edtView.setLayoutParams(lParams);
+                    edtView.getBackground().setColorFilter(0x6fc8b7, PorterDuff.Mode.SRC_IN);
+                    addIngredientsLayout.addView(edtView);
+                    ingredientsEditTextsArray.add(edtView);
+                    break;
+                }catch(Exception e){
+                    Log.d(logTag, "Failed to create new ingredients edit text");
+                }
         }
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        switch(view.getId()){
+        switch(parent.getId()){
             case R.id.recipes_categories_spinner:
                 selectedRecipeCategory = parent.getItemAtPosition(position).toString();
                 break;

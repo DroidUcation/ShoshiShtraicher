@@ -10,6 +10,7 @@ import android.text.util.Linkify;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -61,7 +62,13 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
         TextView storeAddressTxt = (TextView) findViewById(R.id.address_txt);
         String storeAddress = product.getAddress();
-        storeAddressTxt.setText(!TextUtils.isEmpty(storeAddress) ? storeAddress : "");
+        if(!TextUtils.isEmpty(storeAddress)) {
+            storeAddressTxt.setText(storeAddress);
+        } else {
+            LinearLayout addressLayout = (LinearLayout) findViewById(R.id.store_address_layout);
+            addressLayout.setVisibility(View.GONE);
+        }
+
 
         TextView storeUrlTxt = (TextView) findViewById(R.id.store_url_txt);
         storeUrlTxt.setText("");
@@ -71,6 +78,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
             String linkedText = String.format("<a href=\"%s\">%s</a>", "http://"+storeUrl, storeUrl);
             storeUrlTxt.setText(Html.fromHtml(linkedText));
             Linkify.addLinks(storeUrlTxt, Linkify.WEB_URLS);
+        } else {
+            storeUrlTxt.setVisibility(View.GONE);
         }
 
         TextView store_phone_txt = (TextView) findViewById(R.id.store_phone_txt);
@@ -78,13 +87,18 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         if(!TextUtils.isEmpty(storePhone)) {
             store_phone_txt.setText(storePhone);
         }else {
-            store_phone_txt.setText("");
-            storePhoneImg.setVisibility(View.GONE);
+            LinearLayout phoneLayout = (LinearLayout) findViewById(R.id.store_phone_layout);
+            phoneLayout.setVisibility(View.GONE);
         }
 
         TextView productCommentTxt = (TextView) findViewById(R.id.product_comment_txt);
         String comment = product.getComment();
-        productCommentTxt.setText(!TextUtils.isEmpty(comment) ? comment : "");
+        if(!TextUtils.isEmpty(comment)) {
+            productCommentTxt.setText(comment);
+        }else {
+            productCommentTxt.setVisibility(View.GONE);
+        }
+
 
         TextView productUserUploadedTxt = (TextView) findViewById(R.id.product_user_uploaded_txt);
         String productUserUploadedDate = DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(product.getCreatedAt()).toString();

@@ -37,7 +37,7 @@
             android:layout_gravity="right"/>
 
         <LinearLayout
-            android:id="@+id/product_details_layout"
+            android:id="@+id/recipe_details_layout"
             android:layout_width="fill_parent"
             android:orientation="vertical"
             android:layout_height="fill_parent"
@@ -50,7 +50,8 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/recipe_name"
                 android:inputType="text"
-                android:layout_width="fill_parent">
+                android:layout_width="fill_parent"
+                android:backgroundTint="@color/greenAppColor">
             </EditText>
 
             <Spinner
@@ -61,13 +62,33 @@
                 android:entries="@array/recipe_categories_array"
                 android:hint="@string/select_recipe_category"/>
 
-            <EditText
-                android:id="@+id/ingredients"
-                android:layout_height="wrap_content"
-                android:hint="@string/ingredients"
-                android:inputType="text"
-                android:layout_width="fill_parent">
-            </EditText>
+            <LinearLayout
+                android:id="@+id/ingredients_layout"
+                android:layout_width="fill_parent"
+                android:orientation="vertical"
+                android:layout_height="fill_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="fill_parent">
+                <ImageView
+                    android:id="@+id/add_ingredient_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:src="@android:drawable/ic_input_add"
+                    android:tint="@color/pinkAppColor"
+                    android:layout_gravity="top"
+                    android:contentDescription="@string/add_ingredient" />
+                <EditText
+                    android:id="@+id/ingredients"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/ingredients"
+                    android:inputType="text"
+                    android:layout_width="fill_parent">
+                </EditText>
+            </LinearLayout>
+        </LinearLayout>
 
             <EditText
                 android:id="@+id/instructions"

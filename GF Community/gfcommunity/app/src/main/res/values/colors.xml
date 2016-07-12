@@ -2,10 +2,10 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
-    <color name="greenAppColor">#6FC8B7</color>
+    <color name="greenAppColor">#6fc8b7</color>
     <color name="pinkAppColor">#EE7276</color>
 </resources>

@@ -4,6 +4,7 @@ package com.gfcommunity.course.gfcommunity.activities.recipes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,19 +56,35 @@ public class RecipeDetailsActivity extends AppCompatActivity{
 
         TextView preparationTimeTxt = (TextView) findViewById(R.id.preparation_time_txt);
         String preparationTime = recipe.getPreparationTime();
-        preparationTimeTxt.setText(!TextUtils.isEmpty(preparationTime) ? String.format(getString(R.string.preparation_time_details),preparationTime) : "");
+        if(!TextUtils.isEmpty(preparationTime)) {
+            preparationTimeTxt.setText(String.format(getString(R.string.preparation_time_details),preparationTime));
+        } else {
+            preparationTimeTxt.setVisibility(View.GONE);
+        }
 
         TextView dinersNumberTxt = (TextView) findViewById(R.id.diners_number_txt);
         int dinersNumber = recipe.getDinersNumber();
-        dinersNumberTxt.setText(dinersNumber > 0 ? String.format(getString(R.string.diners_number_details),dinersNumber) : "");
+        if(dinersNumber > 0) {
+            dinersNumberTxt.setText(String.format(getString(R.string.diners_number_details),dinersNumber));
+        } else {
+            dinersNumberTxt.setVisibility(View.GONE);
+        }
 
         TextView difficultyPreparationTxt = (TextView) findViewById(R.id.difficulty_preparation_txt);
         String difficultyPreparation = recipe.getDifficultyPreparation();
-        difficultyPreparationTxt.setText(!TextUtils.isEmpty(difficultyPreparation) ? String.format(getString(R.string.difficulty_preparation_details),difficultyPreparation) : "");
+        if(!TextUtils.isEmpty(difficultyPreparation)) {
+            difficultyPreparationTxt.setText(String.format(getString(R.string.difficulty_preparation_details),difficultyPreparation));
+        } else {
+            difficultyPreparationTxt.setVisibility(View.GONE);
+        }
 
         TextView recipeStoryTxt = (TextView) findViewById(R.id.recipe_story_txt);
         String recipeStory = recipe.getRecipeStory();
-        recipeStoryTxt.setText(!TextUtils.isEmpty(recipeStory) ? recipeStory : "");
+        if(!TextUtils.isEmpty(recipeStory)) {
+            recipeStoryTxt.setText(recipeStory);
+        } else {
+            recipeStoryTxt.setVisibility(View.GONE);
+        }
 
         TextView recipetUserUploadedTxt = (TextView) findViewById(R.id.added_by_txt);
         //TODO: set user name

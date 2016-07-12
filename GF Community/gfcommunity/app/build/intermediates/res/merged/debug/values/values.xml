@@ -129,7 +129,7 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="common_action_bar_splitter">#d2d2d2</color>
@@ -165,7 +165,7 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <color name="greenAppColor">#6FC8B7</color>
+    <color name="greenAppColor">#6fc8b7</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
@@ -355,6 +355,9 @@
     <dimen name="design_tab_scrollable_min_width">72dp</dimen>
     <dimen name="design_tab_text_size">14sp</dimen>
     <dimen name="design_tab_text_size_2line">12sp</dimen>
+    <dimen name="details_prop_margin_bottom">8dp</dimen>
+    <dimen name="details_prop_with_icon_margin_left">8dp</dimen>
+    <dimen name="details_prop_without_icon_margin_left">24dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <dimen name="fab_margin">16dp</dimen>
@@ -430,6 +433,7 @@
     <string name="action_edit">Edit</string>
     <string name="action_settings">Settings</string>
     <string name="add_favorites">Add favorites</string>
+    <string name="add_ingredient">Add ingredient</string>
     <string name="add_product">Add product</string>
     <string name="add_product_image_title">Select product image</string>
     <string name="add_recipe">Add recipe</string>
@@ -551,6 +555,7 @@
         <item name="colorAccent">@color/pinkAppColor</item>
         <!-- Used for the title and text -->
         <item name="android:textColorPrimary">@color/greenAppColor</item>
+        <item name="android:divider">@color/greenAppColor</item>"
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
