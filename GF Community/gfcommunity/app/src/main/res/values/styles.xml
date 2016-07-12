@@ -42,4 +42,11 @@
     <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="textAllCaps">false</item>
     </style>
+
+    <style name="AppAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/pinkAppColor</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/greenAppColor</item>
+    </style>
 </resources>

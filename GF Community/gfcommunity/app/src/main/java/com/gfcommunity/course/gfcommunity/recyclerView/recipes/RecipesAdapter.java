@@ -170,11 +170,11 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
             Glide.with(context).load(recipeImgPath)
                     .dontAnimate()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.recipes_24)
-                    .error(R.drawable.recipes_24)
+                    .placeholder(R.drawable.recipe_circle_img)
+                    .error(R.drawable.recipe_circle_img)
                     .into(holder.recipeImg);
         } else {
-            holder.recipeImg.setImageResource(R.drawable.recipes_24);
+            holder.recipeImg.setImageResource(R.drawable.product_round);
         }
 
     }

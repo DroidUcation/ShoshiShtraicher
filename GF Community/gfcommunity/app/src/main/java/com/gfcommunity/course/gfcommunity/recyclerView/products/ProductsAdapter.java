@@ -139,11 +139,11 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
             Glide.with(context).load(productImgPath)
                     .dontAnimate()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.product_24)
-                    .error(R.drawable.product_24)
+                    .placeholder(R.drawable.product_circle_img)
+                    .error(R.drawable.product_circle_img)
                     .into(holder.productImg);
         } else {
-            holder.productImg.setImageResource(R.drawable.product_24);
+            holder.productImg.setImageResource(R.drawable.product_circle_img);
         }
 
     }

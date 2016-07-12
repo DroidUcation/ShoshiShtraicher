@@ -1,6 +1,22 @@
 [
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4/ic_launcher.png",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_app.png",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\src\\main\\res\\mipmap-mdpi\\ic_app.png"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_app.png",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\src\\main\\res\\mipmap-mdpi\\ic_app.png"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     }
 ]

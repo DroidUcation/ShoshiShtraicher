@@ -1,54 +1,158 @@
 [
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/switch_thumb_material_light.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/switch_thumb_material_light.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_light.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_material_light.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_plus_signin_btn_text_light.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/common_plus_signin_btn_text_light.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.2/res/color/common_plus_signin_btn_text_light.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/switch_thumb_material_dark.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/switch_thumb_material_dark.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.2/res/color/common_google_signin_btn_text_light.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_material_dark.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_google_signin_btn_text_dark.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_dark.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_secondary_text_material_dark.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_plus_signin_btn_text_dark.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.2/res/color/common_google_signin_btn_text_dark.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/abc_secondary_text_material_light.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_secondary_text_material_light.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_search_url_text.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/abc_search_url_text.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_search_url_text.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_disable_only_material_light.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_dark.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/color/abc_primary_text_disable_only_material_dark.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_light.xml"
     },
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/color/common_plus_signin_btn_text_dark.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.0.2/res/color/common_plus_signin_btn_text_dark.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_dark.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_plus_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_plus_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_light.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_plus_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_plus_signin_btn_text_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_plus_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\color\\common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_dark.xml"
     }
 ]

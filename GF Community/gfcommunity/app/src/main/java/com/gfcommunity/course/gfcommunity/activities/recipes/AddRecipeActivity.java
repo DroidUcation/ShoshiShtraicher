@@ -12,6 +12,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AppCompatActivity;
@@ -53,7 +54,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
     private EditText recipeStoryEditTxt;
     private Spinner recipesCategoriesSpinner;
     private ImageView recipeImg;
-    private Button addRecipeImgBtn;
+    private FloatingActionButton addRecipeImgBtn;
     private int loaderID = 0; //Insert recipes loader ID
     private String logTag = AddRecipeActivity.class.getName();
     private String selectedRecipeCategory;
@@ -85,8 +86,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
         recipeStoryEditTxt  = (EditText) findViewById(R.id.recipe_story_edit_txt);
         recipesCategoriesSpinner = (Spinner) findViewById(R.id.recipes_categories_spinner);
         Spinner difficultyPreparationSpinner = (Spinner) findViewById(R.id.difficulty_preparation_spinner);
-        addRecipeImgBtn = (Button)findViewById(R.id.select_recipe_img_btn);
-        addRecipeImgBtn.setTransformationMethod(null);  //Ignore automatic upper case
+        addRecipeImgBtn = (FloatingActionButton)findViewById(R.id.select_recipe_img_btn);
         recipeImg = (ImageView)findViewById(R.id.recipe_img);
 
         //Bind views to Listener
@@ -171,7 +171,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
         Notification n = new NotificationCompat.Builder(this)
                 .setContentTitle(getString(R.string.recipe_notification_title))
                 .setContentText(recipeName)
-                .setSmallIcon(R.drawable.icon_app_24)
+                .setSmallIcon(R.mipmap.ic_app)
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true)
                 .setContentIntent(createPendingIntent(recipeUri))
@@ -291,8 +291,8 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
                 Glide.with(this).load(selectedImage)
                         .dontAnimate()
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .placeholder(R.drawable.recipts)
-                        .error(R.drawable.recipts)
+                        .placeholder(R.drawable.recipes)
+                        .error(R.drawable.recipes)
                         .into(recipeImg);
             }
 

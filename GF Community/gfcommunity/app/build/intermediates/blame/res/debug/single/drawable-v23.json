@@ -1,6 +1,14 @@
 [
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-v23/abc_control_background_material.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-v23\\abc_control_background_material.xml"
     }
 ]

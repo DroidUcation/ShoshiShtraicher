@@ -1,6 +1,6 @@
 package com.gfcommunity.course.gfcommunity.activities.products;
 
-import android.app.AlertDialog;
+import android.support.v7.app.AlertDialog;;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
@@ -171,7 +172,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
         Notification n = new NotificationCompat.Builder(this)
                 .setContentTitle(getString(R.string.product_notification_title))
                 .setContentText(String.format(getString(R.string.product_notification_text),productName,storeName ))
-                .setSmallIcon(R.drawable.icon_app_24)
+                .setSmallIcon(R.mipmap.ic_app)
                 .setDefaults(Notification.DEFAULT_SOUND)
                 .setAutoCancel(true)
                 .setContentIntent(createPendingIntent(productUri))
@@ -230,7 +231,7 @@ public class AddProductActivity extends AppCompatActivity implements LoaderManag
     private void selectImage() {
         Uri selectedImage;
         final CharSequence[] options = { getResources().getString(R.string.take_photo_option),getResources().getString(R.string.gallery_option),getResources().getString(R.string.cancel_option)};
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AppAlertDialogStyle);
         builder.setTitle(getString(R.string.add_product_image_title));
         builder.setItems(options, new DialogInterface.OnClickListener() {
 

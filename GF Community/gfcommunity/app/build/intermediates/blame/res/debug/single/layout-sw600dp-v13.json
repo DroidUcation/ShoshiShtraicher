@@ -1,6 +1,14 @@
 [
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/res/layout-sw600dp-v13/design_layout_snackbar.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     }
 ]

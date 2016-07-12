@@ -40,8 +40,8 @@ public class RecipeDetailsActivity extends AppCompatActivity{
             Glide.with(this).load(imgUrl)
                     .dontAnimate()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.recipts)
-                    .error(R.drawable.recipts)
+                    .placeholder(R.drawable.recipes)
+                    .error(R.drawable.recipes)
                     .into(recipeImg);
         }
 

@@ -1,6 +1,14 @@
 [
     {
-        "merged": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/build/intermediates/res/merged/debug/menu/toolbar.xml",
-        "source": "/Android/DroidUcation/ShoshiShtraicher/GF Community/gfcommunity/app/src/main/res/menu/toolbar.xml"
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\toolbar.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\C:\\Users\\slevin\\Documents\\androidProjects\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\toolbar.xml"
+    },
+    {
+        "merged": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\toolbar.xml",
+        "source": "C:\\home\\campus\\Music\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\toolbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\menu\\toolbar.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\src\\main\\res\\menu\\toolbar.xml"
     }
 ]
