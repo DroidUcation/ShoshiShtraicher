@@ -103,7 +103,9 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         TextView productUserUploadedTxt = (TextView) findViewById(R.id.product_user_uploaded_txt);
         String productUserUploadedDate = DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(product.getCreatedAt()).toString();
         //TODO: set user name
-        String productUserUploaded = String.format(getResources().getString(R.string.user_uploaded_with_date_text), "user name", productUserUploadedDate);
+        String productUserUploaded = String.format(getResources().getString(R.string.user_uploaded_with_date_text),
+                                     !TextUtils.isEmpty(product.getUserID()) ? "user name" : getString(R.string.app_name),
+                                      productUserUploadedDate);
         productUserUploadedTxt.setText(!TextUtils.isEmpty(productUserUploaded) ? productUserUploaded : "");
     }
 

@@ -65,7 +65,6 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
 
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, "Mazon min hateva");
         values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "Rye flour");
-        values.put(SharingInfoContract.ProductsEntry.USER_ID, "User ID");
         values.put(SharingInfoContract.ProductsEntry.HOUSE_NO, 147);
         values.put(SharingInfoContract.ProductsEntry.STREET, "Rabi Akiva");
         values.put(SharingInfoContract.ProductsEntry.CITY, "Bnei Brak");
@@ -75,8 +74,7 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
     private void insertFakeData(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, "Super Sal Market");
-        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "gluten free cookies");
-        values.put(SharingInfoContract.ProductsEntry.USER_ID, "User ID");
+        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "Gluten free cookies");
         values.put(SharingInfoContract.ProductsEntry.HOUSE_NO, 25);
         values.put(SharingInfoContract.ProductsEntry.STREET, "Herzel");
         values.put(SharingInfoContract.ProductsEntry.CITY, "Eilat");
@@ -86,8 +84,7 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
 
         values = new ContentValues();
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, "Teva Banachala");
-        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "gluten free pasta");
-        values.put(SharingInfoContract.ProductsEntry.USER_ID, "User ID");
+        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "Gluten free pasta");
         values.put(SharingInfoContract.ProductsEntry.HOUSE_NO, 98);
         values.put(SharingInfoContract.ProductsEntry.STREET, "Nakhalat Yitskhak");
         values.put(SharingInfoContract.ProductsEntry.CITY, "Jerusalem");
@@ -97,8 +94,7 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
 
         values = new ContentValues();
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, "Nizat haduvdevan");
-        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "gluten free crispy");
-        values.put(SharingInfoContract.ProductsEntry.USER_ID, "User ID");
+        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "Gluten free crispy");
         values.put(SharingInfoContract.ProductsEntry.HOUSE_NO, 58);
         values.put(SharingInfoContract.ProductsEntry.STREET, "Ibn Gabirol");
         values.put(SharingInfoContract.ProductsEntry.CITY, "Tel aviv");
@@ -108,8 +104,7 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
 
         values = new ContentValues();
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, "Shkedia");
-        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "gluten free kornfleks");
-        values.put(SharingInfoContract.ProductsEntry.USER_ID, "User ID");
+        values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "Gluten free kornfleks");
         values.put(SharingInfoContract.ProductsEntry.HOUSE_NO, 56);
         values.put(SharingInfoContract.ProductsEntry.STREET, "Katzenelson");
         values.put(SharingInfoContract.ProductsEntry.CITY, "Ramat gan");

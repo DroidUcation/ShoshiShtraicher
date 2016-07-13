@@ -38,8 +38,6 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
     static Cursor cursor;
     static Context context;
 
-    private List<Recipe> mRecipes;
-
     private ArrayList<Recipe> getFilteredList(CharSequence constraint) {
 
         String query = constraint.toString().toLowerCase();
@@ -155,9 +153,9 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
         //Build added by string
         try {
+            String userId = cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_ID)); //TODO: GET USER NAME
             String text = String.format(context.getResources().getString(R.string.user_uploaded_with_date_text),
-                    "USER NAME",
-                    //cursor.getInt(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_ID)), //TODO: GET USER NAME
+                    !TextUtils.isEmpty(userId) ? "user name" : context.getString(R.string.app_name),
                     DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.CREATED_AT)))));
             holder.text.setText(text);
         }catch(Exception e) {}

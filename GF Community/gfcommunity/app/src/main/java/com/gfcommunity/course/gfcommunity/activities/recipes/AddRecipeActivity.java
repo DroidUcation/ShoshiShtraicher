@@ -21,11 +21,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -141,7 +141,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
         recipeName = recipeNameEditTxt.getText().toString();
         values.put(SharingInfoContract.RecipesEntry.RECIPE_NAME, !TextUtils.isEmpty(recipeName) ? recipeName : "");
         String ingredients = ingredientsEditTxt.getText().toString();
-        values.put(SharingInfoContract.RecipesEntry.INGREDIENTS, !TextUtils.isEmpty(ingredients) ? ingredients : "");
+        values.put(SharingInfoContract.RecipesEntry.INGREDIENTS, concatEditTextsArray(ingredientsEditTextsArray)); //Concat ingredientsEditTextsArray array to string separated by ';'
         String instructions = instructionsEditTxt.getText().toString();
         values.put(SharingInfoContract.RecipesEntry.INSTRUCTIONS, !TextUtils.isEmpty(instructions) ? instructions : "");
         values.put(SharingInfoContract.RecipesEntry.CREATED_AT, DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString());
@@ -156,7 +156,24 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
         values.put(SharingInfoContract.RecipesEntry.CATEGORY, !TextUtils.isEmpty(selectedRecipeCategory) && !(selectedRecipeCategory.equals(getString(R.string.select_recipe_category))) ? selectedRecipeCategory : "");
         values.put(SharingInfoContract.RecipesEntry.RECIPE_IMAGE_URl, !TextUtils.isEmpty(downloadUrlPath) ? downloadUrlPath : "");
 
+
         return new InsertRecipeLoader(this, values);
+    }
+
+    /**
+     * Concat EditText array to string separated by ';'
+     * @return concatString
+     */
+    private String concatEditTextsArray(ArrayList<EditText> editTextsArray) {
+        String concatString = "";
+        String ingredient;
+        for (EditText editText:editTextsArray) {
+            ingredient = (editText.getText() != null) ?  editText.getText().toString() : "";
+            if(!TextUtils.isEmpty(ingredient)) {
+                concatString += ingredient + ";";
+            }
+        }
+        return concatString;
     }
 
     /*
@@ -230,9 +247,10 @@ public class AddRecipeActivity extends AppCompatActivity  implements LoaderManag
                     EditText edtView = new EditText(this);
                     LayoutParams lParams = new LinearLayout.LayoutParams(
                             LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-                    edtView.setHint(getString(R.string.ingredients));
+                    edtView.setHint(getString(R.string.ingredient));
                     edtView.setLayoutParams(lParams);
-                    edtView.getBackground().setColorFilter(0x6fc8b7, PorterDuff.Mode.SRC_IN);
+                    edtView.setInputType(InputType.TYPE_CLASS_TEXT);
+                    edtView.getBackground().setColorFilter(getResources().getColor(R.color.greenAppColor), PorterDuff.Mode.SRC_IN);
                     addIngredientsLayout.addView(edtView);
                     ingredientsEditTextsArray.add(edtView);
                     break;

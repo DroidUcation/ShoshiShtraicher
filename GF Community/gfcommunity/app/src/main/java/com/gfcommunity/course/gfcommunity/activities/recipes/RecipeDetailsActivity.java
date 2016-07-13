@@ -3,6 +3,9 @@ package com.gfcommunity.course.gfcommunity.activities.recipes;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +15,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.gfcommunity.course.gfcommunity.R;
 import com.gfcommunity.course.gfcommunity.model.Recipe;
+import com.gfcommunity.course.gfcommunity.recyclerView.DividerItemDecoration;
+import com.gfcommunity.course.gfcommunity.recyclerView.recipes.InstructionsAndIngredientsAdapter;
 
 
 public class RecipeDetailsActivity extends AppCompatActivity{
@@ -46,9 +51,14 @@ public class RecipeDetailsActivity extends AppCompatActivity{
                     .into(recipeImg);
         }
 
-        TextView ingredientsTxt = (TextView) findViewById(R.id.ingredients_txt);
-        String ingredients = recipe.getIngredients();
-        ingredientsTxt.setText(!TextUtils.isEmpty(ingredients) ? ingredients : "");
+        //Ingredients RecyclerView
+        RecyclerView ingredientsRecyclerView = (RecyclerView)findViewById(R.id.ingredients_recycler_view);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        ingredientsRecyclerView.setLayoutManager(mLayoutManager);
+        ingredientsRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        String [] ingredientsArray = recipe.getIngredients().split(";");
+        InstructionsAndIngredientsAdapter ingredientsAdapter= new InstructionsAndIngredientsAdapter(this, ingredientsArray);
+        ingredientsRecyclerView.setAdapter(ingredientsAdapter);
 
         TextView instructionsTxt = (TextView) findViewById(R.id.instructions_txt);
         String instructions = recipe.getInstructions();
@@ -88,8 +98,9 @@ public class RecipeDetailsActivity extends AppCompatActivity{
 
         TextView recipetUserUploadedTxt = (TextView) findViewById(R.id.added_by_txt);
         //TODO: set user name
-        String recipetUserUploaded = String.format(getResources().getString(R.string.user_uploaded_text), "user name");
+        String recipetUserUploaded = String.format(getResources().getString(R.string.user_uploaded_text), !TextUtils.isEmpty(recipe.getUserID()) ? "user name" : getString(R.string.app_name));
         recipetUserUploadedTxt.setText(!TextUtils.isEmpty(recipetUserUploaded) ? recipetUserUploaded : "");
+
     }
 
 }

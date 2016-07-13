@@ -3,6 +3,7 @@
 
     <string name="products_authority">com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider</string>
     <string name="recipes_authority">com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider</string>
+    <string name="text">text</string>
 
     <!-->Product strings<!-->
     <string name="user_uploaded_with_date_text">Added by %1$s on %2$s</string>
@@ -49,6 +50,7 @@
     <string name="select_recipe_category">Select a recipes category</string>
     <string name="recipes_category">Recipes category</string>
     <string name="ingredients">Ingredients</string>
+    <string name="ingredient">Ingredient</string>
     <string name="instructions">Instructions</string>
     <string name="recipe_details">More details</string>
     <string name="preparation_time">Preparation time</string>

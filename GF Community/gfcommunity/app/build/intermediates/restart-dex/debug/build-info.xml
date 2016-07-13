@@ -4,27 +4,27 @@
     api-level="16"
     density="mdpi"
     format="7"
-    timestamp="9708936965791"
+    timestamp="71511500787450"
     token="-3964241457091758860" >
 
     <task
         name="javac"
-        duration="201" />
+        duration="5948" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="48" />
+        duration="1700" />
     <task
         name="verifier"
-        duration="8" />
+        duration="191" />
 
     <artifact
         location="C:\Users\slevin\Documents\androidProjects\update project\GF Community\gfcommunity\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="9708936965791" >
+    <build timestamp="71511500787450" >
         <artifact
             location="C:\Users\slevin\Documents\androidProjects\update project\GF Community\gfcommunity\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />

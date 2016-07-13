@@ -83,7 +83,7 @@
                 <EditText
                     android:id="@+id/ingredients"
                     android:layout_height="wrap_content"
-                    android:hint="@string/ingredients"
+                    android:hint="@string/ingredient"
                     android:inputType="text"
                     android:layout_width="fill_parent">
                 </EditText>

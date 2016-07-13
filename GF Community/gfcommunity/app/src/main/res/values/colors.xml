@@ -8,4 +8,5 @@
     <color name="navigationBarColor">#000000</color>
     <color name="greenAppColor">#6fc8b7</color>
     <color name="pinkAppColor">#EE7276</color>
+    <color name="lightGray">#E9E9E9</color>
 </resources>

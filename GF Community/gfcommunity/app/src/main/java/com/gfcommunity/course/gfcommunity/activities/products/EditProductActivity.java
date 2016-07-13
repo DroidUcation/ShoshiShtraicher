@@ -281,8 +281,8 @@ public class EditProductActivity extends AppCompatActivity implements LoaderMana
                 Glide.with(this).load(selectedImage)
                         .dontAnimate()
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .placeholder(R.xml.progress) //TODO: put loading icon
-                        .error(R.drawable.filter) //TODO: put product icon
+                        .placeholder(R.drawable.products)
+                        .error(R.drawable.products)
                         .into(productImg);
             }
 

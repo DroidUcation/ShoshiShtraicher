@@ -4,24 +4,24 @@
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\notification_template_part_chronometer.xml"
     },
     {
-        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_row.xml",
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\src\\main\\res\\layout\\list_row.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_recipe_details.xml",
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\src\\main\\res\\layout\\activity_recipe_details.xml"
     },
     {
-        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
@@ -68,20 +68,20 @@
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
@@ -102,6 +102,10 @@
     {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
         "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\text_list_row.xml",
+        "source": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\src\\main\\res\\layout\\text_list_row.xml"
     },
     {
         "merged": "C:\\Users\\slevin\\Documents\\androidProjects\\update project\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\layout\\autocomplete_list_item.xml",
