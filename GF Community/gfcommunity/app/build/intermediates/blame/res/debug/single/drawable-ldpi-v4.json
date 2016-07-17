@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_place_white_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_place_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_menu_white_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_menu_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_place_black_16dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_place_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_menu_left_white_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_menu_left_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_share_white_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_share_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_call_16dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_call_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\common_ic_googleplayservices.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\9.0.2\\res\\drawable-ldpi-v4\\common_ic_googleplayservices.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_star_white_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_star_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_cancel_black_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_cancel_black_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_search_white_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_search_white_24dp.png"
+    },
+    {
+        "merged": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_add_a_photo_white_24dp.png",
+        "source": "C:\\Users\\levin\\AndroidProjects\\GF Community\\gfcommunity\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_add_a_photo_white_24dp.png"
+    }
+]

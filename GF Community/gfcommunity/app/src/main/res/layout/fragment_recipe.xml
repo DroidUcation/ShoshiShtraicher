@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/filter_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        >
+        <ImageView
+            android:id="@+id/filter_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/filter"
+            android:layout_marginRight="@dimen/filter_image_view_margin"
+            android:layout_marginTop="@dimen/filter_image_view_margin"
+            android:layout_alignParentRight="true"
+            android:visibility="visible"/>
+        />
+
+        <Spinner
+            android:spinnerMode="dropdown"
+            android:id="@+id/recipe_categories_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/recipe_categories_array"
+            android:visibility="gone"
+            android:layout_alignRight="@id/filter_category"
+            android:layout_marginBottom="8dp"
+            android:prompt="@string/city"/>
+        <TextView
+            android:id="@+id/filtered_by_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/filter_image_view_margin"
+            android:layout_marginTop="@dimen/filter_image_view_margin"
+            android:visibility="gone"
+            android:layout_alignRight="@id/filter_category"/>
+        <ImageView
+            android:id="@+id/cancel_filter_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_cancel_black_24dp"
+            android:layout_marginRight="@dimen/filter_image_view_margin"
+            android:layout_marginTop="@dimen/filter_image_view_margin"
+            android:visibility="gone"
+            android:layout_alignRight="@id/filtered_by_textView"/>
+
+        />
+
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recipes_recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/filter_relative_layout"
+        />
+
+    <!-- ProgressBar which will be shown when data is loading-->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background ="@xml/progress"/>
+</RelativeLayout>
+

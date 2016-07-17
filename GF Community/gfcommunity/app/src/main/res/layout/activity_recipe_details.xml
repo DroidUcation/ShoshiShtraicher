@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="vertical">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_details"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+
+        <ImageView
+            android:id="@+id/recipe_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/recipes"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+        <TextView
+            android:id="@+id/recipe_name_txt"
+            android:layout_height="wrap_content"
+            tools:text="@string/recipe_name"
+            android:layout_width="fill_parent"
+            android:textColor="@android:color/white"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin"
+            android:gravity="center"
+            android:background="@color/greenAppColor"
+            android:paddingTop="@dimen/details_prop_margin_bottom"
+            android:paddingBottom="@dimen/details_prop_margin_bottom">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin">
+            <TextView
+                android:id="@+id/added_by_txt"
+                android:layout_height="wrap_content"
+                tools:text="@string/user_uploaded_text"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom">
+            </TextView>
+
+            <TextView
+                android:id="@+id/recipe_story_txt"
+                android:layout_height="wrap_content"
+                tools:text="@string/recipe_story"
+                android:textStyle="italic"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom">
+            </TextView>
+
+            <TextView
+                android:id="@+id/ingredients_title_txt"
+                android:layout_height="wrap_content"
+                android:text="@string/ingredients_title"
+                android:layout_width="fill_parent"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/greenAppColor"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom">
+            </TextView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/ingredients_recycler_view"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom" />
+
+            <TextView
+                android:id="@+id/instructions_title_txt"
+                android:layout_height="wrap_content"
+                android:text="@string/instructions"
+                android:layout_width="fill_parent"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:textColor="@color/greenAppColor"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom">
+            </TextView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/instructions_recycler_view"
+                android:scrollbars="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom" />
+
+            <TextView
+                android:id="@+id/preparation_time_txt"
+                android:layout_height="wrap_content"
+                tools:text="@string/preparation_time"
+                android:layout_width="fill_parent"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom">
+            </TextView>
+
+            <TextView
+                android:id="@+id/diners_number_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/diners_number"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom">
+            </TextView>
+
+            <TextView
+                android:id="@+id/difficulty_preparation_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/difficulty_preparation"
+                android:layout_marginBottom="@dimen/details_prop_margin_bottom">
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
