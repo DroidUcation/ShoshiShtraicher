@@ -94,7 +94,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onLoadFinished(Loader<Uri> loader, Uri data) {
             Log.i(logTag, "Insert product succeed: " + productName);
-            Toast.makeText(context, String.format(getString(R.string.product_added_msg), productName), Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
+            Toast.makeText(context, String.format(getString(R.string.product_added_msg), productName), Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
             //TODO: check if user city is same as product city
             sendNotification(data); //Send notification
             finish(); //Close this activity and go back to Main Activity
@@ -118,7 +118,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onLoadFinished(Loader<Integer> loader, Integer data) {
             Log.i(logTag, "Update product succeed: " + productName);
-            Toast.makeText(context, String.format(getString(R.string.product_saved_msg), productName), Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
+            Toast.makeText(context, String.format(getString(R.string.product_saved_msg), productName), Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
             finish(); //Close this activity and go back to Main Activity
         }
 
@@ -193,6 +193,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
                         .diskCacheStrategy(DiskCacheStrategy.ALL)
                         .placeholder(R.drawable.products)
                         .error(R.drawable.products)
+                        .centerCrop()
                         .into(productImg);
             }
 

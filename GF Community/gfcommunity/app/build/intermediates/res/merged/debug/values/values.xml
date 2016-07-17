@@ -357,6 +357,7 @@
     <dimen name="design_tab_text_size">14sp</dimen>
     <dimen name="design_tab_text_size_2line">12sp</dimen>
     <dimen name="details_prop_margin_bottom">8dp</dimen>
+    <dimen name="details_prop_multi_margin_bottom">16dp</dimen>
     <dimen name="details_prop_with_icon_margin_left">8dp</dimen>
     <dimen name="details_prop_without_icon_margin_left">24dp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
@@ -487,9 +488,9 @@
     <string name="dialog_msg_delete_prod">"Are you sure you want to delete this product?"</string>
     <string name="dialog_msg_delete_recipe">"Are you sure you want to delete this recipe?"</string>
     <string name="difficulty_preparation">Difficulty preparation</string>
-    <string name="difficulty_preparation_details">Difficulty preparation: %1$s</string>
+    <string name="difficulty_preparation_title">Difficulty preparation:</string>
     <string name="diners_number">Diners number</string>
-    <string name="diners_number_details">Diners number: %1$d</string>
+    <string name="diners_number_title">Diners number:</string>
     <string name="filtered_by">Filtered by: </string>
     <string name="firebase_database_url" translatable="false">https://gf-community.firebaseio.com</string>
     <string name="gallery_option">Choose from Gallery</string>
@@ -515,20 +516,20 @@
     <string name="not_valid_url_msg">Not Valid Url</string>
     <string name="places_api_key">AIzaSyCEsq36NBlHcfNnyxemW-YfmV_EFIqLeNM</string>
     <string name="preparation_time">Preparation time</string>
-    <string name="preparation_time_details">Preparation time: %1$s</string>
-    <string name="product_added_msg">%1$s Product is added successfully</string>
+    <string name="preparation_time_title">Preparation time:</string>
+    <string name="product_added_msg">%1$s product is added successfully</string>
     <string name="product_details">Product details</string>
     <string name="product_name">Product name</string>
     <string name="product_notification_text">%1$s was added in %2$s</string>
     <string name="product_notification_title">New Gluten free product</string>
-    <string name="product_saved_msg">%1$s Product is saved successfully</string>
+    <string name="product_saved_msg">%1$s product is saved successfully</string>
     <string name="products_authority">com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider</string>
     <string name="products_fragment_name">Products</string>
-    <string name="recipe_added_msg">%1$s Recipe is added successfully</string>
+    <string name="recipe_added_msg">%1$s recipe is added successfully</string>
     <string name="recipe_details">More details</string>
     <string name="recipe_name">Recipe name</string>
     <string name="recipe_notification_title">New Gluten free recipe</string>
-    <string name="recipe_saved_msg">%1$s Recipe is saved successfully</string>
+    <string name="recipe_saved_msg">%1$s recipe is saved successfully</string>
     <string name="recipe_story">The story behind the recipe</string>
     <string name="recipes_authority">com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider</string>
     <string name="recipes_category">Recipes category</string>

@@ -85,7 +85,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     }
 
     private void setToolbar() {
-        toolbar.setTitle(getString(R.string.product_details));
+        toolbar.setTitle("");
         mMenu.findItem(R.id.action_search).setVisible(false);
         mMenu.findItem(R.id.action_share).setVisible(true);
         mMenu.findItem(R.id.action_favorites).setVisible(true);

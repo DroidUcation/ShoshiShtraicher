@@ -5,6 +5,7 @@ import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.net.Uri;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
@@ -21,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,7 +79,7 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
     }
 
     private void setToolbar() {
-        toolbar.setTitle(getString(R.string.recipe_details));
+        toolbar.setTitle("");
         mMenu.findItem(R.id.action_search).setVisible(false);
         mMenu.findItem(R.id.action_share).setVisible(true);
         mMenu.findItem(R.id.action_favorites).setVisible(true);
@@ -126,25 +128,28 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
         TextView preparationTimeTxt = (TextView) findViewById(R.id.preparation_time_txt);
         String preparationTime = recipe.getPreparationTime();
         if(!TextUtils.isEmpty(preparationTime)) {
-            preparationTimeTxt.setText(String.format(getString(R.string.preparation_time_details),preparationTime));
+            preparationTimeTxt.setText(" "+preparationTime);
         } else {
-            preparationTimeTxt.setVisibility(View.GONE);
+            LinearLayout preparationTimeLayout = (LinearLayout)findViewById(R.id.preparation_time_layout);
+            preparationTimeLayout.setVisibility(View.GONE);
         }
 
         TextView dinersNumberTxt = (TextView) findViewById(R.id.diners_number_txt);
         int dinersNumber = recipe.getDinersNumber();
         if(dinersNumber > 0) {
-            dinersNumberTxt.setText(String.format(getString(R.string.diners_number_details),dinersNumber));
+            dinersNumberTxt.setText(" "+dinersNumber);
         } else {
-            dinersNumberTxt.setVisibility(View.GONE);
+            LinearLayout dinersNumberLayout = (LinearLayout)findViewById(R.id.diners_number_layout);
+            dinersNumberLayout.setVisibility(View.GONE);
         }
 
         TextView difficultyPreparationTxt = (TextView) findViewById(R.id.difficulty_preparation_txt);
         String difficultyPreparation = recipe.getDifficultyPreparation();
         if(!TextUtils.isEmpty(difficultyPreparation)) {
-            difficultyPreparationTxt.setText(String.format(getString(R.string.difficulty_preparation_details),difficultyPreparation));
+            difficultyPreparationTxt.setText(" "+difficultyPreparation);
         } else {
-            difficultyPreparationTxt.setVisibility(View.GONE);
+            LinearLayout difficultyPreparationLayout = (LinearLayout)findViewById(R.id.difficulty_preparation_layout);
+            difficultyPreparationLayout.setVisibility(View.GONE);
         }
 
         TextView recipeStoryTxt = (TextView) findViewById(R.id.recipe_story_txt);

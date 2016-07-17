@@ -101,7 +101,7 @@
                     android:id="@+id/ingredients"
                     android:layout_height="wrap_content"
                     android:hint="@string/ingredient"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:layout_width="fill_parent">
                 </EditText>
             </LinearLayout>
@@ -139,7 +139,7 @@
                         android:id="@+id/instructions"
                         android:layout_height="wrap_content"
                         android:hint="@string/step"
-                        android:inputType="text"
+                        android:inputType="textMultiLine"
                         android:layout_width="fill_parent">
                     </EditText>
                 </LinearLayout>

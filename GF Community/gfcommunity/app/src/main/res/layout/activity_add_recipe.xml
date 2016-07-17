@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/ingredients_title"
                     android:layout_width="fill_parent"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:textColor="@color/greenAppColor"
                     android:layout_marginBottom="@dimen/margin"
                     android:layout_marginTop="@dimen/margin">
@@ -101,7 +101,7 @@
                     android:id="@+id/ingredients"
                     android:layout_height="wrap_content"
                     android:hint="@string/ingredient"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:layout_width="fill_parent">
                 </EditText>
             </LinearLayout>
@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/instructions"
                     android:layout_width="fill_parent"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:textColor="@color/greenAppColor"
                     android:layout_marginBottom="@dimen/margin"
                     android:layout_marginTop="@dimen/margin">
@@ -139,7 +139,7 @@
                         android:id="@+id/instructions"
                         android:layout_height="wrap_content"
                         android:hint="@string/step"
-                        android:inputType="text"
+                        android:inputType="textMultiLine"
                         android:layout_width="fill_parent">
                     </EditText>
                 </LinearLayout>

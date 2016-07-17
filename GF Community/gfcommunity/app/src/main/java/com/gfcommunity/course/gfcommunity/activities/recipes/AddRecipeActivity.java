@@ -67,6 +67,8 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
     private EditText dinersNumberEditTxt;
     private EditText recipeStoryEditTxt;
     private Spinner recipesCategoriesSpinner;
+    private String[] recipeCategoriesArray;
+    private String[] difficultyPreparationArray;
     private ImageView recipeImg;
     private ImageView addIngredientImg;
     private ImageView addInstructionImg;
@@ -97,7 +99,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
         @Override
         public void onLoadFinished(Loader<Uri> loader, Uri data) {
             Log.i(logTag, getString(R.string.recipe_added_msg)+ recipeName);
-            Toast.makeText(context, String.format(getString(R.string.recipe_added_msg), recipeName),Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
+            Toast.makeText(context, String.format(getString(R.string.recipe_added_msg), recipeName),Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
             sendNotification(data); //Send notification
             finish(); //Close this activity and go back to Main Activity
         }
@@ -119,7 +121,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
         @Override
         public void onLoadFinished(Loader<Integer> loader, Integer data) {
             Log.i(logTag, getString(R.string.recipe_saved_msg)  + recipeName);
-            Toast.makeText(context, String.format(getString(R.string.recipe_saved_msg), recipeName),Toast.LENGTH_SHORT).show();//TODO: Show inserted successfully popup
+            Toast.makeText(context, String.format(getString(R.string.recipe_saved_msg), recipeName),Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
             finish(); //Close this activity and go back to Main Activity
         }
 
@@ -175,16 +177,55 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
 
             addRecipetBtn.setText(getString(R.string.save_recipe));
             recipeNameEditTxt.setText(recipe.getRecipeName());
-            ingredientsEditTxt.setText(recipe.getIngredients());
-            instructionsEditTxt.setText(recipe.getInstructions());
             preparationTimeEditTxt.setText(recipe.getPreparationTime());
             dinersNumberEditTxt.setText(recipe.getDinersNumber()+"");
             recipeStoryEditTxt.setText(recipe.getRecipeStory());
-            //TODO: set values from recipe
-//            recipesCategoriesSpinner = (Spinner) findViewById(R.id.recipes_categories_spinner);
-//            Spinner difficultyPreparationSpinner = (Spinner) findViewById(R.id.difficulty_preparation_spinner);
-//            recipeImg=recipe.getRecipeImgUri();
 
+            String imgUrl =  recipe.getRecipeImgUri();
+            if (!TextUtils.isEmpty(imgUrl)) {
+                Glide.with(this).load(imgUrl)
+                        .dontAnimate()
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .placeholder(R.drawable.recipes)
+                        .error(R.drawable.recipes)
+                        .centerCrop()
+                        .into(recipeImg);
+            }
+
+            recipesCategoriesSpinner = (Spinner) findViewById(R.id.recipes_categories_spinner);
+            String category = recipe.getCategory();
+            int indexCategory = 0;
+            for (; indexCategory < recipeCategoriesArray.length - 1; indexCategory++) {
+                if (recipeCategoriesArray[indexCategory].equals(category.trim()))
+                    break;
+            }
+            recipesCategoriesSpinner.setSelection(indexCategory);
+
+            Spinner difficultyPreparationSpinner = (Spinner) findViewById(R.id.difficulty_preparation_spinner);
+            String difficultyPreparation = recipe.getDifficultyPreparation();
+            int indexDifficultyPreparation = 0;
+            for (; indexDifficultyPreparation < difficultyPreparationArray.length - 1; indexDifficultyPreparation++) {
+                if (difficultyPreparationArray[indexDifficultyPreparation].equals(difficultyPreparation.trim()))
+                    break;
+            }
+            difficultyPreparationSpinner.setSelection(indexDifficultyPreparation);
+
+            EditText dynamicEdtText;
+            String []ingredients = recipe.getIngredients().split(";");
+            ingredientsEditTxt.setText(ingredients[0]);
+            addIngredientImg.setVisibility(View.GONE);
+            for(int i = 1; i < ingredients.length ; i++) {
+                dynamicEdtText = addDynamicEditText(getString(R.string.ingredient), addIngredientsLayout, ingredientsEditTextsArray);
+                dynamicEdtText.setText(ingredients[i]);
+            }
+
+            String []instructions = recipe.getInstructions().split(";");
+            instructionsEditTxt.setText(instructions[0]);
+            addInstructionImg.setVisibility(View.GONE);
+            for(int i = 1; i < instructions.length ; i++) {
+                dynamicEdtText = addDynamicEditText(getString(R.string.step), addInstructionsLayout, instructionsEditTextsArray);
+                dynamicEdtText.setText(instructions[i]);
+            }
         }
     }
 
@@ -231,7 +272,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
 
         //Categories spinner
         String[] recipeCategoriesArrayTemp = getResources().getStringArray(R.array.recipe_categories_array);
-        String[] recipeCategoriesArray = new String[(recipeCategoriesArrayTemp.length)+1];
+        recipeCategoriesArray = new String[(recipeCategoriesArrayTemp.length)+1];
         System.arraycopy(recipeCategoriesArrayTemp, 0, recipeCategoriesArray, 0, recipeCategoriesArrayTemp.length);
         recipeCategoriesArray[recipeCategoriesArrayTemp.length] = getResources().getString(R.string.select_recipe_category);
         SpinnerAdapter dataAdapter = new SpinnerAdapter(this, recipeCategoriesArray, android.R.layout.simple_spinner_item);
@@ -241,7 +282,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
 
         //Difficulty Preparation spinner
         String[] difficultyPreparationArrayTemp = getResources().getStringArray(R.array.difficulty_recipe_preparation_array);
-        String[] difficultyPreparationArray = new String[(difficultyPreparationArrayTemp.length)+1];
+        difficultyPreparationArray = new String[(difficultyPreparationArrayTemp.length)+1];
         System.arraycopy(difficultyPreparationArrayTemp, 0, difficultyPreparationArray, 0, difficultyPreparationArrayTemp.length);
         difficultyPreparationArray[difficultyPreparationArrayTemp.length] = getResources().getString(R.string.select_difficulty_preparation);
         SpinnerAdapter difficultyPreparationDataAdapter = new SpinnerAdapter(this, difficultyPreparationArray, android.R.layout.simple_spinner_item);
@@ -333,16 +374,17 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
      * @param layout
      * @param editTextsArray
      */
-    public void addDynamicEditText(String hint, LinearLayout layout, ArrayList<EditText> editTextsArray) {
+    public EditText addDynamicEditText(String hint, LinearLayout layout, ArrayList<EditText> editTextsArray) {
         EditText edtView = new EditText(this);
         LayoutParams lParams = new LinearLayout.LayoutParams(
                 LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
         edtView.setHint(hint);
         edtView.setLayoutParams(lParams);
-        edtView.setInputType(InputType.TYPE_CLASS_TEXT);
+        edtView.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
         edtView.getBackground().setColorFilter(ContextCompat.getColor(this, R.color.greenAppColor), PorterDuff.Mode.SRC_ATOP);
         layout.addView(edtView);
         editTextsArray.add(edtView);
+        return edtView;
     }
 
     @Override
