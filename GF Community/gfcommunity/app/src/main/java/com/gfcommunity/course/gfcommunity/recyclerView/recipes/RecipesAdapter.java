@@ -3,14 +3,16 @@ package com.gfcommunity.course.gfcommunity.recyclerView.recipes;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -20,23 +22,19 @@ import com.gfcommunity.course.gfcommunity.activities.recipes.RecipeDetailsActivi
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
 import com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider;
 import com.gfcommunity.course.gfcommunity.model.Recipe;
+import com.gfcommunity.course.gfcommunity.recyclerView.SelectableAdapter;
 import com.gfcommunity.course.gfcommunity.utils.DateFormatUtil;
 import com.mikhaellopez.circularimageview.CircularImageView;
-
-
 import java.sql.Timestamp;
-
-import java.text.ParseException;
-import java.text.ParsePosition;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Provide views to RecyclerView with data from recipeList.
  */
-public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHolder>{
+public class RecipesAdapter extends SelectableAdapter<RecipesAdapter.ViewHolder> {
     static Cursor cursor;
     static Context context;
+    private ViewHolder.ClickListener clickListener;
 
     private ArrayList<Recipe> getFilteredList(CharSequence constraint) {
 
@@ -58,18 +56,24 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         return recipesList;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener , View.OnLongClickListener{
         private TextView title, subTitle, text;
         private CircularImageView recipeImg;
+        private ClickListener listener;
+        private RelativeLayout relativeLayout;
+
         private static SparseArray<Recipe> recipesMap = new SparseArray<Recipe>();//Recipes map mapped by recipe ID
 
-        public ViewHolder(View view) {
+        public ViewHolder(View view, ClickListener listener) {
             super(view);
             title = (TextView) view.findViewById(R.id.row_title);
+            relativeLayout = (RelativeLayout)view.findViewById(R.id.listRowCard);
             subTitle = (TextView) view.findViewById(R.id.row_subtitle);
             text = (TextView) view.findViewById(R.id.row_text);
             recipeImg = (CircularImageView) view.findViewById(R.id.row_img);
+            this.listener = listener;
             view.setOnClickListener(this);
+            view.setOnLongClickListener(this);
         }
 
         /**
@@ -91,7 +95,26 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
 
             Intent intent = new Intent(context, RecipeDetailsActivity.class);
             intent.putExtra("selected_item",recipe); //Pass selected recipe to RecipeDetailsActivity
+            intent.putExtra("selectedItemId",position); //Pass selected recipe id to RecipeDetailsActivity
+
             context.startActivity(intent);
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            if (listener != null) {
+                int position = this.getAdapterPosition();
+                cursor.moveToPosition(position);
+                int recipeID = cursor.getInt(cursor.getColumnIndex(SharingInfoContract.RecipesEntry._ID));
+                return listener.onItemLongClicked(position,recipeID);
+            }
+
+            return false;
+        }
+
+        public interface ClickListener {
+            public void onItemClicked(int position);
+            public boolean onItemLongClicked(int position, int recipeID);
         }
     }
 
@@ -119,9 +142,10 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         }
         return recipe;
     }
-    public RecipesAdapter(Context context, Cursor cursor) {
+    public RecipesAdapter(Context context, Cursor cursor, ViewHolder.ClickListener clickListener) {
         this.context = context;
         this.cursor = cursor;
+        this.clickListener = clickListener;
     }
 
     @Override
@@ -129,7 +153,7 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_row, parent, false);
 
-        return new ViewHolder(itemView);
+        return new ViewHolder(itemView, clickListener);
     }
 
     @Override
@@ -173,6 +197,12 @@ public class RecipesAdapter extends RecyclerView.Adapter<RecipesAdapter.ViewHold
                     .into(holder.recipeImg);
         } else {
             holder.recipeImg.setImageResource(R.drawable.recipe_circle_img);
+        }
+        if(isSelected(position)){
+            holder.relativeLayout.setBackgroundColor(ContextCompat.getColor(context, R.color.greenAppColor));
+        }
+        else{
+            holder.relativeLayout.setBackgroundColor(Color.TRANSPARENT);
         }
 
     }

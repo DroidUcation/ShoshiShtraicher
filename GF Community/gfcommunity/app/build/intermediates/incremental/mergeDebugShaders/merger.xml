@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\slevin\Documents\androidProjects\update project\GF Community\gfcommunity\app\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\slevin\Documents\androidProjects\update project\GF Community\gfcommunity\app\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\levin\AndroidProjects\GF Community\gfcommunity\app\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\levin\AndroidProjects\GF Community\gfcommunity\app\src\debug\shaders"/></dataSet></merger>

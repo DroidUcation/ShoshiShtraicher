@@ -366,6 +366,7 @@
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
+    <dimen name="instructions_ingredients_txt_view_padding">4dp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
@@ -479,7 +480,12 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="confirm_option">Ok</string>
     <string name="default_web_client_id" translatable="false">710704984798-vqiv1420tef95v74hbd6bb5utde5buj7.apps.googleusercontent.com</string>
+    <string name="delete_product">Delete Product</string>
+    <string name="delete_recipe">Delete Recipe</string>
+    <string name="dialog_msg_delete_prod">"Are you sure you want to delete this product?"</string>
+    <string name="dialog_msg_delete_recipe">"Are you sure you want to delete this recipe?"</string>
     <string name="difficulty_preparation">Difficulty preparation</string>
     <string name="difficulty_preparation_details">Difficulty preparation: %1$s</string>
     <string name="diners_number">Diners number</string>
@@ -511,6 +517,7 @@
     <string name="preparation_time">Preparation time</string>
     <string name="preparation_time_details">Preparation time: %1$s</string>
     <string name="product_added_msg">%1$s Product is added successfully</string>
+    <string name="product_details">Product details</string>
     <string name="product_name">Product name</string>
     <string name="product_notification_text">%1$s was added in %2$s</string>
     <string name="product_notification_title">New Gluten free product</string>
@@ -521,6 +528,7 @@
     <string name="recipe_details">More details</string>
     <string name="recipe_name">Recipe name</string>
     <string name="recipe_notification_title">New Gluten free recipe</string>
+    <string name="recipe_saved_msg">%1$s Recipe is saved successfully</string>
     <string name="recipe_story">The story behind the recipe</string>
     <string name="recipes_authority">com.gfcommunity.course.gfcommunity.data.recipes.RecipesContentProvider</string>
     <string name="recipes_category">Recipes category</string>
@@ -528,11 +536,13 @@
     <string name="required_err_msg">%1$s is required</string>
     <string name="required_err_msg_default">This field is required</string>
     <string name="save_product">Save product</string>
+    <string name="save_recipe">Save recipe</string>
     <string name="search">Search</string>
     <string name="select_difficulty_preparation">Select Difficulty</string>
     <string name="select_recipe_category">Select a recipes category</string>
     <string name="share">Share</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="step">Step</string>
     <string name="store_address">Address</string>
     <string name="store_details">Store details</string>
     <string name="store_name">Store name</string>
@@ -558,7 +568,8 @@
         <item name="colorAccent">@color/pinkAppColor</item>
         <!-- Used for the title and text -->
         <item name="android:textColorPrimary">@color/greenAppColor</item>
-        <item name="android:divider">@color/greenAppColor</item>"
+        <item name="android:divider">@color/greenAppColor</item>
+        <item name="android:gravity">center_horizontal</item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->

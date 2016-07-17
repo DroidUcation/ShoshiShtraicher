@@ -60,7 +60,15 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_PRODUCTS);
         db.execSQL(CREATE_TABLE_RECIPES);
 
-        insertFakeData(db);
+        insertFakeProductsData(db);
+		insertFakeRecipesData(db);
+    }
+
+    /**
+     * Insert fake products data
+     * @param db
+     */
+    private void insertFakeProductsData(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
 
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, "Mazon min hateva");
@@ -69,10 +77,7 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
         values.put(SharingInfoContract.ProductsEntry.STREET, "Rabi Akiva");
         values.put(SharingInfoContract.ProductsEntry.CITY, "Bnei Brak");
         db.insert(SharingInfoContract.ProductsEntry.TABLE_NAME,null, values);
-    }
 
-    private void insertFakeData(SQLiteDatabase db) {
-        ContentValues values = new ContentValues();
         values.put(SharingInfoContract.ProductsEntry.STORE_NAME, "Super Sal Market");
         values.put(SharingInfoContract.ProductsEntry.PRODUCT_NAME, "Gluten free cookies");
         values.put(SharingInfoContract.ProductsEntry.HOUSE_NO, 25);
@@ -89,7 +94,7 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
         values.put(SharingInfoContract.ProductsEntry.STREET, "Nakhalat Yitskhak");
         values.put(SharingInfoContract.ProductsEntry.CITY, "Jerusalem");
         values.put(SharingInfoContract.ProductsEntry.PHONE, "02-696-7474");
-        values.put(SharingInfoContract.ProductsEntry.IMAGE_URI, "http://makingourlifematter.com/wp-content/uploads/2014/02/gf-family-hp.png");
+        values.put(SharingInfoContract.ProductsEntry.IMAGE_URI, "https://milkandeggs.files.wordpress.com/2013/12/photo-2.jpg");
         db.insert(SharingInfoContract.ProductsEntry.TABLE_NAME,null, values);
 
         values = new ContentValues();
@@ -112,6 +117,40 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
         values.put(SharingInfoContract.ProductsEntry.IMAGE_URI,"https://nyoobserver.files.wordpress.com/2015/09/screen-shot-2015-09-22-at-11-02-05-am-e1442935619503.png?w=242&h=300");
         db.insert(SharingInfoContract.ProductsEntry.TABLE_NAME,null, values);
     }
+	
+	
+    /**
+     * Insert fake recipes data
+     * @param db
+     */
+    private void insertFakeRecipesData(SQLiteDatabase db) {
+        ContentValues values = new ContentValues();
+        values.put(SharingInfoContract.RecipesEntry.CATEGORY, "Cakes");
+        values.put(SharingInfoContract.RecipesEntry.RECIPE_NAME, "GLUTEN-FREE CHOCOLATE CHIP CAKE");
+        values.put(SharingInfoContract.RecipesEntry.INGREDIENTS, "1 box King Arthur Gluten-Free Chocolate Cake Mix;" +
+                "2/3 cup vegetable oil;" +
+                "2 teaspoons vanilla extract;" +
+                "4 large eggs;" +
+                "1 1/3 cups water;" +
+                "2 cups chocolate chips;" +
+                "1 cup chopped walnuts or pecans");
+        values.put(SharingInfoContract.RecipesEntry.INSTRUCTIONS, "Preheat the oven to 350°F. Grease a full size (12-cup) Bundt or tube pan.;" +
+                "To make the cake: Place the cake mix in a bowl. Beat in the oil, vanilla, and 1 egg.;" +
+                "Add the remaining eggs one at a time, beating well after each addition.;" +
+                "Add the water 1/3 at a time, beating until smooth and scraping the bowl after each addition.;" +
+                "Stir in the chocolate chips and nuts.;" +
+                "Bake the cake for 50 to 55 minutes, until a cake tester or toothpick inserted into the center comes out with perhaps crumbs clinging to it, but no wet batter.;" +
+                "Remove the cake from the oven, and after 15 minutes turn it out onto a rack.;" +
+                "To make the glaze: Melt the butter in a medium-sized saucepan set over low heat.;" +
+                "Stir in the corn syrup, cocoa, water, vanilla, espresso powder, and salt. Heat and stir until the salt dissolves.;" +
+                "Mix in enough confectioners' sugar to make a glaze with the consistency of thick molasses; you may not need the entire 2 cups.;" +
+                "Transfer the cake to a serving plate; if it's still a bit warm, that's OK.;" +
+                "Spoon the glaze over the cake, covering it as thoroughly as possible. Reheat the glaze briefly if it becomes too thick to pour");
+        values.put(SharingInfoContract.RecipesEntry.RECIPE_IMAGE_URl, "http://d2gk7xgygi98cy.cloudfront.net/4033-3-large.jpg");
+        values.put(SharingInfoContract.RecipesEntry.PREPARATION_TIME, "1 hrs 27 mins");
+        values.put(SharingInfoContract.RecipesEntry.DIFFICULTY_PREPARATION, "hard");
+        db.insert(SharingInfoContract.RecipesEntry.TABLE_NAME, null, values);
+	}
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {

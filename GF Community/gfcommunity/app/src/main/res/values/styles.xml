@@ -48,6 +48,7 @@
         <item name="colorAccent">@color/pinkAppColor</item>
         <!-- Used for the title and text -->
         <item name="android:textColorPrimary">@color/greenAppColor</item>
-        <item name="android:divider">@color/greenAppColor</item>"
+        <item name="android:divider">@color/greenAppColor</item>
+        <item name="android:gravity">center_horizontal</item>
     </style>
 </resources>
