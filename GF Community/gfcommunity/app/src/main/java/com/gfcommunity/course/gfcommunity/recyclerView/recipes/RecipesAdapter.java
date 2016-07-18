@@ -62,7 +62,7 @@ public class RecipesAdapter extends SelectableAdapter<RecipesAdapter.ViewHolder>
         private ClickListener listener;
         private RelativeLayout relativeLayout;
 
-        private static SparseArray<Recipe> recipesMap = new SparseArray<Recipe>();//Recipes map mapped by recipe ID
+        public static SparseArray<Recipe> recipesMap = new SparseArray<Recipe>();//Recipes map mapped by recipe ID
 
         public ViewHolder(View view, ClickListener listener) {
             super(view);
@@ -95,7 +95,7 @@ public class RecipesAdapter extends SelectableAdapter<RecipesAdapter.ViewHolder>
 
             Intent intent = new Intent(context, RecipeDetailsActivity.class);
             intent.putExtra("selected_item",recipe); //Pass selected recipe to RecipeDetailsActivity
-            intent.putExtra("selectedItemId",position); //Pass selected recipe id to RecipeDetailsActivity
+            intent.putExtra("selectedItemId",recipeID); //Pass selected recipe id to RecipeDetailsActivity
 
             context.startActivity(intent);
         }
@@ -136,6 +136,7 @@ public class RecipesAdapter extends SelectableAdapter<RecipesAdapter.ViewHolder>
             recipe.setCategory(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.CATEGORY)));
             recipe.setRecipeStory(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.RECIPE_STORY)));
             recipe.setUserID(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_ID)));
+            recipe.setUserName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_NAME)));
             recipe.setCreatedAt(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.CREATED_AT))));
         } else {
             Log.e(RecipesAdapter.class.getName(), "Failed to set recipe details");
@@ -179,7 +180,7 @@ public class RecipesAdapter extends SelectableAdapter<RecipesAdapter.ViewHolder>
         try {
             String userId = cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_ID)); //TODO: GET USER NAME
             String text = String.format(context.getResources().getString(R.string.user_uploaded_with_date_text),
-                    !TextUtils.isEmpty(userId) ? "user name" : context.getString(R.string.app_name),
+                    !TextUtils.isEmpty(userId) ? cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.USER_NAME)) : context.getString(R.string.app_name),
                     DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.RecipesEntry.CREATED_AT)))));
             holder.text.setText(text);
         }catch(Exception e) {}

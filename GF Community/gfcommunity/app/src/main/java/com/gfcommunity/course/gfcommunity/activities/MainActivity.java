@@ -1,13 +1,18 @@
 package com.gfcommunity.course.gfcommunity.activities;
 
+import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -48,8 +53,19 @@ import com.gfcommunity.course.gfcommunity.recyclerView.products.ProductsAdapter;
 import com.gfcommunity.course.gfcommunity.recyclerView.recipes.RecipesAdapter;
 import com.gfcommunity.course.gfcommunity.utils.FragmentEnum;
 import com.gfcommunity.course.gfcommunity.utils.NetworkConnectedUtil;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, ProductsAdapter.ViewHolder.ClickListener,RecipesAdapter.ViewHolder.ClickListener, AdapterView.OnItemClickListener , LoaderManager.LoaderCallbacks<Integer>
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ProductsAdapter.ViewHolder.ClickListener,RecipesAdapter.ViewHolder.ClickListener, AdapterView.OnItemClickListener , LoaderManager.LoaderCallbacks<Integer>, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener
 {
     private SelectableAdapter mAdapter;
     private int fragmentPosition;
@@ -63,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Uri uri;
     FragmentEnum currentFragmentName;
     static Context context;
+    private FloatingActionButton addFab;
     private ViewPagerAdapter viewPagerAdapter;
     private int[] tabIcons = {
             R.drawable.new_24,
@@ -74,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static int lastSelectedPos = -1;
     private ShareActionProvider mShareActionProvider;
     private int lastFragmentPos =-1;
+    private static final int RC_SIGN_IN = 1;
+    private FirebaseAuth mFirebaseAuth;
+    private GoogleApiClient mGoogleApiClient;
+    private ProgressDialog mProgressDialog;
 
     public interface ResetLoaderFragment
     {
@@ -85,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         context=this;
         setContentView(R.layout.activity_main);
-        fragmentPosition = getIntent().getIntExtra("fragmentPosition", 1);
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
         params.setScrollFlags(0);  // clear all scroll flags
@@ -99,30 +120,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-        viewPager.setCurrentItem(fragmentPosition); //select specific fragment
+
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         //Adding fab
-        FloatingActionButton addFab = (FloatingActionButton)findViewById(R.id.add_fab);
+        addFab = (FloatingActionButton)findViewById(R.id.add_fab);
         addFab.setOnClickListener(this);
         setupTabIcons();
 
+        //Login
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
+                .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                .build();
+
     }
 
+    /**
+     * Sign in with google API
+     */
+    private void signIn() {
+        showProgressDialog();
+        Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
     private void handleOnBackPress() {
         if (mAdapter!= null && mAdapter.isSelected(lastSelectedPos)) {
             toggleSelection(lastSelectedPos);
         }
     }
+    private void setFragmenPosition() {
+        fragmentPosition = getIntent().getIntExtra("fragmentPosition", 1);
+        viewPager.setCurrentItem(fragmentPosition); //select specific fragment
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
+        setFragmenPosition();
         lastSelectedPos = lastFragmentPos = -1;
         selectionMode = false;
         invalidateOptionsMenu();//Declare that the options menu has changed, so should be recreated. The onCreateOptionsMenu(Menu) method will be called the next time it needs to be displayed
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if(mMenu == null) {
@@ -143,16 +187,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.action_edit:
                 item.setChecked(true);
                 if (NetworkConnectedUtil.isNetworkAvailable(this)) {
-                    if(currentFragmentName == FragmentEnum.ProductsFragment){
-                         intent = new Intent(this, AddProductActivity.class);
+                    if(currentFragmentName == FragmentEnum.ProductsFragment) {
+                        intent = new Intent(this, AddProductActivity.class);
                         intent.putExtra("selectedProductId", selectedItemId);//send product id to init
+                    }
+                    else if(currentFragmentName == FragmentEnum.RecipesFragment) {
+                        intent = new Intent(this, AddRecipeActivity.class);
+                        intent.putExtra("selectedRecipeId", selectedItemId);//send recipe id to init
 
                     }
-                    else if(currentFragmentName == FragmentEnum.RecipesFragment){
-                        intent = new Intent(this, AddRecipeActivity.class);
-                        intent.putExtra("selectedRecipeId", selectedItemId);//send product id to init
-                    }
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(this, getString(R.string.no_internet_connection_msg), Toast.LENGTH_SHORT).show();
                 }
@@ -211,12 +256,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.add_fab: //Start Add new product or recipe activity
                 //Check internet connection
                 if (NetworkConnectedUtil.isNetworkAvailable(this)) {
-                    if (viewPager.getCurrentItem() == 1) { //Add product
-                        Intent intent = new Intent(this, AddProductActivity.class);
-                        startActivity(intent);
-                    } else if (viewPager.getCurrentItem() == 2) { //Add recipe
-                        Intent intent = new Intent(this, AddRecipeActivity.class);
-                        startActivity(intent);
+                    SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+                    boolean Islogin = prefs.getBoolean("Islogin", false); // get value of last login status
+                    if(!Islogin) {
+                        signIn(); //sign in with google in order to add product or recipe
+                    } else {
+                        if (viewPager.getCurrentItem() == 1) { //Add product
+                            Intent intent = new Intent(this, AddProductActivity.class);
+                            startActivity(intent);
+                        } else if (viewPager.getCurrentItem() == 2) { //Add recipe
+                            Intent intent = new Intent(this, AddRecipeActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 } else {
                     Toast.makeText(this, getString(R.string.no_internet_connection_msg), Toast.LENGTH_SHORT).show();
@@ -233,13 +284,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             toolbar.setTitle(getString(R.string.app_name));
         }
         mMenu.findItem(R.id.action_search).setVisible(!selectionMode);
-//        MenuItem shareItem = mMenu.findItem(R.id.action_share);
-//        shareItem.setVisible(selectionMode);
+        MenuItem shareItem = mMenu.findItem(R.id.action_share);
+        shareItem.setVisible(selectionMode);
 //        mShareActionProvider = (ShareActionProvider) shareItem.getActionProvider();
         mMenu.findItem(R.id.action_favorites).setVisible(selectionMode);
         mMenu.findItem(R.id.action_edit).setVisible(selectionMode);
         mMenu.findItem(R.id.action_delete).setVisible(selectionMode);
-        mMenu.findItem(R.id.action_navigate).setVisible(selectionMode);
+        mMenu.findItem(R.id.action_navigate).setVisible(selectionMode && currentFragmentName == FragmentEnum.ProductsFragment);
 }
 
     // Call to update the share intent
@@ -267,6 +318,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(lastSelectedPos >= 0){
                     handleOnBackPress();
                     lastSelectedPos = -1;
+                }
+
+                if(addFab != null) {
+                    if (position == 0) {
+                        addFab.setVisibility(View.GONE);
+                    } else {
+                        addFab.setVisibility(View.VISIBLE);
+                    }
                 }
             }
 
@@ -307,7 +366,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onAttachFragment(Fragment fragment) {
         super.onAttachFragment(fragment);
-//        resetLoaderFragment = (MainActivity.ResetLoaderFragment)viewPagerAdapter.getItem(1);
     }
 
     /**
@@ -376,7 +434,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onLoadFinished(Loader<Integer> loader, Integer data) {
         mAdapter.toggleSelection(selectedItemId);
         resetLoaderFragment.resetNow();
-//        adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -412,5 +469,88 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return mFragmentTitleList.get(position);
         }
 
+    }
+
+    //LOGIN//
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        hideProgressDialog();
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
+        if (requestCode == RC_SIGN_IN) {
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            if (result.isSuccess()) {
+                // Google Sign In was successful, authenticate with Firebase
+                GoogleSignInAccount account = result.getSignInAccount();
+                firebaseAuthWithGoogle(account);
+            } else {
+                Toast.makeText(MainActivity.this, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void firebaseAuthWithGoogle(final GoogleSignInAccount acct) {
+        AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+        mFirebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        } else {
+                            handleLoginSucssess(acct);
+                        }
+                    }
+                });
+    }
+
+    private void handleLoginSucssess(GoogleSignInAccount acct) {
+        Intent intent = null;
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs.edit().putBoolean("Islogin", true).commit(); // islogin is a boolean value of login status
+        if (viewPager.getCurrentItem() == 1) { //Add product
+            intent = new Intent(context, AddProductActivity.class);
+
+        } else if (viewPager.getCurrentItem() == 2) { //Add recipe
+            intent = new Intent(context, AddRecipeActivity.class);
+        }
+        prefs.edit().putString("accountDisplayName", acct.getDisplayName()).commit();
+        prefs.edit().putString("accountID", acct.getIdToken()).commit();
+        startActivity(intent);
+    }
+
+    @Override
+    public void onConnected(@Nullable Bundle bundle) {
+
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull com.google.android.gms.common.ConnectionResult connectionResult) {
+        Toast.makeText(this, "No Connection!", Toast.LENGTH_SHORT).show();
+    }
+
+    private void showProgressDialog() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(this);
+            mProgressDialog.setMessage("Please wait...");
+            mProgressDialog.setIndeterminate(true);
+        }
+
+        mProgressDialog.show();
+    }
+
+    private void hideProgressDialog() {
+        if (mProgressDialog != null && mProgressDialog.isShowing()) {
+            mProgressDialog.hide();
+        }
     }
 }

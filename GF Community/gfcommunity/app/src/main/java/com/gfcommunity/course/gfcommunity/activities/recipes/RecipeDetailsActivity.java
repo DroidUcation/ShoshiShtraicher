@@ -5,7 +5,6 @@ import android.content.ContentUris;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.LinearGradient;
 import android.net.Uri;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
@@ -63,9 +62,16 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
         selectedRecipeId = intent.getIntExtra("selectedItemId", -1);
         setRecipeValues(); //Set recipe details in the textViews
     }
+    @Override
+    public void onBackPressed() {
+        handleOnBackPress();
+    }
+
     private void handleOnBackPress() {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("fragmentPosition", 2);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -85,7 +91,7 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
         mMenu.findItem(R.id.action_favorites).setVisible(true);
         mMenu.findItem(R.id.action_edit).setVisible(true);
         mMenu.findItem(R.id.action_delete).setVisible(true);
-        mMenu.findItem(R.id.action_navigate).setVisible(true);
+        mMenu.findItem(R.id.action_navigate).setVisible(false);
     }
 
     /**
@@ -161,8 +167,7 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
         }
 
         TextView recipetUserUploadedTxt = (TextView) findViewById(R.id.added_by_txt);
-        //TODO: set user name
-        String recipetUserUploaded = String.format(getResources().getString(R.string.user_uploaded_text), !TextUtils.isEmpty(recipe.getUserID()) ? "user name" : getString(R.string.app_name));
+        String recipetUserUploaded = String.format(getResources().getString(R.string.user_uploaded_text), !TextUtils.isEmpty(recipe.getUserID()) ? recipe.getUserName() : getString(R.string.app_name));
         recipetUserUploadedTxt.setText(!TextUtils.isEmpty(recipetUserUploaded) ? recipetUserUploaded : "");
 
     }
@@ -177,6 +182,7 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
                     intent = new Intent(this, AddRecipeActivity.class);
                     intent.putExtra("selectedRecipeId", selectedRecipeId);//send product id to init
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(this, getString(R.string.no_internet_connection_msg), Toast.LENGTH_SHORT).show();
                 }
@@ -223,9 +229,7 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
      * perform delete item action
      */
     private void deleteItem() {
-        Bundle b = new Bundle();
-        b.putCharSequence("itemIdToDelete", selectedRecipeId +"");
-        getSupportLoaderManager().restartLoader(loaderID, b, this).forceLoad();//Initializes delete Loader
+        getSupportLoaderManager().restartLoader(loaderID, null, this).forceLoad();//Initializes delete Loader
 
     }
 
@@ -240,8 +244,7 @@ public class RecipeDetailsActivity extends AppCompatActivity implements LoaderMa
     @Override
     public void onLoadFinished(Loader<Integer> loader, Integer data) {
         RecipesFragment.recipesAdapter.toggleSelection(selectedRecipeId);
-        finish(); //Close this activity and go back to Main Activity
-//        adapter.notifyDataSetChanged();
+        handleOnBackPress();
     }
 
     @Override

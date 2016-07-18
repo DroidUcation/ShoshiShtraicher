@@ -2,7 +2,9 @@ package com.gfcommunity.course.gfcommunity.activities.products;
 
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.preference.PreferenceManager;
 import android.support.design.widget.AppBarLayout;
 import android.graphics.PorterDuff;
 import android.support.v4.content.ContextCompat;
@@ -53,6 +55,7 @@ import com.gfcommunity.course.gfcommunity.utils.SpinnerAdapter;
 import android.net.Uri;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -84,6 +87,8 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
     private boolean updateActivity = false;
     private Context context;
     private Toolbar toolbar;
+    private String accountDisplayName;
+    private String accountID;
 
     private LoaderManager.LoaderCallbacks<Uri> insertProductLoaderListener = new LoaderManager.LoaderCallbacks<Uri>() {
         @Override
@@ -97,7 +102,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(context, String.format(getString(R.string.product_added_msg), productName), Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
             //TODO: check if user city is same as product city
             sendNotification(data); //Send notification
-            finish(); //Close this activity and go back to Main Activity
+            handleOnBackPress(); //Close this activity and go back to Main Activity
         }
 
         @Override
@@ -119,7 +124,8 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         public void onLoadFinished(Loader<Integer> loader, Integer data) {
             Log.i(logTag, "Update product succeed: " + productName);
             Toast.makeText(context, String.format(getString(R.string.product_saved_msg), productName), Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
-            finish(); //Close this activity and go back to Main Activity
+            ProductsAdapter.ViewHolder.productsMap.delete(selectedProductId);
+            handleOnBackPress(); //Close this activity and go back to Main Activity
         }
 
         @Override
@@ -140,6 +146,9 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         if (selectedProductId != -1) {
             initialEditedProduct();
         }
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        accountDisplayName = prefs.getString("accountDisplayName", "");
+        accountID = prefs.getString("accountID" , "");
     }
 
     private ContentValues setProductValues(Bundle args) {
@@ -162,6 +171,10 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         String comment = commentEditTxt.getText().toString();
         values.put(SharingInfoContract.ProductsEntry.COMMENT, !TextUtils.isEmpty(comment) ? comment : "");
         values.put(SharingInfoContract.ProductsEntry.IMAGE_URI, !TextUtils.isEmpty(downloadUrlPath) ? downloadUrlPath : "");
+        if(!updateActivity) {
+            values.put(SharingInfoContract.ProductsEntry.USER_ID, !TextUtils.isEmpty(accountID) ? accountID : "");
+            values.put(SharingInfoContract.ProductsEntry.USER_NAME, !TextUtils.isEmpty(accountDisplayName) ? accountDisplayName : "");
+        }
         return values;
     }
 
@@ -259,7 +272,6 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         citiesSpinner.setSelection(dataAdapter.getCount());// show hint
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_basic);
-
     }
 
     @Override
@@ -267,7 +279,13 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         super.onResume();
         if(toolbar!= null){
             toolbar.setTitleTextColor(Color.WHITE);
-            toolbar.setTitle(getResources().getString(R.string.add_product));
+            if(updateActivity){
+                toolbar.setTitle(getResources().getString(R.string.edit_product));
+            }
+            else{
+                toolbar.setTitle(getResources().getString(R.string.add_product));
+            }
+
 //            AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
 //            params.setScrollFlags(0);  // clear all scroll flags
             setSupportActionBar(toolbar);
@@ -280,10 +298,16 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
             });
         }
     }
+    @Override
+    public void onBackPressed() {
+        handleOnBackPress();
+    }
 
     private void handleOnBackPress() {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("fragmentPosition", 1);
         startActivity(intent);
+        finish();
     }
 
 
@@ -335,9 +359,9 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
                         UploadFile.uploadFile(this, selectedImage, this, "product"); //Upload product image to firebase
                     } else {
                         if (updateActivity) {
-                            getSupportLoaderManager().initLoader(loaderID, null, updateProductLoaderListener).forceLoad();//Initializes the Insert Loader
+                            getSupportLoaderManager().initLoader(updateLoaderID, null, updateProductLoaderListener).forceLoad();//Initializes the update Loader
                         } else {
-                            getSupportLoaderManager().initLoader(updateLoaderID, null, insertProductLoaderListener).forceLoad();//Initializes the update Loader
+                            getSupportLoaderManager().initLoader(loaderID, null, insertProductLoaderListener).forceLoad();//Initializes the insert Loader
                         }
                     }
                 }
@@ -587,7 +611,11 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
     public void onUrlReceived(Uri uri) {
         Bundle bundle = new Bundle();
         bundle.putString("downloadUrlPath", uri.toString());
-        getSupportLoaderManager().initLoader(loaderID, bundle, insertProductLoaderListener).forceLoad();//Initializes the Insert Loader
+        if (updateActivity) {
+            getSupportLoaderManager().initLoader(updateLoaderID, bundle, updateProductLoaderListener).forceLoad();//Initializes the update Loader
+        } else {
+            getSupportLoaderManager().initLoader(loaderID, bundle, insertProductLoaderListener).forceLoad();//Initializes the insert Loader
+        }
     }
 
     private class ProductTextWatcher implements TextWatcher {

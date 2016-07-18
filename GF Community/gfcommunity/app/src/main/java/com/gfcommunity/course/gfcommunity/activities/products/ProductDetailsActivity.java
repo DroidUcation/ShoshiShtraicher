@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
 import android.support.v7.app.AlertDialog;
@@ -68,10 +69,16 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
         storePhoneImg.setOnClickListener(this);
         setProductValues(); //Set product details in the textViews
     }
+    @Override
+    public void onBackPressed() {
+        handleOnBackPress();
+    }
 
     private void handleOnBackPress() {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("fragmentPosition", 1);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -164,9 +171,8 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
 
         TextView productUserUploadedTxt = (TextView) findViewById(R.id.product_user_uploaded_txt);
         String productUserUploadedDate = DateFormatUtil.DATE_FORMAT_DDMMYYYY.format(product.getCreatedAt()).toString();
-        //TODO: set user name
         String productUserUploaded = String.format(resources.getString(R.string.user_uploaded_with_date_text),
-                !TextUtils.isEmpty(product.getUserID()) ? "user name" : getString(R.string.app_name),
+                !TextUtils.isEmpty(product.getUserID()) ? product.getUserName() : getString(R.string.app_name),
                 productUserUploadedDate);
         productUserUploadedTxt.setText(!TextUtils.isEmpty(productUserUploaded) ? productUserUploaded : "");
     }
@@ -179,11 +185,13 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                 dialIntent = new Intent(Intent.ACTION_DIAL);
                 dialIntent.setData(Uri.parse("tel:" + storePhone));
                 startActivity(dialIntent);
+                finish();
                 break;
             case R.id.store_phone_txt:
                 dialIntent = new Intent(Intent.ACTION_DIAL);
                 dialIntent.setData(Uri.parse("tel:" + storePhone));
                 startActivity(dialIntent);
+                finish();
                 break;
         }
     }
@@ -197,6 +205,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
                     Intent intent = new Intent(this, AddProductActivity.class);
                     intent.putExtra("selectedProductId", selectedProductId);//send product id to init
                     startActivity(intent);
+                    finish();
                 } else {
                     Toast.makeText(this, getString(R.string.no_internet_connection_msg), Toast.LENGTH_SHORT).show();
                 }
@@ -258,8 +267,7 @@ public class ProductDetailsActivity extends AppCompatActivity implements View.On
     @Override
     public void onLoadFinished(Loader<Integer> loader, Integer data) {
         ProductsFragment.productsAdapter.toggleSelection(selectedProductId);
-        finish(); //Close this activity and go back to Main Activity
-//        adapter.notifyDataSetChanged();
+        handleOnBackPress();
     }
 
     @Override

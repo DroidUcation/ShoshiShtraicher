@@ -39,7 +39,7 @@ public class ProductsAdapter extends SelectableAdapter<ProductsAdapter.ViewHolde
         private TextView title, subTitle, text;
         private RelativeLayout relativeLayout;
         private CircularImageView productImg;
-        private static SparseArray<Product> productsMap = new SparseArray<Product>();//Products map mapped by product ID
+        public static SparseArray<Product> productsMap = new SparseArray<Product>();//Products map mapped by product ID
         private ClickListener listener;
 
         public ViewHolder(View view, ClickListener listener) {
@@ -118,6 +118,7 @@ public class ProductsAdapter extends SelectableAdapter<ProductsAdapter.ViewHolde
             product.setPhone(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.PHONE)));
             product.setComment(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.COMMENT)));
             product.setUserID(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.USER_ID)));
+            product.setUserName(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.USER_NAME)));
             product.setCreatedAt(Timestamp.valueOf(cursor.getString(cursor.getColumnIndex(SharingInfoContract.ProductsEntry.CREATED_AT))));
         } else {
             Log.e(ProductsAdapter.class.getName(), "Failed to set product details");

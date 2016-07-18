@@ -29,7 +29,8 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
             + SharingInfoContract.ProductsEntry.PHONE + " TEXT, "
             + SharingInfoContract.ProductsEntry.CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
             + SharingInfoContract.ProductsEntry.IMAGE_URI + " TEXT, "
-            + SharingInfoContract.ProductsEntry.USER_ID + " TEXT"+");";
+            + SharingInfoContract.ProductsEntry.USER_ID + " TEXT, "
+            + SharingInfoContract.ProductsEntry.USER_NAME + " TEXT"+");";
 
     //Recipes table create statement
     private static final String CREATE_TABLE_RECIPES =
@@ -46,7 +47,8 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
                     + SharingInfoContract.RecipesEntry.RECIPE_STORY + " TEXT, "
                     + SharingInfoContract.RecipesEntry.CATEGORY + " TEXT, "
                     + SharingInfoContract.RecipesEntry.CREATED_AT + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP, "
-                    + SharingInfoContract.RecipesEntry.USER_ID + " TEXT"+");";
+                    + SharingInfoContract.ProductsEntry.USER_ID + " TEXT, "
+                    + SharingInfoContract.RecipesEntry.USER_NAME + " TEXT"+");";
 
     public SharingInfoDatabaseHelper(Context context){
         super(context,"SharingInfoDB",null,DATABASE_VERSION);
@@ -126,7 +128,7 @@ public class SharingInfoDatabaseHelper extends SQLiteOpenHelper {
     private void insertFakeRecipesData(SQLiteDatabase db) {
         ContentValues values = new ContentValues();
         values.put(SharingInfoContract.RecipesEntry.CATEGORY, "Cakes");
-        values.put(SharingInfoContract.RecipesEntry.RECIPE_NAME, "GLUTEN-FREE CHOCOLATE CHIP CAKE");
+        values.put(SharingInfoContract.RecipesEntry.RECIPE_NAME, "Chocolate chip cake");
         values.put(SharingInfoContract.RecipesEntry.INGREDIENTS, "1 box King Arthur Gluten-Free Chocolate Cake Mix;" +
                 "2/3 cup vegetable oil;" +
                 "2 teaspoons vanilla extract;" +

@@ -20,6 +20,7 @@
     <string name="store_phone">Phone</string>
     <string name="comment">Comment</string>
     <string name="add_product">Add product</string>
+    <string name="edit_product">Edit product</string>
     <string name="save_product">Save product</string>
     <string name="store_details">Store details</string>
     <string name="places_api_key">AIzaSyCEsq36NBlHcfNnyxemW-YfmV_EFIqLeNM</string>
@@ -53,7 +54,7 @@
     <!-->Recipe strings<!-->
     <string name="recipe_name">Recipe name</string>
     <string name="ingredients_title">Recipe ingredients</string>
-    <string name="select_recipe_category">Select a recipes category</string>
+    <string name="select_recipe_category">Select recipes category</string>
     <string name="recipes_category">Recipes category</string>
     <string name="ingredients">Ingredients</string>
     <string name="ingredient">Ingredient</string>
@@ -63,16 +64,17 @@
     <string name="preparation_time">Preparation time</string>
     <string name="preparation_time_title">Preparation time:</string>
     <string name="diners_number_title">Diners number:</string>
-    <string name="difficulty_preparation_title">Difficulty preparation:</string>
+    <string name="difficulty_preparation_title">Difficulty in preparation:</string>
     <string name="diners_number">Diners number</string>
     <string name="select_difficulty_preparation">Select Difficulty</string>
     <string name="recipe_story">The story behind the recipe</string>
     <string name="add_recipe">Add recipe</string>
+    <string name="edit_recipe">Edit recipe</string>
     <string name="recipe_notification_title">New Gluten free recipe</string>
     <string name="recipe_added_msg">%1$s recipe is added successfully</string>
     <string name="recipe_saved_msg">%1$s recipe is saved successfully</string>
     <string name="add_recipe_image_title">Add recipe image</string>
-    <string name="difficulty_preparation">Difficulty preparation</string>
+    <string name="difficulty_preparation">Difficulty in preparation</string>
     <string name="add_ingredient">Add ingredient</string>
     <string name="product_details">Product details</string>
     <string name="tbd">TBD</string>

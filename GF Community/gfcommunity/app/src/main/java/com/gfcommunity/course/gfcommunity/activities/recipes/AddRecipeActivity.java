@@ -10,11 +10,13 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
@@ -88,6 +90,8 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
     private boolean updateActivity = false;
     private Context context;
     private Toolbar toolbar;
+    private String accountDisplayName;
+    private String accountID;
 
     private LoaderManager.LoaderCallbacks<Uri> insertRecipeLoaderListener = new LoaderManager.LoaderCallbacks<Uri>() {
         @Override
@@ -101,7 +105,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
             Log.i(logTag, getString(R.string.recipe_added_msg)+ recipeName);
             Toast.makeText(context, String.format(getString(R.string.recipe_added_msg), recipeName),Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
             sendNotification(data); //Send notification
-            finish(); //Close this activity and go back to Main Activity
+            handleOnBackPress(); //Close this activity and go back to Main Activity
         }
 
         @Override
@@ -120,9 +124,10 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
 
         @Override
         public void onLoadFinished(Loader<Integer> loader, Integer data) {
+            RecipesAdapter.ViewHolder.recipesMap.delete(selectedRecipeId);
             Log.i(logTag, getString(R.string.recipe_saved_msg)  + recipeName);
             Toast.makeText(context, String.format(getString(R.string.recipe_saved_msg), recipeName),Toast.LENGTH_LONG).show();//TODO: Show inserted successfully popup
-            finish(); //Close this activity and go back to Main Activity
+            handleOnBackPress(); //Close this activity and go back to Main Activity
         }
 
         @Override
@@ -136,9 +141,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
         ContentValues values = new ContentValues();
         recipeName = recipeNameEditTxt.getText().toString();
         values.put(SharingInfoContract.RecipesEntry.RECIPE_NAME, !TextUtils.isEmpty(recipeName) ? recipeName : "");
-        String ingredients = ingredientsEditTxt.getText().toString();
         values.put(SharingInfoContract.RecipesEntry.INGREDIENTS, concatEditTextsArray(ingredientsEditTextsArray)); //Concat ingredientsEditTextsArray array to string separated by ';'
-        String instructions = instructionsEditTxt.getText().toString();
         values.put(SharingInfoContract.RecipesEntry.INSTRUCTIONS, concatEditTextsArray(instructionsEditTextsArray)); //Concat instructionsEditTextsArray array to string separated by ';'
         values.put(SharingInfoContract.RecipesEntry.CREATED_AT, DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString());
         String preparationTime = preparationTimeEditTxt.getText().toString();
@@ -151,6 +154,10 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
         values.put(SharingInfoContract.RecipesEntry.DIFFICULTY_PREPARATION, !TextUtils.isEmpty(selectedDifficultyPreparation) && !(selectedDifficultyPreparation.equals(getString(R.string.select_difficulty_preparation))) ? selectedDifficultyPreparation : "");
         values.put(SharingInfoContract.RecipesEntry.CATEGORY, !TextUtils.isEmpty(selectedRecipeCategory) && !(selectedRecipeCategory.equals(getString(R.string.select_recipe_category))) ? selectedRecipeCategory : "");
         values.put(SharingInfoContract.RecipesEntry.RECIPE_IMAGE_URl, !TextUtils.isEmpty(downloadUrlPath) ? downloadUrlPath : "");
+        if(!updateActivity) {
+            values.put(SharingInfoContract.ProductsEntry.USER_ID, !TextUtils.isEmpty(accountID) ? accountID : "");
+            values.put(SharingInfoContract.ProductsEntry.USER_NAME, !TextUtils.isEmpty(accountDisplayName) ? accountDisplayName : "");
+        }
         return values;
     }
 
@@ -166,6 +173,10 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
         if (selectedRecipeId != -1) {
             initialEditedRecipe();
         }
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        accountDisplayName = prefs.getString("accountDisplayName", "");
+        accountID = prefs.getString("accountID" , "");
     }
 
     private void initialEditedRecipe() {
@@ -296,8 +307,13 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
     protected void onResume() {
         super.onResume();
         if(toolbar!= null){
+            if(updateActivity){
+                toolbar.setTitle(getResources().getString(R.string.edit_recipe));
+            }
+            else{
+                toolbar.setTitle(getResources().getString(R.string.add_recipe));
+            }
             toolbar.setTitleTextColor(Color.WHITE);
-            toolbar.setTitle(getResources().getString(R.string.add_recipe));
             setSupportActionBar(toolbar);
             toolbar.setNavigationIcon(R.drawable.ic_menu_left_white_24dp);
             toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -311,7 +327,14 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
 
     private void handleOnBackPress() {
         Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("fragmentPosition", 2);
         startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        handleOnBackPress();
     }
 
     /**
@@ -368,7 +391,7 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
         notificationManager.notify(1, n);
     }
 
-   /**
+    /**
      * Add editText to the layout param and editTextsArray param
      * @param hint
      * @param layout
@@ -396,9 +419,9 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
                         UploadFile.uploadFile(this, selectedImage, this, "recipe"); //Upload recipe image to firebase
                     } else {
                         if (updateActivity) {
-                            getSupportLoaderManager().initLoader(loaderID, null, updateRecipeLoaderListener).forceLoad();//Initializes the Insert Loader
+                            getSupportLoaderManager().initLoader(updateLoaderID, null, updateRecipeLoaderListener).forceLoad();//Initializes the update Loader
                         } else {
-                            getSupportLoaderManager().initLoader(updateLoaderID, null, insertRecipeLoaderListener).forceLoad();//Initializes the update Loader
+                            getSupportLoaderManager().initLoader(loaderID, null, insertRecipeLoaderListener).forceLoad();//Initializes the insert Loader
                         }
                     }
                 }
@@ -591,7 +614,11 @@ public class AddRecipeActivity extends AppCompatActivity  implements View.OnClic
     public void onUrlReceived(Uri uri) {
         Bundle bundle= new Bundle();
         bundle.putString("downloadUrlPath",uri.toString());
-        getSupportLoaderManager().initLoader(loaderID,bundle , insertRecipeLoaderListener).forceLoad();//Initializes the Insert Loader
+        if (updateActivity) {
+            getSupportLoaderManager().initLoader(updateLoaderID, bundle, updateRecipeLoaderListener).forceLoad();//Initializes the update Loader
+        } else {
+            getSupportLoaderManager().initLoader(loaderID, bundle, insertRecipeLoaderListener).forceLoad();//Initializes the insert Loader
+        }
     }
 
     private class RecipeTextWatcher implements TextWatcher {
