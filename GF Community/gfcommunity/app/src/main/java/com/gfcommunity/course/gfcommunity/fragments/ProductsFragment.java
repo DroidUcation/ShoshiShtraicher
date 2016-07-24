@@ -24,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gfcommunity.course.gfcommunity.R;
+import com.gfcommunity.course.gfcommunity.activities.MainActivity;
 import com.gfcommunity.course.gfcommunity.activities.products.AddProductActivity;
 import com.gfcommunity.course.gfcommunity.data.products.ProductsContentProvider;
 import com.gfcommunity.course.gfcommunity.data.SharingInfoContract;
@@ -33,9 +34,10 @@ import com.gfcommunity.course.gfcommunity.utils.NetworkConnectedUtil;
 import com.gfcommunity.course.gfcommunity.utils.SpinnerAdapter;
 
 
-public class ProductsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener , AdapterView.OnItemSelectedListener{
+public class ProductsFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>, View.OnClickListener , AdapterView.OnItemSelectedListener
+        , MainActivity.ResetLoaderFragment {
     private int loaderID = 0; // Identifies a particular Loader being used in this component
-    private ProductsAdapter productsAdapter;
+    public static ProductsAdapter productsAdapter;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
     private String selectedCity;
@@ -94,6 +96,7 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.context = getContext();
+        setHasOptionsMenu(true);
         getLoaderManager().initLoader(loaderID, null, this); //Initializes the CursorLoader
     }
 
@@ -117,7 +120,7 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         progressBar.setVisibility(View.GONE);
         if (cursor != null && cursor.moveToFirst()) {
-            productsAdapter = new ProductsAdapter(context, cursor);
+            productsAdapter = new ProductsAdapter(context, cursor, (ProductsAdapter.ViewHolder.ClickListener) getActivity());
             recyclerView.setAdapter(productsAdapter);
             recyclerView.setVisibility(View.VISIBLE);
             this.getView().setBackgroundColor(Color.TRANSPARENT);
@@ -137,6 +140,16 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
     @Override
     public void onClick(View view) {
         switch(view.getId()){
+            case R.id.add_fab: //Start Add new product activity
+                //Check internet connection
+                if(NetworkConnectedUtil.isNetworkAvailable(context)) {
+                    Intent intent = new Intent(getActivity(), AddProductActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(context,getString(R.string.no_internet_connection_msg),Toast.LENGTH_SHORT).show();
+                }
+                break;
             case R.id.filter_city:
                 citiesSpinner.setVisibility(View.VISIBLE);
                 filterCity.setVisibility(View.GONE);
@@ -180,4 +193,9 @@ public class ProductsFragment extends Fragment implements LoaderManager.LoaderCa
         return new ProductsFragment();
     }
 
+    @Override
+    public void resetNow() {
+        getLoaderManager().restartLoader(loaderID, null, this);
+        //Toast.makeText(context, "dsfdsfdsfdsf", Toast.LENGTH_SHORT).show();
+    }
 }

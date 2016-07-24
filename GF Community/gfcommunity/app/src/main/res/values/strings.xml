@@ -20,16 +20,23 @@
     <string name="store_phone">Phone</string>
     <string name="comment">Comment</string>
     <string name="add_product">Add product</string>
+    <string name="edit_product">Edit product</string>
     <string name="save_product">Save product</string>
     <string name="store_details">Store details</string>
     <string name="places_api_key">AIzaSyCEsq36NBlHcfNnyxemW-YfmV_EFIqLeNM</string>
     <string name="required_err_msg">%1$s is required</string>
     <string name="store_name">Store name</string>
     <string name="required_err_msg_default">This field is required</string>
+    <string name="save_recipe">Save recipe</string>
     <string name="city_spinner_title">Select city</string>
     <string name="take_photo_option">Take Photo</string>
     <string name="gallery_option">Choose from Gallery</string>
     <string name="cancel_option">Cancel</string>
+    <string name="confirm_option">Ok</string>
+    <string name="delete_product">Delete Product</string>
+    <string name="delete_recipe">Delete Recipe</string>
+    <string name="dialog_msg_delete_prod">"Are you sure you want to delete this product?"</string>
+    <string name="dialog_msg_delete_recipe">"Are you sure you want to delete this recipe?"</string>
     <string name="products_fragment_name">Products</string>
     <string name="news_fragment_name">What\'s new</string>
     <string name="recipes_fragment_name">Recipes</string>
@@ -39,34 +46,37 @@
     <string name="filtered_by">Filtered by: </string>
     <string name="product_notification_title">New Gluten free product</string>
     <string name="product_notification_text">%1$s was added in %2$s</string>
-    <string name="product_added_msg">%1$s Product is added successfully</string>
-    <string name="product_saved_msg">%1$s Product is saved successfully</string>
+    <string name="product_added_msg">%1$s product is added successfully</string>
+    <string name="product_saved_msg">%1$s product is saved successfully</string>
     <string name="add_product_image_title">Select product image</string>
 
 
     <!-->Recipe strings<!-->
     <string name="recipe_name">Recipe name</string>
     <string name="ingredients_title">Recipe ingredients</string>
-    <string name="select_recipe_category">Select a recipes category</string>
+    <string name="select_recipe_category">Select recipes category</string>
     <string name="recipes_category">Recipes category</string>
     <string name="ingredients">Ingredients</string>
     <string name="ingredient">Ingredient</string>
     <string name="instructions">Instructions</string>
+    <string name="step">Step</string>
     <string name="recipe_details">More details</string>
     <string name="preparation_time">Preparation time</string>
+    <string name="preparation_time_title">Preparation time:</string>
+    <string name="diners_number_title">Diners number:</string>
+    <string name="difficulty_preparation_title">Difficulty in preparation:</string>
     <string name="diners_number">Diners number</string>
     <string name="select_difficulty_preparation">Select Difficulty</string>
     <string name="recipe_story">The story behind the recipe</string>
     <string name="add_recipe">Add recipe</string>
+    <string name="edit_recipe">Edit recipe</string>
     <string name="recipe_notification_title">New Gluten free recipe</string>
-    <string name="recipe_added_msg">%1$s Recipe is added successfully</string>
+    <string name="recipe_added_msg">%1$s recipe is added successfully</string>
+    <string name="recipe_saved_msg">%1$s recipe is saved successfully</string>
     <string name="add_recipe_image_title">Add recipe image</string>
-    <string name="difficulty_preparation">Difficulty preparation</string>
-    <string name="preparation_time_details">Preparation time: %1$s</string>
-    <string name="diners_number_details">Diners number: %1$d</string>
-    <string name="difficulty_preparation_details">Difficulty preparation: %1$s</string>
+    <string name="difficulty_preparation">Difficulty in preparation</string>
     <string name="add_ingredient">Add ingredient</string>
-
+    <string name="product_details">Product details</string>
     <string name="tbd">TBD</string>
     <!-->Israel cities array<!-->
     <string-array name="cities_array">

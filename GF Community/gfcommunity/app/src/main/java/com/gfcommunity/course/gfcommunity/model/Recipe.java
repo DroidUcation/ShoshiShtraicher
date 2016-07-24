@@ -17,11 +17,12 @@ public class Recipe implements Serializable{
     private String recipeStory;
     private String category;
     private String userID;
+    private String userName;
     private Timestamp createdAt;
 
     public Recipe(){}
 
-    public Recipe(String recipeName, String ingredients, String instructions, String recipeImgUri, String preparationTime, int dinersNumber, String difficultyPreparation, String recipeStory, String category, Timestamp createdAt, String userID) {
+    public Recipe(String recipeName, String ingredients, String instructions, String recipeImgUri, String preparationTime, int dinersNumber, String difficultyPreparation, String recipeStory, String category, Timestamp createdAt, String userID, String userName) {
         this.recipeName = recipeName;
         this.ingredients = ingredients;
         this.instructions = instructions;
@@ -33,8 +34,18 @@ public class Recipe implements Serializable{
         this.category = category;
         this.createdAt = createdAt;
         this.userID = userID;
+        this.userName = userName;
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+
+    }
+
+    public String getUserName() {
+
+        return userName;
+    }
     public String getRecipeName() {
         return recipeName;
     }

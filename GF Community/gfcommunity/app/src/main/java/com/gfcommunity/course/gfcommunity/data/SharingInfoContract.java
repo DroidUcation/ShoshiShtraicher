@@ -21,6 +21,7 @@ public class SharingInfoContract {
         public static  final String CREATED_AT = "created_at";
         public static  final String IMAGE_URI = "img_uri";
         public static  final String USER_ID = "user_id";
+        public static  final String USER_NAME = "user_name";
     }
 
     //Recipes
@@ -37,5 +38,6 @@ public class SharingInfoContract {
         public static  final String CATEGORY = "category";
         public static  final String CREATED_AT = "created_at";
         public static  final String USER_ID = "user_id";
+        public static  final String USER_NAME = "user_name";
     }
 }

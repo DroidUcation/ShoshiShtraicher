@@ -48,6 +48,14 @@
         <item name="colorAccent">@color/pinkAppColor</item>
         <!-- Used for the title and text -->
         <item name="android:textColorPrimary">@color/greenAppColor</item>
-        <item name="android:divider">@color/greenAppColor</item>"
+        <item name="android:divider">@color/greenAppColor</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="ProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:background">@xml/progress</item>
     </style>
 </resources>
